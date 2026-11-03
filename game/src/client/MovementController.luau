@@ -1,6 +1,7 @@
 local Players=game:GetService("Players")
 local RunService=game:GetService("RunService")
 local Input=game:GetService("UserInputService")
+local VR=game:GetService("VRService")
 local Shared=game:GetService("ReplicatedStorage"):WaitForChild("FPS")
 local Tuning=require(Shared.Movement)
 local Geometry=require(Shared.LeanGeometry)
@@ -9,21 +10,14 @@ local Controller={}
 function Controller.start(action,callbacks)
     local player=Players.LocalPlayer
     local controls=require(player.PlayerScripts:WaitForChild("PlayerModule")):GetControls()
-    local left,right,focused=false,false,true
+    local focused=true
     local movement,lean=Vector3.zero,0
     local request,aiming,lastSend,lastLean,lastAim=0,false,-math.huge,nil,nil
     local previousCamera,previousTransform
     local pendingRecoil=0
     local currentCharacter
     local poses=setmetatable({},{__mode="k"})
-    local function release() left,right=false,false end
-    Input.InputBegan:Connect(function(input,processed)
-        if processed or not callbacks.active() or Input:GetFocusedTextBox() then return end
-        if input.KeyCode==Enum.KeyCode.Q then left=true elseif input.KeyCode==Enum.KeyCode.E then right=true end
-    end)
-    Input.InputEnded:Connect(function(input)
-        if input.KeyCode==Enum.KeyCode.Q then left=false elseif input.KeyCode==Enum.KeyCode.E then right=false end
-    end)
+    local function release() callbacks.reset() end
     Input.WindowFocusReleased:Connect(function() focused=false;release() end)
     Input.WindowFocused:Connect(function() focused=true end)
     Input.TextBoxFocused:Connect(release)
@@ -52,7 +46,7 @@ function Controller.start(action,callbacks)
             hum:Move(movement,true)
             if not active then hum.Jump=false end
         end
-        request=Tuning.availableLean((if right then 1 else 0)-(if left then 1 else 0),
+        request=Tuning.availableLean(callbacks.lean(),
             hum~=nil and hum.FloorMaterial~=Enum.Material.Air,
             active==true and hum:GetState()~=Enum.HumanoidStateType.Swimming)
         aiming=active==true and callbacks.aiming() and callbacks.weapon().zoom>1
@@ -70,7 +64,7 @@ function Controller.start(action,callbacks)
             previousCamera.CFrame*=previousTransform:Inverse()
         end
         previousCamera,previousTransform=nil,nil
-        if pendingRecoil~=0 and callbacks.active() then
+        if pendingRecoil~=0 and callbacks.active() and not VR.VREnabled then
             workspace.CurrentCamera.CFrame*=CFrame.Angles(pendingRecoil,0,0)
         end
         pendingRecoil=0
@@ -84,7 +78,7 @@ function Controller.start(action,callbacks)
         if callbacks.active() and head and root and hum and hum.Health>0 and cam.CameraType==Enum.CameraType.Custom then
             local origin,allowed=Geometry.resolve(char,head,root,lean)
             local base=cam.CFrame
-            local result=CFrame.new(base.Position+origin-head.Position)*base.Rotation*CFrame.Angles(0,0,-allowed*Tuning.LeanAngle)
+            local result=CFrame.new(base.Position+origin-head.Position)*base.Rotation*CFrame.Angles(0,0,if VR.VREnabled then 0 else -allowed*Tuning.LeanAngle)
             previousCamera,previousTransform=cam,base:ToObjectSpace(result)
             cam.CFrame=result
         end

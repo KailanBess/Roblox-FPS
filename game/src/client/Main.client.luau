@@ -3,6 +3,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local Input = game:GetService("UserInputService")
 local Debris = game:GetService("Debris")
+local GuiService = game:GetService("GuiService")
+local VR = game:GetService("VRService")
 local player = Players.LocalPlayer
 local shared = ReplicatedStorage:WaitForChild("FPS")
 local Catalog = require(shared.WeaponCatalog)
@@ -11,6 +13,7 @@ local Traits = require(shared.WeaponTraits)
 local Workshop = require(shared.Workshop)
 local Models = require(shared.WeaponModel)
 local MovementController = require(script.Parent.MovementController)
+local InputRouter = require(script.Parent.InputRouter)
 local network = shared:WaitForChild("Network")
 local action, state, effect = network:WaitForChild("Action"), network:WaitForChild("State"), network:WaitForChild("Effect")
 local weapon, ammo, reloading, savedCells = Catalog.ById.M4A1, 30, false, nil
@@ -18,9 +21,11 @@ local firing, ads, lastShot = false, false, -math.huge
 local menuOpen = true
 local viewmodel
 local movementController
+local inputRouter, closeMenuButton
 local gui = Instance.new("ScreenGui")
 gui.Name = "FPSInterface"
 gui.ResetOnSpawn = false
+gui.ScreenInsets = Enum.ScreenInsets.CoreUISafeInsets
 gui.Parent = player:WaitForChild("PlayerGui")
 local function element(class, parent, props)
     local object = Instance.new(class)
@@ -35,8 +40,9 @@ end
 local function button(parent, text, pos, size, callback)
     local b = element("TextButton",parent,{Text=text, Position=pos, Size=size,
         BackgroundColor3=Color3.fromRGB(43,57,77), TextColor3=Color3.new(1,1,1),
-        Font=Enum.Font.GothamBold, TextSize=14, BorderSizePixel=0})
+        Font=Enum.Font.GothamBold, TextSize=14, TextScaled=true, Selectable=true, BorderSizePixel=0})
     element("UICorner",b,{CornerRadius=UDim.new(0,5)})
+    element("UITextSizeConstraint",b,{MinTextSize=9,MaxTextSize=14})
     b.Activated:Connect(callback)
     return b
 end
@@ -60,6 +66,11 @@ local function setMenu(open)
     menuOpen = open
     panel.Visible = open
     firing, ads = false, false
+    if inputRouter then inputRouter.reset();inputRouter.refresh() end
+    hud.Visible=not open
+    if open and closeMenuButton and string.find(Input:GetLastInputType().Name,"Gamepad") then
+        GuiService.SelectedObject=closeMenuButton
+    elseif not open then GuiService.SelectedObject=nil end
     player.CameraMode = if open then Enum.CameraMode.Classic else Enum.CameraMode.LockFirstPerson
     Input.MouseBehavior = if open then Enum.MouseBehavior.Default else Enum.MouseBehavior.LockCenter
     Input.MouseIconEnabled = open
@@ -67,7 +78,7 @@ local function setMenu(open)
 end
 button(panel,"ARMORY",UDim2.fromScale(.02,.085),UDim2.fromScale(.18,.06),function() armory.Visible=true; editor.Visible=false end)
 button(panel,"CUSTOM WEAPONS",UDim2.fromScale(.21,.085),UDim2.fromScale(.25,.06),function() armory.Visible=false; editor.Visible=true end)
-button(panel,"PLAY / CLOSE [M]",UDim2.fromScale(.71,.085),UDim2.fromScale(.27,.06),function() setMenu(false) end)
+closeMenuButton=button(panel,"PLAY / CLOSE",UDim2.fromScale(.71,.085),UDim2.fromScale(.27,.06),function() setMenu(false) end)
 local list = element("ScrollingFrame",armory,{Size=UDim2.fromScale(.31,1),BackgroundTransparency=1,
     BorderSizePixel=0,ScrollBarThickness=5,CanvasSize=UDim2.new(0,0,0,#Catalog.Order*42)})
 local preview = element("ViewportFrame",armory,{Position=UDim2.fromScale(.34,.02),Size=UDim2.fromScale(.65,.64),
@@ -80,13 +91,15 @@ preview.CurrentCamera = camera
 local world = Instance.new("WorldModel")
 world.Parent = preview
 local stats = label(armory,"",UDim2.fromScale(.34,.68),UDim2.fromScale(.65,.19))
+stats.TextScaled=true
+element("UITextSizeConstraint",stats,{MinTextSize=9,MaxTextSize=16})
 local selected = weapon
 local function selectWeapon(id)
     selected = Catalog.ById[id]
     world:ClearAllChildren()
     Models.build(selected).Parent = world
-    stats.Text = string.format("%s / %s\nDMG %d   RPM %d   MAG %d   RANGE %sm\n%d coins • sandbox unlocked • %s",
-        selected.id,selected.class,selected.damage,selected.rpm,selected.magazine,tostring(selected.range),selected.price,
+    stats.Text = string.format("%s / %s\nDMG %d   RPM %d   MAG %d   RANGE %sm\nAll combat templates free • %s",
+        selected.id,selected.class,selected.damage,selected.rpm,selected.magazine,tostring(selected.range),
         if selected.zoom>1 then tostring(selected.zoom).."x scope" else "hipfire / no recoil")
         .."\n"..Traits.forWeapon(selected).title..": "..Traits.forWeapon(selected).description
 end
@@ -99,8 +112,18 @@ selectWeapon(weapon.id)
 -- A 32×16 side-profile editor, extruded into a voxel model. No copied image assets.
 local design, cellButtons, history = {}, {}, {}
 local paletteIndex, erasing, drawing, strokeSaved = 5, false, false, false
-local grid = element("Frame",editor,{Position=UDim2.fromScale(0,.10),Size=UDim2.fromScale(.72,.70),BackgroundTransparency=1})
-element("UIAspectRatioConstraint",grid,{AspectRatio=2,DominantAxis=Enum.DominantAxis.Width})
+local paintTouch
+local zoomLevel,panMode,showPreview=1,false,false
+local gridScroll=element("ScrollingFrame",editor,{Position=UDim2.fromScale(0,.10),Size=UDim2.fromScale(.72,.70),
+    BackgroundTransparency=1,BorderSizePixel=0,ScrollBarThickness=6,ScrollingEnabled=false,
+    CanvasSize=UDim2.fromOffset(1,1)})
+local grid=element("Frame",gridScroll,{Size=UDim2.fromOffset(320,160),BackgroundTransparency=1})
+local function resizeGrid()
+    local width=math.max(gridScroll.AbsoluteSize.X,1)*zoomLevel
+    grid.Size=UDim2.fromOffset(width,width/2)
+    gridScroll.CanvasSize=UDim2.fromOffset(width,width/2)
+end
+gridScroll:GetPropertyChangedSignal("AbsoluteSize"):Connect(resizeGrid)
 local function repaint()
     for id,b in cellButtons do
         local index = design[id]
@@ -121,6 +144,7 @@ local function orbitPreview(viewport, previewCamera, container)
     viewport.Active=true
     previewCamera.FieldOfView=35
     local yaw,pitch,dragging,zoom=.25,.12,false,1
+    local touchPointer,touchPosition
     local function update()
         local model=container:FindFirstChildOfClass("Model")
         if not model then return end
@@ -143,15 +167,29 @@ local function orbitPreview(viewport, previewCamera, container)
         previewCamera.CFrame=CFrame.lookAt(center+direction*distance*1.12*zoom,center)
     end
     viewport.InputBegan:Connect(function(input)
-        if input.UserInputType==Enum.UserInputType.MouseButton1 then dragging=true end
+        if input.UserInputType==Enum.UserInputType.MouseButton1 then dragging=true
+        elseif input.UserInputType==Enum.UserInputType.Touch then
+            dragging=true;touchPointer=input;touchPosition=input.Position
+        end
     end)
     Input.InputEnded:Connect(function(input)
-        if input.UserInputType==Enum.UserInputType.MouseButton1 then dragging=false end
+        if input.UserInputType==Enum.UserInputType.MouseButton1 or input==touchPointer then
+            dragging=false;touchPointer=nil
+        end
     end)
     Input.InputChanged:Connect(function(input)
         if dragging and menuOpen and viewport.Visible and input.UserInputType==Enum.UserInputType.MouseMovement then
             yaw-=input.Delta.X*.012
             pitch=math.clamp(pitch+input.Delta.Y*.012,-1.2,1.2)
+            update()
+        end
+    end)
+    Input.InputChanged:Connect(function(input)
+        if dragging and input==touchPointer and menuOpen then
+            local delta=input.Position-touchPosition
+            touchPosition=input.Position
+            yaw-=delta.X*.012
+            pitch=math.clamp(pitch+delta.Y*.012,-1.2,1.2)
             update()
         end
     end)
@@ -161,13 +199,20 @@ local function orbitPreview(viewport, previewCamera, container)
             update()
         end
     end)
+    for index,title in {"<",">","+","-"} do
+        button(viewport,title,UDim2.fromScale(.02+(index-1)*.18,.84),UDim2.fromScale(.16,.14),function()
+            if index==1 then yaw-=.3 elseif index==2 then yaw+=.3
+            elseif index==3 then zoom=math.max(.65,zoom-.1) else zoom=math.min(2.5,zoom+.1) end
+            update()
+        end)
+    end
     container.ChildAdded:Connect(function() zoom=1; update() end)
     viewport:GetPropertyChangedSignal("AbsoluteSize"):Connect(update)
     update()
 end
 orbitPreview(preview,camera,world)
 orbitPreview(editorPreview,editCamera,editWorld)
-label(preview,"Drag to rotate • scroll to zoom",UDim2.fromScale(0,.90),UDim2.fromScale(1,.10)).TextSize=12
+label(preview,"Drag to rotate / use buttons",UDim2.fromScale(0,0),UDim2.fromScale(1,.1)).TextSize=12
 local function serialize()
     local cells = {}
     for id,color in design do
@@ -198,23 +243,32 @@ for y=1,Workshop.Height do
     for x=1,Workshop.Width do
         local id=x..":"..y
         local b=element("TextButton",grid,{Text="",Size=UDim2.new(1/32,-1,1/16,-1),
-            Position=UDim2.fromScale((x-1)/32,(y-1)/16),BorderSizePixel=0,AutoButtonColor=false})
+            Position=UDim2.fromScale((x-1)/32,(y-1)/16),BorderSizePixel=0,AutoButtonColor=false,Selectable=true})
         cellButtons[id]=b
+        b:SetAttribute("CellId",id)
         b.InputBegan:Connect(function(input)
-            if input.UserInputType==Enum.UserInputType.MouseButton1 or input.UserInputType==Enum.UserInputType.Touch then
+            if not panMode and (input.UserInputType==Enum.UserInputType.MouseButton1 or input.UserInputType==Enum.UserInputType.Touch) then
+                paintTouch=if input.UserInputType==Enum.UserInputType.Touch then input else nil
                 drawing=true; strokeSaved=false; paint(id)
             end
         end)
-        b.MouseEnter:Connect(function() if drawing then paint(id) end end)
+        b.MouseEnter:Connect(function() if drawing and not paintTouch then paint(id) end end)
+        b.Activated:Connect(function()
+            if not panMode and string.find(Input:GetLastInputType().Name,"Gamepad") then
+                strokeSaved=false;paint(id);updatePreview()
+            end
+        end)
     end
 end
+local paletteButtons={}
 for i,rgb in Workshop.Palette do
     local b=button(editor,"",UDim2.fromScale((i-1)*.058,0),UDim2.fromScale(.05,.075),function()
         paletteIndex=i; erasing=false; notice.Text="Paint color "..i
     end)
     b.BackgroundColor3=Color3.fromRGB(rgb[1],rgb[2],rgb[3])
+    paletteButtons[i]=b
 end
-label(editor,"Paint a side profile • 384 voxel limit • cosmetic only\nPreview and apply to your current weapon. Session only; no publishing yet.",
+local editorHelp=label(editor,"Free creator tools • 384 voxels • appearance only\nSystem weapons work without customization. Designs are session-only.",
     UDim2.fromScale(.75,.55),UDim2.fromScale(.25,.28))
 button(editor,"ERASER",UDim2.fromScale(0,.86),UDim2.fromScale(.15,.09),function() erasing=not erasing; notice.Text=if erasing then "Eraser selected" else "Paint selected" end)
 button(editor,"UNDO",UDim2.fromScale(.16,.86),UDim2.fromScale(.15,.09),function()
@@ -226,12 +280,47 @@ button(editor,"APPLY DESIGN",UDim2.fromScale(.49,.86),UDim2.fromScale(.23,.09),f
     if cells then action:FireServer("Workshop",cells) else notice.Text=err end
 end)
 repaint()
-Input.InputEnded:Connect(function(input)
-    if input.UserInputType==Enum.UserInputType.MouseButton1 or input.UserInputType==Enum.UserInputType.Touch then
-        if drawing then drawing=false; updatePreview() end
-        firing=false
-    elseif input.UserInputType==Enum.UserInputType.MouseButton2 then ads=false end
+Input.InputChanged:Connect(function(input)
+    if drawing and input==paintTouch then
+        for _,object in player.PlayerGui:GetGuiObjectsAtPosition(input.Position.X,input.Position.Y) do
+            local id=object:GetAttribute("CellId")
+            if id and object:IsDescendantOf(grid) then paint(id);break end
+        end
+    end
 end)
+Input.InputEnded:Connect(function(input)
+    if (input.UserInputType==Enum.UserInputType.MouseButton1 and not paintTouch) or input==paintTouch then
+        if drawing then drawing=false;paintTouch=nil;updatePreview() end
+    end
+end)
+local function editorLayout()
+    local narrow=panel.AbsoluteSize.X<700 or (Input.TouchEnabled and panel.AbsoluteSize.Y<500)
+    local rowHeight=math.max(36/math.max(editor.AbsoluteSize.Y,1),.07)
+    for i,b in paletteButtons do
+        b.Position=if narrow then UDim2.fromScale(((i-1)%6)/6,math.floor((i-1)/6)*rowHeight)
+            else UDim2.fromScale((i-1)*.058,0)
+        b.Size=if narrow then UDim2.fromScale(.15,rowHeight-.008) else UDim2.fromScale(.05,.075)
+    end
+    local top=if narrow then rowHeight*2+.02 else .10
+    gridScroll.Position=UDim2.fromScale(0,top)
+    gridScroll.Size=UDim2.fromScale(if narrow then 1 else .72,if narrow then math.max(.15,.8-top) else .70)
+    editorHelp.Visible=not narrow
+    editorPreview.Position=if narrow then UDim2.fromScale(0,top) else UDim2.fromScale(.75,.10)
+    editorPreview.Size=if narrow then UDim2.fromScale(1,math.max(.15,.8-top)) else UDim2.fromScale(.25,.43)
+    editorPreview.Visible=not narrow or showPreview
+    gridScroll.Visible=not narrow or not showPreview
+    resizeGrid()
+end
+panel:GetPropertyChangedSignal("AbsoluteSize"):Connect(editorLayout)
+button(editor,"ZOOM +",UDim2.fromScale(0,.98),UDim2.fromScale(.15,.085),function() zoomLevel=math.min(4,zoomLevel+.5);resizeGrid() end)
+button(editor,"ZOOM -",UDim2.fromScale(.16,.98),UDim2.fromScale(.15,.085),function() zoomLevel=math.max(1,zoomLevel-.5);resizeGrid() end)
+button(editor,"PAN / PAINT",UDim2.fromScale(.32,.98),UDim2.fromScale(.23,.085),function()
+    panMode=not panMode;gridScroll.ScrollingEnabled=panMode
+    for _,b in cellButtons do b.Active=not panMode end
+    notice.Text=if panMode then "Pan mode: drag the canvas" else "Paint mode"
+end)
+button(editor,"DESIGN / 3D",UDim2.fromScale(.56,.98),UDim2.fromScale(.25,.085),function() showPreview=not showPreview;editorLayout() end)
+editorLayout()
 local function fire()
     if menuOpen or Input:GetFocusedTextBox() then return end
     local char=player.Character
@@ -241,19 +330,12 @@ local function fire()
     if now-lastShot<60/weapon.rpm then return end
     lastShot=now
     if movementController then movementController.send() end
-    action:FireServer("Fire",{direction=workspace.CurrentCamera.CFrame.LookVector,
+    action:FireServer("Fire",{direction=(if VR.VREnabled then workspace.CurrentCamera:GetRenderCFrame() else workspace.CurrentCamera.CFrame).LookVector,
         timestamp=workspace:GetServerTimeNow(),ads=ads})
     if weapon.zoom>1 then
         if movementController then movementController.recoil(math.rad(.7)*Traits.forWeapon(weapon).recoil) end
     end
 end
-Input.InputBegan:Connect(function(input,processed)
-    if processed then return end
-    if input.KeyCode==Enum.KeyCode.M then setMenu(not menuOpen)
-    elseif input.KeyCode==Enum.KeyCode.R and not menuOpen then action:FireServer("Reload")
-    elseif input.UserInputType==Enum.UserInputType.MouseButton1 and not menuOpen then firing=true; fire()
-    elseif input.UserInputType==Enum.UserInputType.MouseButton2 and not menuOpen and weapon.zoom>1 then ads=true end
-end)
 local hitGeneration=0
 state.OnClientEvent:Connect(function(data)
     if data.weapon then
@@ -291,25 +373,39 @@ end)
 RunService:BindToRenderStep("FPSView",Enum.RenderPriority.Camera.Value+2,function(dt)
     local cam=workspace.CurrentCamera
     local targetFov=if ads and weapon.zoom>1 and not menuOpen then 70/weapon.zoom else 70
-    cam.FieldOfView += (targetFov-cam.FieldOfView)*math.min(1,dt*15)
-    crosshair.Visible=not menuOpen and not ads
+    if not VR.VREnabled then cam.FieldOfView += (targetFov-cam.FieldOfView)*math.min(1,dt*15) end
+    crosshair.Visible=not menuOpen and (not ads or VR.VREnabled)
     crosshair.TextSize=math.clamp((136-weapon.accuracy)*.5,18,55)
     if firing and weapon.automatic then fire() end
     if viewmodel then
         viewmodel.Parent=if menuOpen or ads then nil else cam
         if viewmodel.Parent then
-            viewmodel:PivotTo(cam.CFrame*CFrame.new(.65,-.65,-1.9)*CFrame.Angles(0,math.pi/2,0))
+            viewmodel:PivotTo((if VR.VREnabled then cam:GetRenderCFrame() else cam.CFrame)*CFrame.new(.65,-.65,-1.9)*CFrame.Angles(0,math.pi/2,0))
         end
     end
     local hum=player.Character and player.Character:FindFirstChildOfClass("Humanoid")
     local hp=if hum then math.ceil(hum.Health) else 0
-    hud.Text=string.format("HP %d / 200     %s     %s\nLMB fire • RMB scope • R reload • Q/E lean • M armory",hp,weapon.id,
-        if reloading then "RELOADING" elseif weapon.class=="Knife" then "MELEE" else tostring(ammo).." / "..weapon.magazine)
+    hud.Text=string.format("HP %d / 200     %s     %s\n%s",hp,weapon.id,
+        if reloading then "RELOADING" elseif weapon.class=="Knife" then "MELEE" else tostring(ammo).." / "..weapon.magazine,
+        if inputRouter then inputRouter.hint() else "")
 end)
+inputRouter=InputRouter.start({
+    controlsParent=gui,
+    active=function() return not menuOpen end,
+    menuOpen=function() return menuOpen end,
+    menu=setMenu,
+    focusMenu=function() GuiService.SelectedObject=closeMenuButton end,
+    fire=function(pressed) firing=pressed;if pressed then fire() end end,
+    aim=function(pressed) ads=pressed and weapon.zoom>1 end,
+    aiming=function() return ads end,
+    reload=function() action:FireServer("Reload") end,
+})
 setMenu(true)
 movementController=MovementController.start(action,{
     active=function() return not menuOpen end,
     aiming=function() return ads end,
     weapon=function() return weapon end,
+    lean=function() return inputRouter.lean() end,
+    reset=inputRouter.reset,
 })
 action:FireServer("Sync")

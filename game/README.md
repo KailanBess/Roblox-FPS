@@ -2,6 +2,11 @@
 
 Game code is Roblox Luau. Original uploaded design documents remain unchanged.
 
+Core identity: **fair competition + optional weapon creation**. All combat templates
+and creator tools are free; purchases must not grant combat power. See the
+[fair-play/creator plan](docs/GAME_IDENTITY.md), [platform checklist](docs/CROSS_PLATFORM.md),
+and [shooter design comparisons](docs/SHOOTER_COMPARISON.md).
+
 ## Open in Roblox Studio
 
 The original design documents remain at the repository root; all game implementation lives in `game/`.
@@ -29,9 +34,13 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
 - Hold **Q/E** to lean left/right; release to center. Walking now uses a controlled
   12.5–15.5-stud/sec pace with smooth acceleration/stopping. Aim and lean slow movement.
   [Movement tuning and Studio checks](docs/MOVEMENT.md).
+- Touch: on-screen fire/reload, toggle aim and lean. Gamepad: RT fire, LT aim,
+  X reload, LB/RB lean, Y armory, B back; A activates menu/editor buttons.
+  VR head-aim support is a prototype requiring headset testing.
 - Custom Weapons: choose a color, click/drag on the 32×16 grid, preview, undo,
   erase, clear, and apply. Applying requires 8–384 voxels. Designs last for the
   current server session and replace only your local first-person model.
+  Touch drag and controller A can paint; zoom/pan and preview buttons are available.
 
 ## Included
 

@@ -6,6 +6,9 @@ local Combat = require(Shared.CombatMath)
 local Workshop = require(Shared.Workshop)
 local Traits = require(Shared.WeaponTraits)
 local Magazines = require(Shared.MagazineState)
+local FairPlay = require(Shared.FairPlayPolicy)
+assert(FairPlay.AllCombatTemplatesFree and FairPlay.WorkshopToolsFree and not FairPlay.PaidStatModifiersAllowed,
+    "This game requires free combat templates and creator tools, with no paid combat modifiers")
 local MovementService = require(script.Parent.MovementService)
 local network = Instance.new("Folder")
 network.Name = "Network"

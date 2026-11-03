@@ -23,8 +23,9 @@ These values live in `src/shared/Movement.luau` for later playtest tuning.
 Leaning remains available while aiming. Menus, text input, focus loss, death and
 respawn clear held lean input. Airborne/seated/swimming and stale server input
 return the lean request to neutral. The server input timeout is 0.6 seconds.
-Leaning currently has desktop Q/E input; dedicated touch/gamepad lean bindings
-and accessibility toggle-to-lean controls remain future work.
+Keyboard Q/E and gamepad LB/RB or D-pad hold to lean. Touch buttons toggle lean,
+including neutral on a second tap. See CROSS_PLATFORM.md for the current platform
+implementation and required device tests. VR avoids artificial camera roll.
 
 ## Cover, shooting and visibility
 
@@ -72,5 +73,5 @@ cannot be executed in this Linux cloud environment and are not claimed verified.
 5. Test with two clients: the other avatar should lean and its exposed head should
    take headshot damage. Check both R6 and R15 rigs. Check latency during stance
    changes and check the unchanged normal head hitbox for overly generous hits.
-6. Confirm mobile/analog walking still works; dedicated mobile/gamepad lean input
-   is pending. Inspect Output and profile per-frame overlap/spherecast cost.
+6. Check mobile/analog walking and touch/gamepad lean controls. Inspect Output
+   and profile per-frame overlap/spherecast cost. Verify VR comfort on a headset.

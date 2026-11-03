@@ -256,3 +256,46 @@ for _,id in Catalog.Order do
     check(math.abs(w.damage*w.rpm/60/mean-1)<=.15,"Same-class raw DPS within 15%: "..id)
 end
 print("PASS: all 41 weapons within 15% of their class mean raw DPS; effective gameplay balance requires Studio playtests")
+
+local Control=require("../src/shared/ControlState")
+local FairPlay=require("../src/shared/FairPlayPolicy")
+local platformStart=checks
+local controls=Control.new()
+Control.setLean(controls,-1,true,false)
+check(Control.lean(controls)==-1,"Keyboard/controller hold left")
+Control.setLean(controls,1,true,false)
+check(Control.lean(controls)==0,"Opposing held leans cancel")
+Control.setLean(controls,-1,false,false)
+check(Control.lean(controls)==1,"Releasing one held lean keeps the other")
+Control.clear(controls)
+Control.setLean(controls,-1,true,true)
+Control.setLean(controls,-1,false,true)
+check(Control.lean(controls)==-1,"Touch lean remains latched after finger release")
+Control.setLean(controls,-1,true,true)
+check(Control.lean(controls)==0,"Touch lean toggles off")
+Control.setLean(controls,-1,true,true)
+Control.setLean(controls,1,true,true)
+check(Control.lean(controls)==1,"Touch can change lean side")
+Control.clear(controls)
+check(Control.lean(controls)==0,"Focus/menu/device reset clears touch and held states")
+check(Control.mode("MouseButton1")==Control.mode("MouseMovement"),"Mouse motion cannot cancel held firing as a device switch")
+check(Control.mode("Keyboard")==Control.mode("MouseButton2"),"Keyboard and mouse share a mode")
+check(Control.mode("Touch")=="Touch" and Control.mode("Gamepad1")=="Gamepad","Distinct device modes")
+check(FairPlay.AllCombatTemplatesFree and FairPlay.WorkshopToolsFree,"Combat and creator access remain free")
+check(not FairPlay.PaidStatModifiersAllowed,"Paid combat modifiers forbidden")
+for category in FairPlay.CosmeticCategories do
+    check(FairPlay.validCosmeticGrant({category=category,itemId="cosmetic_01"}),"Accept cosmetic-only category")
+end
+for _,grant in {
+    {category="WeaponUnlock",itemId="AWM"},
+    {category="DamageBoost",itemId="boost"},
+    {category="WeaponAppearance",itemId="skin",damage=2},
+    {category="WeaponAppearance",itemId="skin",bonuses={rpm=2}},
+    {category="ProfileAppearance",itemId=""},
+} do check(not FairPlay.validCosmeticGrant(grant),"Reject power grants and hidden modifiers") end
+check(not FairPlay.validCosmeticGrant(nil),"Reject invalid entitlement data")
+local normalDesign={}
+for x=1,8 do normalDesign[x]={x=x,y=1,color=1} end
+normalDesign.damage=999
+check(Workshop.validate(normalDesign)==nil,"Workshop payload cannot smuggle weapon stats")
+print(string.format("PASS: %d platform-input and fair-play checks",checks-platformStart))
