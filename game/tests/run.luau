@@ -64,7 +64,7 @@ for _,id in Catalog.Order do
         local model=Voxels.generate(weapon)
         firearmCount+=1
         check(model.voxelCount>100,"Volumetric model: "..id)
-        check(#model.runs<600,"Render instance budget: "..id)
+        check(#model.runs<900,"Render instance budget: "..id)
         local occupied={}
         local volume=0
         local roles={}
@@ -79,7 +79,7 @@ for _,id in Catalog.Order do
             for x=run.x1,run.x2 do for y=run.y1,run.y2 do for z=run.z1,run.z2 do
                 local key=x..":"..y..":"..z
                 check(not occupied[key],"Meshed geometry has no overlapping voxels")
-                occupied[key]={x,y,z}
+                occupied[key]={x,y,z,color=run.color}
                 volume+=1
             end end end
         end
@@ -137,9 +137,26 @@ for _,id in Catalog.Order do
             M9={"ExposedBarrel","Hammer","GripMedallion"},
         }
         for _,role in features[id] or {} do check(roles[role],id.." defining detail: "..role) end
+        local raw=Voxels.generate(weapon,{textured=false})
+        check(raw.voxelCount==model.voxelCount,"Finish preserves geometry volume: "..id)
+        check(raw.finishVoxelCount==0 and model.finishVoxelCount>0,"Surface finish applied only when enabled: "..id)
+        local sameGeometryAndPalette=true
+        for _,run in raw.runs do
+            for x=run.x1,run.x2 do for y=run.y1,run.y2 do for z=run.z1,run.z2 do
+                local c=occupied[x..":"..y..":"..z]
+                if not c or Voxels.BaseColors[c.color]~=run.color then sameGeometryAndPalette=false end
+            end end end
+        end
+        check(sameGeometryAndPalette,"Finish preserves every voxel location and base palette identity: "..id)
         local repeated=Voxels.generate(weapon)
         check(#repeated.runs==#model.runs and repeated.voxelCount==model.voxelCount,"Stable regeneration")
         maxParts=math.max(maxParts,#model.runs)
+    end
+end
+for key,rgb in Voxels.Palette do
+    local base=Voxels.Palette[Voxels.BaseColors[key]]
+    for channel=1,3 do
+        check(math.abs(rgb[channel]-base[channel])<=base[channel]*.11+1,"Surface tones stay within original color family: "..key)
     end
 end
 check(firearmCount==35,"All 35 real-world firearm roster entries modeled")

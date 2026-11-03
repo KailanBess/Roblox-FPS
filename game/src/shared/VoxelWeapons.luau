@@ -1,4 +1,5 @@
 -- Original voxel art, not engineering geometry. Integer grid: +X forward, +Y up.
+local Finish = if script then require(script.Parent.WeaponFinish) else require("./WeaponFinish")
 local VoxelWeapons = {}
 VoxelWeapons.CellSize = 0.05
 VoxelWeapons.Palette = {
@@ -16,8 +17,9 @@ local profiles={
     M249="M249",PKM="PKM",RPK="RPK",MG36="MG36",["Stoner 63"]="Stoner",
     ["MK14 EBR"]="EBR",["SR-25"]="SR25",G28="G28",M110="M110",SVD="SVD",
 }
+VoxelWeapons.Palette,VoxelWeapons.BaseColors=Finish.palette(VoxelWeapons.Palette)
 VoxelWeapons.Profiles=table.freeze(profiles)
-function VoxelWeapons.generate(weapon)
+function VoxelWeapons.generate(weapon,options)
     local family=profiles[weapon.id]
     assert(family,"Missing profile: "..tostring(weapon.id))
     local cells={}
@@ -437,6 +439,7 @@ function VoxelWeapons.generate(weapon)
         sightLine.rear.x=math.floor(sightLine.rear.x*lengthScale)
         sightLine.front.x=math.floor(sightLine.front.x*lengthScale)
     end
+    local finishVoxelCount=if options and options.textured==false then 0 else Finish.apply(cells)
     -- Three-axis greedy merging keeps the fine grid without one Instance per voxel.
     local rows={}
     local voxelCount=0
@@ -477,6 +480,6 @@ function VoxelWeapons.generate(weapon)
     end
     local runs=merge(strips,"y","x1","x2","z1","z2")
     runs=merge(runs,"z","x1","x2","y1","y2")
-    return {family=family,runs=runs,voxelCount=voxelCount,magazineSeats=magazineSeats,sightLine=sightLine,lengthScale=lengthScale,muzzle={x=muzzleX,y=muzzleY,z=0},grip={x=gripX,y=gripY,z=0}}
+    return {family=family,runs=runs,finishVoxelCount=finishVoxelCount,voxelCount=voxelCount,magazineSeats=magazineSeats,sightLine=sightLine,lengthScale=lengthScale,muzzle={x=muzzleX,y=muzzleY,z=0},grip={x=gripX,y=gripY,z=0}}
 end
 return VoxelWeapons

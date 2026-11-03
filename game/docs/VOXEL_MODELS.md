@@ -71,8 +71,8 @@ The player avatar does not yet receive a replicated third-person held gun.
 - Metal, polymer, wood and glass parts use separate palette colors and actual
   Roblox lighting. No baked fake image is used as the geometry.
 - Contiguous same-component/color voxels merge across all three axes into rectangular blocks.
-  The visible voxel silhouette is preserved, with at most 462 render Parts per
-  firearm in this revision. All 35 models fit the tested 600-part ceiling.
+  The visible voxel silhouette is preserved, with at most 782 render Parts per
+  firearm in this revision. All 35 models fit the tested 900-part detailed-finish ceiling.
 - Armory and custom design previews support mouse drag rotation and wheel zoom.
 - Cosmetic workshop profiles remain separate: they use the player's painted 2D
   grid extruded into 3D, rather than the real-world-inspired system shapes.
@@ -148,3 +148,34 @@ The same pass adds a rounded/ribbed M4 forearm with a receiver-length rail, a
 continuous SCAR upper and stock hinge, gentler magazine curvature, pistol magazine
 base plates, and a continuous sniper magazine/chassis junction. Balance and firing
 behavior are unchanged. Studio testing remains required for actual gameplay.
+
+## Surface finishes — original colors retained
+
+`WeaponFinish.luau` adds deterministic metal brushing, small coating wear, polymer
+and rubber stippling, and lengthwise wood grain. These are procedural color
+patterns in existing exterior voxels, combined with Roblox Metal, SmoothPlastic,
+Wood and Glass materials. They are not uploaded bitmap/PBR textures and require
+no asset IDs or texture permissions. The OBJ/MTL and Roblox model exports include
+the finish tones; Roblox exports also retain the material families.
+
+Each finish tone maps back to its original palette color; channel changes are
+limited to about -10% to +7.5%, with no change of hue family. Component fasteners,
+recesses, vents and seams retain their existing detail colors. Lens and bore colors
+are preserved. The finish pass adds no voxels or geometry changes, and the full
+magazine seating, sight alignment and body connectivity checks still pass.
+Tests compare every textured voxel against the untextured model for position and
+base-color identity. The revised image `assets/VoxelWeapons-surface-details.png`
+shows material close-ups rendered from the actual model geometry.
+
+Surface color boundaries require more render blocks: this revision peaks at 782
+Parts per firearm, within the 900-part detailed-finish budget. Geometry without
+surface patterns can still be generated for a simpler display:
+
+```lua
+local gun = models.build(catalog.ById.M4A1, nil, {textured = false})
+```
+
+Default armory and first-person models use the detailed finishes. No runtime
+randomness or per-frame recoloring is involved. Profile actual device performance
+and native material appearance in Roblox Studio before release; offline renders
+do not reproduce Roblox lighting, shadows or reflections exactly.

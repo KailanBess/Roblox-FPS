@@ -17,7 +17,7 @@ local function attachment(anchor,name,position)
     a.CFrame=CFrame.lookAt(position,position+Vector3.xAxis)
     a.Parent=anchor
 end
-function Models.build(weapon,cells)
+function Models.build(weapon,cells,options)
     local model=Instance.new("Model")
     model.Name=weapon.id
     local muzzle, grip = Vector3.zero, Vector3.zero
@@ -35,22 +35,27 @@ function Models.build(weapon,cells)
         newPart(model,"Edge",Vector3.new(1.2,.08,.045),Vector3.new(.65,-.17,0),Color3.fromRGB(222,230,237))
         muzzle,grip=Vector3.new(1.3,0,0),Vector3.new(-.5,0,0)
     else
-        local data=Voxels.generate(weapon)
+        local data=Voxels.generate(weapon,options)
         local scale=Voxels.CellSize
         sightLine=data.sightLine
         model:SetAttribute("LengthScale",data.lengthScale)
         model:SetAttribute("VoxelFamily",data.family)
         model:SetAttribute("VoxelCount",data.voxelCount)
+        model:SetAttribute("FinishVoxelCount",data.finishVoxelCount)
         for _,run in data.runs do
             local rgb=Voxels.Palette[run.color]
-            local material=if run.color=="Glass" then Enum.Material.Glass
-                elseif run.color=="Polymer" or run.color=="Dark" or run.color=="Rubber" then Enum.Material.SmoothPlastic
-                elseif run.color=="Wood" or run.color=="WoodLight" then Enum.Material.Wood
+            local baseColor=Voxels.BaseColors[run.color]
+            local material=if baseColor=="Glass" then Enum.Material.Glass
+                elseif baseColor=="Polymer" or baseColor=="Dark" or baseColor=="Rubber" then Enum.Material.SmoothPlastic
+                elseif baseColor=="Wood" or baseColor=="WoodLight" then Enum.Material.Wood
                 else Enum.Material.Metal
             local p=newPart(model,run.role,Vector3.new((run.x2-run.x1+1)*scale,(run.y2-run.y1+1)*scale,(run.z2-run.z1+1)*scale),
                 Vector3.new((run.x1+run.x2)/2*scale,(run.y1+run.y2)/2*scale,(run.z1+run.z2)/2*scale),
                 Color3.fromRGB(rgb[1],rgb[2],rgb[3]),material)
+            p.Reflectance=if material==Enum.Material.Metal then .04 else 0
             p:SetAttribute("WeaponComponent",run.role)
+            p:SetAttribute("BasePaletteColor",baseColor)
+            p:SetAttribute("SurfaceFinish",run.color)
         end
         muzzle=Vector3.new(data.muzzle.x,data.muzzle.y,data.muzzle.z)*scale
         grip=Vector3.new(data.grip.x,data.grip.y,data.grip.z)*scale

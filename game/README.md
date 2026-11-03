@@ -33,6 +33,8 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
 ## Included
 
 - Documented 41-weapon roster and store prices (shown for reference; no purchases).
+- Procedural metal grain, grip stippling, wood grain and restrained wear preserve
+  existing colors. [Surface detail close-ups](assets/VoxelWeapons-surface-details.png).
 - True 3D voxel models for all 35 firearms, using real-world-inspired gun families,
   metal/polymer/wood finishes, magazines, open muzzles and scopes. Related variants
   share base shapes. Drag armory previews to rotate; scroll to zoom.
