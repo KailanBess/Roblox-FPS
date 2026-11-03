@@ -99,6 +99,19 @@ for _,id in Catalog.Order do
             end end
         end
         check(#queue==volume,"Every voxel connects to the weapon body: "..id)
+        local needsMagazine=weapon.class~="Shotgun" or id=="KSG"
+        if needsMagazine and id~="KSG" then
+            check(#model.magazineSeats>0,"Magazine mounting region defined: "..id)
+        end
+        for _,seat in model.magazineSeats do
+            check(seat.y1<=seat.y2 and seat.x1<=seat.x2,"Valid magazine seat bounds: "..id)
+            for x=seat.x1,seat.x2 do for y=seat.y1,seat.y2 do for z=seat.z1,seat.z2 do
+                check(occupied[x..":"..y..":"..z]~=nil,"Continuous magazine-to-receiver seat: "..id)
+            end end end
+        end
+        if id=="KSG" then
+            check(roles.MagazineTube and not roles.Magazine,"KSG uses tube magazines, not a detachable rifle magazine")
+        end
         if model.sightLine then
             local rear,front=model.sightLine.rear,model.sightLine.front
             check(rear.y==front.y and rear.z==0 and front.z==0,"Iron sights share a centered sight plane: "..id)

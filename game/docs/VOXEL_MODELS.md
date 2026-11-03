@@ -71,7 +71,7 @@ The player avatar does not yet receive a replicated third-person held gun.
 - Metal, polymer, wood and glass parts use separate palette colors and actual
   Roblox lighting. No baked fake image is used as the geometry.
 - Contiguous same-component/color voxels merge across all three axes into rectangular blocks.
-  The visible voxel silhouette is preserved, with at most 471 render Parts per
+  The visible voxel silhouette is preserved, with at most 462 render Parts per
   firearm in this revision. All 35 models fit the tested 600-part ceiling.
 - Armory and custom design previews support mouse drag rotation and wheel zoom.
 - Cosmetic workshop profiles remain separate: they use the player's painted 2D
@@ -129,3 +129,22 @@ wheel zoom remains available. Gallery spacing accommodates the longer models.
 `assets/VoxelWeapons-fit-check.png` shows side, top and sight-axis geometry views.
 The revised preview is rendered without cropping stocks or muzzles. These images
 are offline renders; in-game framing and device performance still need Studio tests.
+
+## Magazine seating and photographic references
+
+See [PHOTO_REFERENCES.md](PHOTO_REFERENCES.md) for inspected image sources and the
+specific silhouette changes they informed. Image filenames were not treated as
+reliable weapon IDs, and reference images are not redistributed with the assets.
+
+The prior flood-fill check verified that a magazine was attached somewhere, which
+could miss a visible air gap above the magazine when it touched a guard at one
+edge. Magazine generation now defines an explicit neck inserted into its host,
+plus a fitted outer magwell rim. The tests check the entire seating core, across
+its width, depth and height. Pistol grip magazines, top-mounted P90 magazines and
+belt boxes use appropriate mounting regions; the KSG now has twin magazine tubes
+and no detachable rifle magazine. See `assets/VoxelWeapons-magazine-fit.png`.
+
+The same pass adds a rounded/ribbed M4 forearm with a receiver-length rail, a
+continuous SCAR upper and stock hinge, gentler magazine curvature, pistol magazine
+base plates, and a continuous sniper magazine/chassis junction. Balance and firing
+behavior are unchanged. Studio testing remains required for actual gameplay.

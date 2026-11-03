@@ -37,7 +37,9 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
   metal/polymer/wood finishes, magazines, open muzzles and scopes. Related variants
   share base shapes. Drag armory previews to rotate; scroll to zoom.
 - [Downloadable Roblox/OBJ model pack](assets/VoxelWeapons-35-models.zip) and
-  [model usage guide](docs/VOXEL_MODELS.md). First image guides the separate custom workshop.
+  [model usage guide](docs/VOXEL_MODELS.md), [photographic references](docs/PHOTO_REFERENCES.md),
+  and [magazine-fit close-ups](assets/VoxelWeapons-magazine-fit.png).
+  First image guides the separate custom workshop.
 - Server raycasts, server-selected origins, fire cadence, ammo, timed reloads,
   timestamp/type/finite checks, request rate limiting, team checks, armor,
   penetration, falloff, shotgun pellets, and hit/elimination feedback.

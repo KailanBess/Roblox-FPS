@@ -22,6 +22,7 @@ function VoxelWeapons.generate(weapon)
     assert(family,"Missing profile: "..tostring(weapon.id))
     local cells={}
     local sightSpec
+    local magazineSeats={}
     local function put(x,y,z,color,role)
         local key=x..":"..y..":"..z
         cells[key]=if color then {x=x,y=y,z=z,color=color,role=role} else nil
@@ -46,11 +47,11 @@ function VoxelWeapons.generate(weapon)
             if inside then box(x,x,y,y,z1,z2,color,role) end
         end end
     end
-    local function tube(x1,x2,cy,radius,color,role,hollow)
+    local function tube(x1,x2,cy,radius,color,role,hollow,centerZ)
         for y=-radius,radius do for z=-radius,radius do
             local d=y*y+z*z
             if d<=radius*radius+.5 and (not hollow or d>=(if radius>=4 then (radius-2)^2 else (radius-1)^2)) then
-                box(x1,x2,cy+y,cy+y,z,z,color,role)
+                box(x1,x2,cy+y,cy+y,z+(centerZ or 0),z+(centerZ or 0),color,role)
             end
         end end
     end
@@ -70,18 +71,25 @@ function VoxelWeapons.generate(weapon)
         box(x,x+2,top-1,top+2,-2,2,"Dark","GuardHanger")
         box(x+15,x+17,top-1,top+2,-2,2,"Dark","GuardHanger")
     end
-    local function magazine(x,top,length,curve,color)
+    local function magazine(x,top,length,curve,color,mountY,width)
+        mountY=mountY or 0
+        width=width or 10
         for step=0,length do
             local bend=math.floor(curve*(step/length)^2)
             local zwidth=if step>length-3 then 4 else 3
-            box(x+bend,x+bend+9,top-step,top-step,-zwidth,zwidth,color or "Gunmetal","Magazine")
+            box(x+bend,x+bend+width-1,top-step,top-step,-zwidth,zwidth,color or "Gunmetal","Magazine")
             if step>4 and step<length-3 then
                 for _,z in {-4,4} do
                     box(x+bend+2,x+bend+2,top-step,top-step,z,z,"Dark","MagazineGroove")
-                    box(x+bend+6,x+bend+6,top-step,top-step,z,z,"Highlight","MagazineGroove")
+                    box(x+bend+width-4,x+bend+width-4,top-step,top-step,z,z,"Highlight","MagazineGroove")
                 end
             end
         end
+        -- Insert the magazine neck into its receiver/grip, rather than letting a
+        -- trigger guard provide the only edge contact across a visible air gap.
+        box(x,x+width-1,top,mountY,-3,3,color or "Gunmetal","MagazineInsert")
+        box(x-1,x+width,top-1,top+2,-4,4,"Dark","MagazineWell")
+        table.insert(magazineSeats,{kind="detachable",x1=x,x2=x+width-1,y1=top,y2=mountY,z1=-2,z2=2})
     end
     local function stock(rear,kind,color)
         if kind=="telescopic" then
@@ -151,6 +159,9 @@ function VoxelWeapons.generate(weapon)
         box(-18,long-2,8,8,-3,3,"Highlight","SlideBevel")
         box(-18,long,-4,-1,-3,3,"Polymer","Frame")
         grip(-15,-4,"Polymer")
+        box(-20,-11,-29,-28,-4,4,"Dark","MagazineBase")
+        box(-18,-13,-27,-24,-2,2,"Gunmetal","MagazineInsert")
+        table.insert(magazineSeats,{kind="grip",x1=-18,x2=-13,y1=-28,y2=-24,z1=-2,z2=2})
         guard(-7,-4)
         for x=-19,-9,2 do
             for _,z in {-5,5} do box(x,x,1,7,z,z,"Dark","SlideSerration") end
@@ -231,6 +242,7 @@ function VoxelWeapons.generate(weapon)
             polygon({{-41,-4},{-16,-4},{-12,-20},{-33,-21},{-44,-15}},-5,5,color,"Stock")
             polygon({{-35,-8},{-20,-8},{-19,-15},{-32,-16}},-6,6,nil)
             box(-46,23,12,17,-5,5,"WarmMetal","TopMagazine")
+            table.insert(magazineSeats,{kind="top",x1=-40,x2=15,y1=11,y2=12,z1=-2,z2=2})
             for x=-41,17,7 do box(x,x+1,14,16,-6,6,"Dark","MagazineRib") end
             box(-17,13,23,25,-2,2,"Dark","OpticsBridge")
             box(-18,-15,18,22,-2,2,"Dark","BridgeSupport")
@@ -238,13 +250,16 @@ function VoxelWeapons.generate(weapon)
             tube(-5,6,27,3,"Dark","ReflexSight",true)
             tube(5,5,27,2,"Glass","Lens")
         else
-            magazine(-28,-8,22,if family=="FAMAS" then 1 else 0,"Gunmetal")
+            if family=="FAMAS" then
+                magazine(-28,-8,22,1,"Gunmetal",-4)
+            end
             box(-38,23,24,26,-2,2,"Dark","CarryHandle")
             box(-40,-37,11,24,-2,2,"Dark","HandleSupport")
             box(21,24,10,24,-2,2,"Dark","HandleSupport")
             sights(-33,21,27,false)
             if family=="KSG" then
-                tube(22,52,0,2,"Gunmetal","MagazineTube")
+                tube(-42,52,0,2,"Gunmetal","MagazineTube",false,-4)
+                tube(-42,52,0,2,"Gunmetal","MagazineTube",false,4)
                 for _,z in {-6,6} do box(19,39,-4,4,z,z,"Dark","Pump") end
             end
         end
@@ -265,9 +280,16 @@ function VoxelWeapons.generate(weapon)
             if family=="SVD" or family=="RPK" then "Wood" elseif family=="SCAR" then "Tan" else "Polymer")
         local magLength=if smg then 31 elseif marksman then 19 else 30
         if family~="Vector" and family~="MP7" and not lmg then
-            magazine(2,-3,magLength,if ak then 13 elseif family=="MP5" then 6 else -2,"Gunmetal")
+            magazine(2,-3,magLength,if ak then 11 elseif family=="MP5" then 6 elseif marksman then 0 else 4,"Gunmetal")
         end
         handguard(17,endX-8,10,if ak and family~="AK" then "Wood" else finish)
+        if family=="M4" then
+            -- Rounded/ribbed polymer forearm in the carbine reference photographs.
+            tube(18,endX-9,6,5,"Polymer","Handguard")
+            for x=20,endX-10,4 do
+                for _,z in {-6,6} do box(x,x+1,3,8,z,z,"Dark","HandguardRib") end
+            end
+        end
         tube(endX-7,endX+17,7,2,"Steel","Barrel",true)
         tube(endX+13,endX+19,7,3,"Dark","FlashHider",true)
         muzzleX=endX+20
@@ -300,13 +322,13 @@ function VoxelWeapons.generate(weapon)
             sights(-15,26,17,false)
         elseif family=="MP7" then
             -- Short machine-pistol receiver and grip-fed magazine.
-            magazine(-17,-19,19,0,"Dark")
+            magazine(-20,-19,19,0,"Dark",-14,7)
             box(2,13,-34,-4,-3,3,nil)
             grip(20,-3,"Polymer")
             rail(-18,29,13)
             sights(-15,29,17,false)
         else
-            rail(-19,endX-10,13)
+            rail(-19,if family=="M4" then 14 else endX-10,13)
             if weapon.zoom>1 then scope(-3,17,false) else sights(-17,endX-9,17,false) end
             if family=="M4" then
                 -- Raised carry handle and triangular front sight rather than a flat rail.
@@ -329,12 +351,17 @@ function VoxelWeapons.generate(weapon)
             end
         end
         if family=="SCAR" then
+            -- Taller monolithic upper, separated folding hinge and cheek piece.
+            box(-20,endX-9,11,14,-4,4,"Tan","MonolithicUpper")
+            box(-24,-21,0,11,-5,5,"Dark","StockHinge")
             stock(-60,"solid","Tan")
             box(-52,-28,6,13,-4,4,"Tan","AdjustableCheekRest")
             box(-7,-3,8,9,-9,-5,"Steel","ChargingHandle")
         end
         if lmg then
             box(-2,17,-23,-4,-8,8,"Olive","AmmoBox")
+            box(-1,16,-4,0,-5,5,"Gunmetal","AmmoBoxMount")
+            table.insert(magazineSeats,{kind="beltBox",x1=0,x2=14,y1=-4,y2=0,z1=-2,z2=2})
             box(-18,13,13,15,-5,5,"Gunmetal","FeedCover")
             for x=-1,14,3 do box(x,x+1,5,7,6,12,"Brass","BeltRound") end
             box(5,12,20,21,-2,2,"Dark","CarryHandle")
@@ -400,6 +427,10 @@ function VoxelWeapons.generate(weapon)
             put(x,c.y,c.z,c.color,c.role)
         end
     end
+    for _,seat in magazineSeats do
+        seat.x1=math.floor(seat.x1*lengthScale)
+        seat.x2=math.floor((seat.x2+1)*lengthScale)-1
+    end
     muzzleX=math.floor(muzzleX*lengthScale)
     gripX=math.floor(gripX*lengthScale)
     if sightLine then
@@ -446,6 +477,6 @@ function VoxelWeapons.generate(weapon)
     end
     local runs=merge(strips,"y","x1","x2","z1","z2")
     runs=merge(runs,"z","x1","x2","y1","y2")
-    return {family=family,runs=runs,voxelCount=voxelCount,sightLine=sightLine,lengthScale=lengthScale,muzzle={x=muzzleX,y=muzzleY,z=0},grip={x=gripX,y=gripY,z=0}}
+    return {family=family,runs=runs,voxelCount=voxelCount,magazineSeats=magazineSeats,sightLine=sightLine,lengthScale=lengthScale,muzzle={x=muzzleX,y=muzzleY,z=0},grip={x=gripX,y=gripY,z=0}}
 end
 return VoxelWeapons
