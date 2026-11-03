@@ -4,6 +4,8 @@ local Shared = ReplicatedStorage:WaitForChild("FPS")
 local Catalog = require(Shared.WeaponCatalog)
 local Combat = require(Shared.CombatMath)
 local Workshop = require(Shared.Workshop)
+local Traits = require(Shared.WeaponTraits)
+local Magazines = require(Shared.MagazineState)
 local MovementService = require(script.Parent.MovementService)
 local network = Instance.new("Folder")
 network.Name = "Network"
@@ -34,7 +36,7 @@ end
 local function setupPlayer(player)
     sessions[player] = {weapon = "M4A1", ammo = Catalog.ById.M4A1.magazine,
         lastShot = -math.huge, reloadEnd = 0, nextEquip = 0, nextWorkshop = 0,
-        tokens = 60, tokenTime = os.clock(), bloom = 0, cells = nil}
+        tokens = 60, tokenTime = os.clock(), bloom = 0, cells = nil, magazines = {}}
     local function spawnCharacter(char)
         local hum = char:WaitForChild("Humanoid")
         local s = sessions[player]
@@ -44,6 +46,7 @@ local function setupPlayer(player)
         MovementService.configure(player,char,hum)
         char:SetAttribute("Armor", Combat.MaxArmor)
         s.ammo = Catalog.ById[s.weapon].magazine
+        s.magazines = {[s.weapon] = s.ammo}
         s.reloadEnd = 0
         s.lastShot = os.clock()
         s.bloom = 0
@@ -72,15 +75,14 @@ action.OnServerEvent:Connect(function(player, kind, payload)
     elseif kind == "Equip" then
         if type(payload) ~= "string" or not Catalog.ById[payload] or now < s.nextEquip then return end
         -- Sandbox roster is unlocked. Production ownership belongs in a server inventory service.
-        s.nextEquip = now + .4
-        s.weapon = payload
-        -- Re-equipping cannot refill ammunition: a new weapon starts empty and must reload.
-        s.ammo = 0
+        s.nextEquip = now + Traits.equipSeconds(Catalog.ById[payload])
+        -- Keep rounds per weapon: switching never refills or discards a loaded magazine.
+        Magazines.equip(s,payload)
         s.reloadEnd = 0
         s.lastShot = now
         s.bloom = 0
         s.aiming = false
-        sync(player, "Equipped — reload to load magazine")
+        sync(player, if s.ammo == 0 then "Equipped — reload to load magazine" else "Equipped — magazine retained")
     elseif kind == "Workshop" then
         if now < s.nextWorkshop then return end
         s.nextWorkshop = now + 2
@@ -115,13 +117,12 @@ action.OnServerEvent:Connect(function(player, kind, payload)
         if not melee and s.ammo < 1 then sync(player, "Reload required"); return end
         local origin = MovementService.origin(player)
         if not origin then return end
-        s.bloom = math.max(0, s.bloom-(now-s.lastShot)*3)
+        s.bloom = Combat.recoverBloom(weapon,s.bloom,now-s.lastShot)
         s.lastShot = now
         if not melee then s.ammo -= 1 end
         local scoped = weapon.zoom > 1 and s.aiming == true and payload.ads == true
-        local spread = if scoped then .0015 else (100-weapon.accuracy)*.0006 + s.bloom*.002
-        if hum.MoveDirection.Magnitude > .1 then spread += .008 end
-        if hum.FloorMaterial == Enum.Material.Air then spread += .025 end
+        local spread = Combat.spread(weapon,s.bloom,scoped,hum.MoveDirection.Magnitude > .1,
+            hum.FloorMaterial == Enum.Material.Air)
         s.bloom = math.min(s.bloom+.6, 4)
         local params = RaycastParams.new()
         params.FilterType = Enum.RaycastFilterType.Exclude

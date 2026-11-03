@@ -1,8 +1,8 @@
 # Controlled movement and leaning
 
 This pass replaces the old 0.08 × mobility rating conversion, which produced
-15.2–20 stud/sec walking, with a calmer 12.5-stud/sec baseline. Weapon mobility
-ratings remain data inputs: final unmodified walking is clamped to 11–14 studs/sec.
+15.2–20 stud/sec walking, with a moderate 14-stud/sec baseline. Weapon mobility
+ratings remain data inputs: final unmodified walking is clamped to 12.5–15.5 studs/sec.
 There is no sprint or movement FOV boost. Jump height is 3.2 studs with auto-jump
 disabled. No camera bob, dash, slide or additional movement forces are introduced.
 
@@ -17,7 +17,7 @@ Normal movement animations and the default camera remain in use.
 Hold **Q** for left or **E** for right. Release to return to neutral; holding both
 is neutral. A full lean offsets the eye up to 0.8 studs with 9 degrees of camera
 roll. Lean eases in and out. Aim movement is 80% of walking pace; a full lean is
-82%; scoped leaning combines the two, giving 8.2 studs/sec with the default rifle.
+82%; scoped leaning combines the two, giving 9.184 studs/sec with the default rifle.
 These values live in `src/shared/Movement.luau` for later playtest tuning.
 
 Leaning remains available while aiming. Menus, text input, focus loss, death and

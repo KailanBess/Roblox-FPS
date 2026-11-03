@@ -1,4 +1,5 @@
--- Named roster from Roblox guns.txt; prices from Current system store prices..txt.
+-- Named roster and prices from the uploaded documents.
+-- Three small rate adjustments are recorded in docs/WEAPON_BALANCE.md.
 local Catalog = {}
 Catalog.Order = {}
 Catalog.ById = {}
@@ -98,7 +99,7 @@ do
     Catalog.ById[weapon.id] = weapon
 end
 do
-    local weapon = table.freeze({id = "Scout", class = "Sniper", damage = 130.0, rpm = 65.0, magazine = 10, range = 58.0, accuracy = 18.0, reloadRating = 40.0, move = 220.0, penetration = 85.0, zoom = 2.0, price = 5500, automatic = false})
+    local weapon = table.freeze({id = "Scout", class = "Sniper", damage = 130.0, rpm = 60.0, magazine = 10, range = 58.0, accuracy = 18.0, reloadRating = 40.0, move = 220.0, penetration = 85.0, zoom = 2.0, price = 5500, automatic = false})
     table.insert(Catalog.Order, weapon.id)
     Catalog.ById[weapon.id] = weapon
 end
@@ -193,7 +194,7 @@ do
     Catalog.ById[weapon.id] = weapon
 end
 do
-    local weapon = table.freeze({id = "Karambit", class = "Knife", damage = 95.0, rpm = 55.0, magazine = 1, range = 3.0, accuracy = 100.0, reloadRating = 50.0, move = 250.0, penetration = 100.0, zoom = 1.0, price = 5750, automatic = false})
+    local weapon = table.freeze({id = "Karambit", class = "Knife", damage = 95.0, rpm = 52.0, magazine = 1, range = 3.0, accuracy = 100.0, reloadRating = 50.0, move = 250.0, penetration = 100.0, zoom = 1.0, price = 5750, automatic = false})
     table.insert(Catalog.Order, weapon.id)
     Catalog.ById[weapon.id] = weapon
 end
@@ -203,7 +204,7 @@ do
     Catalog.ById[weapon.id] = weapon
 end
 do
-    local weapon = table.freeze({id = "Tactical Axe", class = "Knife", damage = 145.0, rpm = 25.0, magazine = 1, range = 4.2, accuracy = 100.0, reloadRating = 50.0, move = 235.0, penetration = 100.0, zoom = 1.0, price = 7000, automatic = false})
+    local weapon = table.freeze({id = "Tactical Axe", class = "Knife", damage = 145.0, rpm = 26.0, magazine = 1, range = 4.2, accuracy = 100.0, reloadRating = 50.0, move = 235.0, penetration = 100.0, zoom = 1.0, price = 7000, automatic = false})
     table.insert(Catalog.Order, weapon.id)
     Catalog.ById[weapon.id] = weapon
 end

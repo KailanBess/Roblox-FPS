@@ -164,12 +164,12 @@ print(string.format("PASS: %d total checks; %d voxel firearms, maximum %d render
 
 local Movement=require("../src/shared/Movement")
 local movementStart=checks
-check(near(Movement.walkSpeed(215,false,0),12.5),"Controlled base walking pace")
-check(near(Movement.walkSpeed(10000,false,0),14),"Light-weapon speed cap")
-check(near(Movement.walkSpeed(1,false,0),11),"Heavy-weapon speed floor")
-check(near(Movement.walkSpeed(215,true,0),10),"Aiming slows movement")
-check(near(Movement.walkSpeed(215,false,-1),10.25),"Leaning slows movement")
-check(near(Movement.walkSpeed(215,true,1),8.2),"Scoped leaning has a controlled pace")
+check(near(Movement.walkSpeed(215,false,0),14),"Controlled base walking pace")
+check(near(Movement.walkSpeed(10000,false,0),15.5),"Light-weapon speed cap")
+check(near(Movement.walkSpeed(1,false,0),12.5),"Heavy-weapon speed floor")
+check(near(Movement.walkSpeed(215,true,0),11.2),"Aiming slows movement")
+check(near(Movement.walkSpeed(215,false,-1),11.48),"Leaning slows movement")
+check(near(Movement.walkSpeed(215,true,1),9.184),"Scoped leaning has a controlled pace")
 check(near(Movement.walkSpeed(215,false,-1),Movement.walkSpeed(215,false,1)),"Left/right pace symmetric")
 check(Movement.validRequest({lean=-1,ads=false}),"Accept left lean")
 check(Movement.validRequest({lean=1,ads=true}),"Accept aimed right lean")
@@ -203,3 +203,56 @@ end
 check(Movement.approach(.5,1,Movement.LeanResponse,0)==.5,"Zero-time step is stable")
 check(Movement.approach(.5,1,Movement.LeanResponse,-1)==.5,"Negative-time step is stable")
 print(string.format("PASS: %d movement checks (pace, lean, cover clearance, invalid requests and frame rates)",checks-movementStart))
+
+local Traits=require("../src/shared/WeaponTraits")
+local Magazines=require("../src/shared/MagazineState")
+local traitStart=checks
+for class,trait in Traits.ByClass do
+    local modifiers=0
+    for _,field in {"recovery","equip","reload","scopedSpread","recoil","stationarySpread"} do
+        local value=trait[field]
+        check(value>=.92 and value<=1.08,"Class handling bonus remains modest: "..class)
+        if value~=1 then modifiers+=1 end
+    end
+    check(modifiers==1,"Exactly one handling trait per class")
+    check(trait.damage==nil and trait.rpm==nil and trait.move==nil,"No stacking damage, RPM or movement bonus")
+end
+for _,id in Catalog.Order do
+    local weapon=Catalog.ById[id]
+    check(type(Traits.forWeapon(weapon).description)=="string","Every weapon exposes its class identity")
+    check(Traits.equipSeconds(weapon)>=.368 and Traits.equipSeconds(weapon)<=.4,"Equip bonus bounded")
+end
+check(near(Combat.reloadSeconds(Catalog.ById.M870),120/32*.95),"Shotgun reload bonus applied to actual timing")
+check(near(Combat.reloadSeconds(Catalog.ById.M4A1),120/45),"Other reloads unchanged")
+check(near(Combat.recoverBloom(Catalog.ById.M4A1,4,.5),2.41),"AR recovers bloom 6% faster")
+check(near(Combat.recoverBloom(Catalog.ById.M9,4,.5),2.5),"Non-AR recovery unchanged")
+check(near(Combat.spread(Catalog.ById.AWM,0,true,false,false),.0015*.94),"Sniper scoped precision bonus applied")
+local lmg=Catalog.ById.M249
+local base=(100-lmg.accuracy)*.0006
+check(near(Combat.spread(lmg,0,false,false,false),base*.94),"LMG bracing bonus while stationary")
+check(near(Combat.spread(lmg,0,false,true,false),base+.008),"LMG bracing disabled while moving")
+check(near(Combat.spread(lmg,0,false,false,true),base+.025),"LMG bracing disabled while airborne")
+local inventory={weapon="M4A1",ammo=17,magazines={M9=8}}
+Magazines.equip(inventory,"M9")
+check(inventory.ammo==8 and inventory.magazines.M4A1==17,"Switch retains loaded magazines")
+inventory.ammo=5
+Magazines.equip(inventory,"M4A1")
+check(inventory.ammo==17 and inventory.magazines.M9==5,"Switch does not refill fired rounds")
+Magazines.equip(inventory,"M4A1")
+check(inventory.ammo==17,"Reselect cannot grant free ammo")
+Magazines.equip(inventory,"AWM")
+check(inventory.ammo==0,"Unloaded new selection still needs a reload")
+print(string.format("PASS: %d trait and magazine-state checks",checks-traitStart))
+
+local balanceSums,balanceCounts={},{}
+for _,id in Catalog.Order do
+    local w=Catalog.ById[id]
+    balanceSums[w.class]=(balanceSums[w.class] or 0)+w.damage*w.rpm/60
+    balanceCounts[w.class]=(balanceCounts[w.class] or 0)+1
+end
+for _,id in Catalog.Order do
+    local w=Catalog.ById[id]
+    local mean=balanceSums[w.class]/balanceCounts[w.class]
+    check(math.abs(w.damage*w.rpm/60/mean-1)<=.15,"Same-class raw DPS within 15%: "..id)
+end
+print("PASS: all 41 weapons within 15% of their class mean raw DPS; effective gameplay balance requires Studio playtests")

@@ -7,6 +7,7 @@ local player = Players.LocalPlayer
 local shared = ReplicatedStorage:WaitForChild("FPS")
 local Catalog = require(shared.WeaponCatalog)
 local Combat = require(shared.CombatMath)
+local Traits = require(shared.WeaponTraits)
 local Workshop = require(shared.Workshop)
 local Models = require(shared.WeaponModel)
 local MovementController = require(script.Parent.MovementController)
@@ -87,6 +88,7 @@ local function selectWeapon(id)
     stats.Text = string.format("%s / %s\nDMG %d   RPM %d   MAG %d   RANGE %sm\n%d coins • sandbox unlocked • %s",
         selected.id,selected.class,selected.damage,selected.rpm,selected.magazine,tostring(selected.range),selected.price,
         if selected.zoom>1 then tostring(selected.zoom).."x scope" else "hipfire / no recoil")
+        .."\n"..Traits.forWeapon(selected).title..": "..Traits.forWeapon(selected).description
 end
 for i,id in Catalog.Order do
     button(list,id,UDim2.new(0,0,0,(i-1)*42),UDim2.new(1,-8,0,36),function() selectWeapon(id) end)
@@ -242,7 +244,7 @@ local function fire()
     action:FireServer("Fire",{direction=workspace.CurrentCamera.CFrame.LookVector,
         timestamp=workspace:GetServerTimeNow(),ads=ads})
     if weapon.zoom>1 then
-        if movementController then movementController.recoil(math.rad(.7)) end
+        if movementController then movementController.recoil(math.rad(.7)*Traits.forWeapon(weapon).recoil) end
     end
 end
 Input.InputBegan:Connect(function(input,processed)

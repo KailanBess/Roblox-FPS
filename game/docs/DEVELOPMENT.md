@@ -7,11 +7,12 @@ weapons from `Roblox guns.txt` and prices from `Current system store prices..txt
 Shared constants follow `core gameplay systems.1.txt`: 200 HP, 150 armor, 30%
 maximum reduction, 1.5× normal and 2× sniper headshots. Penetration subtracts armor
 points, as that document's example specifies. Uploaded base templates with much
-lower fire rates are not silently substituted for the named roster.
+lower fire rates are not silently substituted for the named roster. Three small,
+explicit rate adjustments and the class traits are documented in WEAPON_BALANCE.md.
 
 Range values are treated as meters and converted at 3.571 studs per meter.
 Movement 190–250 is treated as a rating. The current controlled-movement pass maps
-it to a 12.5-stud/sec baseline clamped to 11–14; aim/lean slow it further. See
+it to a 14-stud/sec baseline clamped to 12.5–15.5; aim/lean slow it further. See
 MOVEMENT.md. This supersedes the initial 0.08 conversion. Reload rating is mapped
 to 120/rating seconds. These conversions are provisional and centralized in
 CombatMath for tuning. Falloff reaches 50% damage at twice the listed range.
@@ -34,8 +35,8 @@ use original procedural geometry rather than image-derived or copied assets.
   that replaces the platform's default passive health regeneration script).
 
 The server creates its Network RemoteEvents before clients connect. All roster
-entries are unlocked for this sandbox. Equipping starts with an empty magazine,
-preventing weapon switching from granting free ammo. Reload supplies unlimited
+entries are unlocked for this sandbox. Newly selected weapons start unloaded,
+while switching retains already loaded rounds without refilling them. Reload supplies unlimited
 reserve ammo for this practice build. Spawn begins with a full magazine.
 
 ## Required Roblox Studio checks — not yet run in the cloud

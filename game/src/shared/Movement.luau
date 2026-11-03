@@ -1,6 +1,6 @@
 -- Deliberate movement tuning. Catalog mobility values are ratings, not studs/sec.
 local Movement = {
-    BaseSpeed = 12.5, MinSpeed = 11, MaxSpeed = 14,
+    BaseSpeed = 14, MinSpeed = 12.5, MaxSpeed = 15.5,
     AimMultiplier = .80, LeanMultiplier = .82,
     InputAcceleration = 16, InputBraking = 25, SpeedResponse = 12,
     LeanResponse = 10, LeanDistance = .8, LeanAngle = math.rad(9),

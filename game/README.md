@@ -27,7 +27,7 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
 - **M**: open/close armory and workshop. **LMB**: fire; hold for automatic classes.
 - **R**: reload. **RMB**: scope for sniper and marksman weapons only.
 - Hold **Q/E** to lean left/right; release to center. Walking now uses a controlled
-  11–14-stud/sec pace with smooth acceleration/stopping. Aim and lean slow movement.
+  12.5–15.5-stud/sec pace with smooth acceleration/stopping. Aim and lean slow movement.
   [Movement tuning and Studio checks](docs/MOVEMENT.md).
 - Custom Weapons: choose a color, click/drag on the 32×16 grid, preview, undo,
   erase, clear, and apply. Applying requires 8–384 voxels. Designs last for the
@@ -45,6 +45,8 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
   [model usage guide](docs/VOXEL_MODELS.md), [photographic references](docs/PHOTO_REFERENCES.md),
   and [magazine-fit close-ups](assets/VoxelWeapons-magazine-fit.png).
   First image guides the separate custom workshop.
+- Small class handling traits (5–8%) appear in the armory; loaded rounds persist
+  when switching. [Weapon balance and next priorities](docs/WEAPON_BALANCE.md).
 - Server raycasts, server-selected origins, fire cadence, ammo, timed reloads,
   timestamp/type/finite checks, request rate limiting, team checks, armor,
   penetration, falloff, shotgun pellets, and hit/elimination feedback.
