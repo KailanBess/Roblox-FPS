@@ -113,12 +113,30 @@ editorPreview.CurrentCamera=editCamera
 local editWorld = Instance.new("WorldModel")
 editWorld.Parent=editorPreview
 -- Orbit either 3D preview without rotating the gameplay camera.
-local function orbitPreview(viewport, previewCamera, distance)
+local function orbitPreview(viewport, previewCamera, container)
     viewport.Active=true
-    local yaw,pitch,dragging=.25,.18,false
+    previewCamera.FieldOfView=35
+    local yaw,pitch,dragging,zoom=.25,.12,false,1
     local function update()
-        local position=Vector3.new(math.sin(yaw)*math.cos(pitch),math.sin(pitch),math.cos(yaw)*math.cos(pitch))*distance
-        previewCamera.CFrame=CFrame.lookAt(position,Vector3.zero)
+        local model=container:FindFirstChildOfClass("Model")
+        if not model then return end
+        local bounds,size=model:GetBoundingBox()
+        local center=bounds.Position
+        local direction=Vector3.new(math.sin(yaw)*math.cos(pitch),math.sin(pitch),math.cos(yaw)*math.cos(pitch))
+        local orientation=CFrame.lookAt(center+direction,center)
+        local aspect=math.max(viewport.AbsoluteSize.X,1)/math.max(viewport.AbsoluteSize.Y,1)
+        local tanV=math.tan(math.rad(previewCamera.FieldOfView/2))
+        local tanH=tanV*aspect
+        local distance=.5
+        -- Fit all eight corners in the current view, rather than using a fixed
+        -- camera distance or a sphere that makes long, thin weapons look tiny.
+        for _,x in {-1,1} do for _,y in {-1,1} do for _,z in {-1,1} do
+            local corner=bounds:PointToWorldSpace(Vector3.new(x*size.X,y*size.Y,z*size.Z)/2)
+            local localCorner=orientation:VectorToObjectSpace(corner-center)
+            distance=math.max(distance,math.abs(localCorner.X)/tanH+localCorner.Z,
+                math.abs(localCorner.Y)/tanV+localCorner.Z)
+        end end end
+        previewCamera.CFrame=CFrame.lookAt(center+direction*distance*1.12*zoom,center)
     end
     viewport.InputBegan:Connect(function(input)
         if input.UserInputType==Enum.UserInputType.MouseButton1 then dragging=true end
@@ -135,14 +153,16 @@ local function orbitPreview(viewport, previewCamera, distance)
     end)
     viewport.InputChanged:Connect(function(input)
         if input.UserInputType==Enum.UserInputType.MouseWheel then
-            distance=math.clamp(distance-input.Position.Z*.5,3,12)
+            zoom=math.clamp(zoom-input.Position.Z*.1,.65,2.5)
             update()
         end
     end)
+    container.ChildAdded:Connect(function() zoom=1; update() end)
+    viewport:GetPropertyChangedSignal("AbsoluteSize"):Connect(update)
     update()
 end
-orbitPreview(preview,camera,6.3)
-orbitPreview(editorPreview,editCamera,5)
+orbitPreview(preview,camera,world)
+orbitPreview(editorPreview,editCamera,editWorld)
 label(preview,"Drag to rotate • scroll to zoom",UDim2.fromScale(0,.90),UDim2.fromScale(1,.10)).TextSize=12
 local function serialize()
     local cells = {}

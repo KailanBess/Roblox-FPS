@@ -11,7 +11,7 @@ function Gallery.build(parent,origin,ids)
         assert(weapon,"Unknown weapon "..tostring(id))
         if weapon.class~="Knife" then
             local model=Models.build(weapon)
-            model:PivotTo((origin or CFrame.identity)*CFrame.new(index%5*8,0,math.floor(index/5)*5))
+            model:PivotTo((origin or CFrame.identity)*CFrame.new(index%5*12,0,math.floor(index/5)*7))
             model.Parent=folder
             index+=1
         end

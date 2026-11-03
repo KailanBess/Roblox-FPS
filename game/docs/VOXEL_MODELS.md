@@ -66,12 +66,12 @@ The player avatar does not yet receive a replicated third-person held gun.
 
 ## Geometry and presentation
 
-- Integer voxel shapes use 0.045-stud cells, including stepped circular barrels,
+- Integer voxel shapes use 0.05-stud cells, including stepped circular barrels,
   open muzzle bores, guard openings, curved magazines and scopes where applicable.
 - Metal, polymer, wood and glass parts use separate palette colors and actual
   Roblox lighting. No baked fake image is used as the geometry.
 - Contiguous same-component/color voxels merge across all three axes into rectangular blocks.
-  The visible voxel silhouette is preserved, with at most 446 render Parts per
+  The visible voxel silhouette is preserved, with at most 471 render Parts per
   firearm in this revision. All 35 models fit the tested 600-part ceiling.
 - Armory and custom design previews support mouse drag rotation and wheel zoom.
 - Cosmetic workshop profiles remain separate: they use the player's painted 2D
@@ -102,3 +102,30 @@ belt rounds, bipods, and smaller pistol sights. The palette uses restrained meta
 polymer, wood and rubber finishes; voxel edges remain visible. Store combat stats
 are unaffected. Geometry is original stylized interpretation, not a claim of
 manufacturer-accurate dimensions or individually sculpted variants for every ID.
+
+## Proportion and component-fit revision
+
+The complete assembly is 11% larger through the cell-size change, with coherent
+length increases of 25% for long guns, 18% for SMGs and 12% for pistols before that
+size change. X coordinates are resampled on the cubic voxel grid, including grip,
+muzzle and sight coordinates; components are not scaled independently.
+
+Floating geometry found in the previous revision was corrected at the authored
+mounts: stock cheek rests, guard hangers, grip tangs, charging handles, bipod hinges,
+scope reducers and feet, bullpup handle supports, and Vector magazine well.
+Automated flood-fill checks now require every voxel in every firearm to connect
+to its body through shared faces. This checks assembly geometry, not animation
+clearance or physical operation of a real firearm.
+
+Iron sights are built after the body and rail, using their actual mounting surface
+heights. Rear aperture and front post share one centered sight plane; tests require
+an open rear aperture, an actual post at the aim point, and a clear intervening
+sight line. Scoped variants omit competing iron-sight pairs. Luau models expose
+`Anchor.RearSight` and `Anchor.FrontSight` Attachments when irons are present.
+
+The armory camera now fits all eight bounding-box corners for the current orbit
+angle and viewport size instead of using a fixed distance. Selection resets zoom;
+wheel zoom remains available. Gallery spacing accommodates the longer models.
+`assets/VoxelWeapons-fit-check.png` shows side, top and sight-axis geometry views.
+The revised preview is rendered without cropping stocks or muzzles. These images
+are offline renders; in-game framing and device performance still need Studio tests.

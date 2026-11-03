@@ -21,6 +21,7 @@ function Models.build(weapon,cells)
     local model=Instance.new("Model")
     model.Name=weapon.id
     local muzzle, grip = Vector3.zero, Vector3.zero
+    local sightLine
     if cells then
         for _,cell in cells do
             local rgb=Workshop.Palette[cell.color]
@@ -36,6 +37,8 @@ function Models.build(weapon,cells)
     else
         local data=Voxels.generate(weapon)
         local scale=Voxels.CellSize
+        sightLine=data.sightLine
+        model:SetAttribute("LengthScale",data.lengthScale)
         model:SetAttribute("VoxelFamily",data.family)
         model:SetAttribute("VoxelCount",data.voxelCount)
         for _,run in data.runs do
@@ -57,6 +60,11 @@ function Models.build(weapon,cells)
     model.PrimaryPart=anchor
     attachment(anchor,"Muzzle",muzzle)
     attachment(anchor,"RightHandGrip",grip)
+    if sightLine then
+        for name,point in {RearSight=sightLine.rear,FrontSight=sightLine.front} do
+            attachment(anchor,name,Vector3.new(point.x,point.y,point.z)*Voxels.CellSize)
+        end
+    end
     model:SetAttribute("WeaponId",weapon.id)
     return model
 end

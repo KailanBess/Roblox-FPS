@@ -79,9 +79,34 @@ for _,id in Catalog.Order do
             for x=run.x1,run.x2 do for y=run.y1,run.y2 do for z=run.z1,run.z2 do
                 local key=x..":"..y..":"..z
                 check(not occupied[key],"Meshed geometry has no overlapping voxels")
-                occupied[key]=true
+                occupied[key]={x,y,z}
                 volume+=1
             end end end
+        end
+        local pending=table.clone(occupied)
+        local firstKey,first=next(pending)
+        pending[firstKey]=nil
+        local queue={first}
+        local nextIndex=1
+        while nextIndex<=#queue do
+            local cell=queue[nextIndex]
+            nextIndex+=1
+            for axis=1,3 do for _,step in {-1,1} do
+                local p={cell[1],cell[2],cell[3]}
+                p[axis]+=step
+                local key=p[1]..":"..p[2]..":"..p[3]
+                if pending[key] then table.insert(queue,pending[key]);pending[key]=nil end
+            end end
+        end
+        check(#queue==volume,"Every voxel connects to the weapon body: "..id)
+        if model.sightLine then
+            local rear,front=model.sightLine.rear,model.sightLine.front
+            check(rear.y==front.y and rear.z==0 and front.z==0,"Iron sights share a centered sight plane: "..id)
+            check(not occupied[rear.x..":"..rear.y..":0"],"Rear aperture remains open: "..id)
+            check(occupied[front.x..":"..front.y..":0"]~=nil,"Front aim point sits on its post: "..id)
+            for x=rear.x+2,front.x-1 do
+                check(not occupied[x..":"..rear.y..":0"],"Clear iron-sight line: "..id)
+            end
         end
         check(volume==model.voxelCount,"Meshing preserves exact voxel volume")
         check(minZ<0 and maxZ>0,"True depth on both sides of receiver")
