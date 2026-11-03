@@ -54,3 +54,44 @@ local huge={}
 for i=1,385 do huge[i]={x=(i-1)%32+1,y=math.floor((i-1)/32)+1,color=1} end
 rejects(huge,"Reject excessive cells")
 print(string.format("PASS: %d checks (roster, combat formulas, hostile workshop payloads)",checks))
+
+local Voxels=require("../src/shared/VoxelWeapons")
+local firearmCount=0
+local maxParts=0
+for _,id in Catalog.Order do
+    local weapon=Catalog.ById[id]
+    if weapon.class~="Knife" then
+        local model=Voxels.generate(weapon)
+        firearmCount+=1
+        check(model.voxelCount>100,"Volumetric model: "..id)
+        check(#model.runs<1200,"Render instance budget: "..id)
+        local occupied={}
+        local volume=0
+        local roles={}
+        local minZ,maxZ=math.huge,-math.huge
+        local maxX=-math.huge
+        for _,run in model.runs do
+            check(Voxels.Palette[run.color]~=nil,"Palette defined")
+            check(run.x1<=run.x2,"Positive run length")
+            minZ,maxZ=math.min(minZ,run.z),math.max(maxZ,run.z)
+            maxX=math.max(maxX,run.x2)
+            roles[run.role]=true
+            for x=run.x1,run.x2 do
+                local key=x..":"..run.y..":"..run.z
+                check(not occupied[key],"Meshed geometry has no overlapping voxels")
+                occupied[key]=true
+                volume+=1
+            end
+        end
+        check(volume==model.voxelCount,"Meshing preserves exact voxel volume")
+        check(minZ<0 and maxZ>0,"True depth on both sides of receiver")
+        check(roles.Barrel and roles.Grip and roles.Trigger,"Required weapon components: "..id)
+        check(model.muzzle.x>maxX,"Muzzle attachment clear of model: "..id)
+        if weapon.zoom>1 then check(roles.Scope and roles.Lens,"Scoped model: "..id) end
+        local repeated=Voxels.generate(weapon)
+        check(#repeated.runs==#model.runs and repeated.voxelCount==model.voxelCount,"Stable regeneration")
+        maxParts=math.max(maxParts,#model.runs)
+    end
+end
+check(firearmCount==35,"All 35 real-world firearm roster entries modeled")
+print(string.format("PASS: %d total checks; %d voxel firearms, maximum %d render parts",checks,firearmCount,maxParts))

@@ -33,9 +33,11 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
 ## Included
 
 - Documented 41-weapon roster and store prices (shown for reference; no purchases).
-- Layered procedural system models with vents, rails, fasteners, metal highlights,
-  polymer grips, class silhouettes, and scopes. These are first-pass models, not
-  final authored meshes. First image guides the separate voxel workshop.
+- True 3D voxel models for all 35 firearms, using real-world-inspired gun families,
+  metal/polymer/wood finishes, magazines, open muzzles and scopes. Related variants
+  share base shapes. Drag armory previews to rotate; scroll to zoom.
+- [Downloadable Roblox/OBJ model pack](assets/VoxelWeapons-35-models.zip) and
+  [model usage guide](docs/VOXEL_MODELS.md). First image guides the separate custom workshop.
 - Server raycasts, server-selected origins, fire cadence, ammo, timed reloads,
   timestamp/type/finite checks, request rate limiting, team checks, armor,
   penetration, falloff, shotgun pellets, and hit/elimination feedback.
@@ -50,7 +52,9 @@ Roblox Studio itself must run on supported Windows or macOS hardware.
 /workspace/tools/rojo/rojo build default.project.json -o build/RobloxFPS.rbxlx
 ```
 
-186 checks cover roster data, combat calculations and hostile workshop payloads.
+186 baseline checks cover roster data, combat calculations and hostile workshop payloads.
+Additional geometry checks validate all 35 voxel firearms, including merged volume,
+nonoverlap, depth, muzzle placement and component budgets.
 All Luau files also compile with Luau 0.659. These checks do **not** execute Roblox
 services or prove multiplayer behavior. Run the Studio checklist in
 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) before gameplay release.

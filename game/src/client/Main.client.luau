@@ -112,6 +112,38 @@ editCamera.Parent=editorPreview
 editorPreview.CurrentCamera=editCamera
 local editWorld = Instance.new("WorldModel")
 editWorld.Parent=editorPreview
+-- Orbit either 3D preview without rotating the gameplay camera.
+local function orbitPreview(viewport, previewCamera, distance)
+    viewport.Active=true
+    local yaw,pitch,dragging=.25,.18,false
+    local function update()
+        local position=Vector3.new(math.sin(yaw)*math.cos(pitch),math.sin(pitch),math.cos(yaw)*math.cos(pitch))*distance
+        previewCamera.CFrame=CFrame.lookAt(position,Vector3.zero)
+    end
+    viewport.InputBegan:Connect(function(input)
+        if input.UserInputType==Enum.UserInputType.MouseButton1 then dragging=true end
+    end)
+    Input.InputEnded:Connect(function(input)
+        if input.UserInputType==Enum.UserInputType.MouseButton1 then dragging=false end
+    end)
+    Input.InputChanged:Connect(function(input)
+        if dragging and menuOpen and viewport.Visible and input.UserInputType==Enum.UserInputType.MouseMovement then
+            yaw-=input.Delta.X*.012
+            pitch=math.clamp(pitch+input.Delta.Y*.012,-1.2,1.2)
+            update()
+        end
+    end)
+    viewport.InputChanged:Connect(function(input)
+        if input.UserInputType==Enum.UserInputType.MouseWheel then
+            distance=math.clamp(distance-input.Position.Z*.5,3,12)
+            update()
+        end
+    end)
+    update()
+end
+orbitPreview(preview,camera,6.3)
+orbitPreview(editorPreview,editCamera,5)
+label(preview,"Drag to rotate • scroll to zoom",UDim2.fromScale(0,.90),UDim2.fromScale(1,.10)).TextSize=12
 local function serialize()
     local cells = {}
     for id,color in design do
