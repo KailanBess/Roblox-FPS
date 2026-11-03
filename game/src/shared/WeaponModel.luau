@@ -41,11 +41,11 @@ function Models.build(weapon,cells)
         for _,run in data.runs do
             local rgb=Voxels.Palette[run.color]
             local material=if run.color=="Glass" then Enum.Material.Glass
-                elseif run.color=="Polymer" or run.color=="Dark" then Enum.Material.SmoothPlastic
+                elseif run.color=="Polymer" or run.color=="Dark" or run.color=="Rubber" then Enum.Material.SmoothPlastic
                 elseif run.color=="Wood" or run.color=="WoodLight" then Enum.Material.Wood
                 else Enum.Material.Metal
-            local p=newPart(model,run.role,Vector3.new((run.x2-run.x1+1)*scale,scale,scale),
-                Vector3.new((run.x1+run.x2)/2*scale,run.y*scale,run.z*scale),
+            local p=newPart(model,run.role,Vector3.new((run.x2-run.x1+1)*scale,(run.y2-run.y1+1)*scale,(run.z2-run.z1+1)*scale),
+                Vector3.new((run.x1+run.x2)/2*scale,(run.y1+run.y2)/2*scale,(run.z1+run.z2)/2*scale),
                 Color3.fromRGB(rgb[1],rgb[2],rgb[3]),material)
             p:SetAttribute("WeaponComponent",run.role)
         end

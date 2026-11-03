@@ -64,7 +64,7 @@ for _,id in Catalog.Order do
         local model=Voxels.generate(weapon)
         firearmCount+=1
         check(model.voxelCount>100,"Volumetric model: "..id)
-        check(#model.runs<1200,"Render instance budget: "..id)
+        check(#model.runs<600,"Render instance budget: "..id)
         local occupied={}
         local volume=0
         local roles={}
@@ -73,21 +73,32 @@ for _,id in Catalog.Order do
         for _,run in model.runs do
             check(Voxels.Palette[run.color]~=nil,"Palette defined")
             check(run.x1<=run.x2,"Positive run length")
-            minZ,maxZ=math.min(minZ,run.z),math.max(maxZ,run.z)
+            minZ,maxZ=math.min(minZ,run.z1),math.max(maxZ,run.z2)
             maxX=math.max(maxX,run.x2)
             roles[run.role]=true
-            for x=run.x1,run.x2 do
-                local key=x..":"..run.y..":"..run.z
+            for x=run.x1,run.x2 do for y=run.y1,run.y2 do for z=run.z1,run.z2 do
+                local key=x..":"..y..":"..z
                 check(not occupied[key],"Meshed geometry has no overlapping voxels")
                 occupied[key]=true
                 volume+=1
-            end
+            end end end
         end
         check(volume==model.voxelCount,"Meshing preserves exact voxel volume")
         check(minZ<0 and maxZ>0,"True depth on both sides of receiver")
         check(roles.Barrel and roles.Grip and roles.Trigger,"Required weapon components: "..id)
         check(model.muzzle.x>maxX,"Muzzle attachment clear of model: "..id)
         if weapon.zoom>1 then check(roles.Scope and roles.Lens,"Scoped model: "..id) end
+        local features={
+            M4A1={"CarryHandle","FrontSightTower","ForwardAssist","MagazineWell"},
+            ["AK-103"]={"GasTube","DustCover","SelectorLever","ReceiverRivet"},
+            MP5={"TubularReceiver","TaperedForearm","ChargingHandle","TriLugMount"},
+            P90={"TopMagazine","OpticsBridge","ReflexSight"},
+            M870={"Pump","PumpRib","VentRib","MagazineTube"},
+            AWM={"BoltHandle","BoltKnob","RaisedCheekRest","ElevationTurret"},
+            ["Glock 17"]={"SlideSerration","SlidePort","Chamber","SightDot"},
+            M9={"ExposedBarrel","Hammer","GripMedallion"},
+        }
+        for _,role in features[id] or {} do check(roles[role],id.." defining detail: "..role) end
         local repeated=Voxels.generate(weapon)
         check(#repeated.runs==#model.runs and repeated.voxelCount==model.voxelCount,"Stable regeneration")
         maxParts=math.max(maxParts,#model.runs)

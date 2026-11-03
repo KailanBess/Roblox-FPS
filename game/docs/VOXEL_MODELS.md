@@ -66,13 +66,13 @@ The player avatar does not yet receive a replicated third-person held gun.
 
 ## Geometry and presentation
 
-- Integer voxel shapes use 0.085-stud cells, including stepped circular barrels,
+- Integer voxel shapes use 0.045-stud cells, including stepped circular barrels,
   open muzzle bores, guard openings, curved magazines and scopes where applicable.
 - Metal, polymer, wood and glass parts use separate palette colors and actual
   Roblox lighting. No baked fake image is used as the geometry.
-- Contiguous same-component/color voxels merge along X into rectangular runs.
-  The visible voxel silhouette is preserved, with at most 485 render Parts per
-  firearm in this revision. All 35 models fit the tested 1,200-part ceiling.
+- Contiguous same-component/color voxels merge across all three axes into rectangular blocks.
+  The visible voxel silhouette is preserved, with at most 446 render Parts per
+  firearm in this revision. All 35 models fit the tested 600-part ceiling.
 - Armory and custom design previews support mouse drag rotation and wheel zoom.
 - Cosmetic workshop profiles remain separate: they use the player's painted 2D
   grid extruded into 3D, rather than the real-world-inspired system shapes.
@@ -86,3 +86,19 @@ place builds with Rojo. Roblox Studio, in-game visuals, welded hand poses,
 multiplayer replication, mobile orbit controls and performance on target devices
 have not been tested here. Rotate a few models in Studio, check material/shadow
 appearance and profile first-person rendering before release.
+
+## Detail revision
+
+The finer-grid revision replaces rectangular stock/grip outlines with filled
+polygons: tapered buttstocks, angled pistol grips, thumbhole and skeleton stocks,
+sloped forearms, and swept magazines. Family-specific modeling includes M4 carry
+handle/front-sight tower, AK dust cover/gas tube/rivets, MP5 tubular upper and
+tri-lug mount, P90 top magazine, shotgun vent rib and pump, bolt-action handles,
+Glock slide serrations/chamber, and Beretta open-top slide/exposed barrel.
+
+Additional details include receiver chamfers, flared magwells, controls, ejection
+ports, buffer tubes, stock openings, grip texture, scope rings/turrets, rail teeth,
+belt rounds, bipods, and smaller pistol sights. The palette uses restrained metal,
+polymer, wood and rubber finishes; voxel edges remain visible. Store combat stats
+are unaffected. Geometry is original stylized interpretation, not a claim of
+manufacturer-accurate dimensions or individually sculpted variants for every ID.
