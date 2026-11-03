@@ -1,0 +1,510 @@
+VOLUME VII — CRATE AND REWARD SYSTEMS
+PART 1 — COMPLETE CRATE ECOSYSTEM, KEYS, DROP RATES, PITY SYSTEMS, DUPLICATE PROTECTION, AND REWARD FAIRNESS
+220. CRATE SYSTEM OVERVIEW
+
+The crate system provides a randomized reward system focused on:
+
+Cosmetics
+Collection
+Progression materials
+Customization
+
+Crates do not provide:
+
+Direct combat power
+Guaranteed competitive advantages
+Pay-to-win progression
+220.1 CRATE DESIGN PHILOSOPHY
+
+Crates should provide:
+
+Excitement
+Collection goals
+Variety
+
+But must avoid:
+
+Frustration
+Unfair progression
+Excessive randomness
+221. KEY SYSTEM
+
+All crates require keys.
+
+Crates cannot be opened directly with premium currency.
+
+Key Sources
+
+Keys are obtained from:
+
+Events
+
+Examples:
+
+Seasonal events
+Community goals
+Limited challenges
+Login Rewards
+
+Daily:
+
+Small key chances
+
+Weekly:
+
+Guaranteed keys
+
+Monthly:
+
+Large key rewards
+
+Workshop Achievements
+
+Examples:
+
+Publish approved creation
+Gain reputation milestones
+Player Level Rewards
+
+Major levels provide keys.
+
+Purchases
+
+Players may purchase key bundles.
+
+222. KEY ECONOMY RULES
+
+Keys are universal.
+
+One key opens:
+
+One eligible crate.
+
+Example:
+
+1 Skin Crate
+
+=
+
+1 Key
+223. CRATE TYPES
+
+The ecosystem contains:
+
+Standard Crate
+
+Main progression crate.
+
+Contains:
+
+System weapon skins
+Armor pieces
+Cosmetics
+Scrap
+Materials
+Enhancement Crate
+
+Contains:
+
+Enhancements
+Enhancement materials
+Scrap
+Cosmetic Crate
+
+Contains:
+
+Character cosmetics
+Effects
+Charms
+Titles
+Event Crates
+
+Limited-time rewards.
+
+224. STANDARD CRATE SYSTEM
+
+Standard Crate is the main reward crate.
+
+Contains:
+
+System Weapon Skins
+Armor
+Cosmetic Effects
+Scrap
+Keys
+225. STANDARD CRATE DROP CHANCES
+
+Example:
+
+Common Item
+
+55%
+
+Uncommon Item
+
+25%
+
+Rare Item
+
+12%
+
+Epic Item
+
+5%
+
+Legendary Item
+
+2%
+
+Mythic Item
+
+0.8%
+
+Awakened Item
+
+0.2%
+226. STANDARD CRATE ITEM DISTRIBUTION
+
+After rarity:
+
+Second roll:
+
+Item Category
+
+Example:
+
+Weapon Skin
+
+35%
+
+Armor
+
+30%
+
+Cosmetic
+
+20%
+
+Scrap
+
+10%
+
+Key
+
+5%
+227. SYSTEM WEAPON SKIN CRATE
+
+Dedicated weapon cosmetic crate.
+
+Contains:
+
+Only:
+
+System weapon skins
+228. SYSTEM WEAPON SKIN DROP CHANCES
+Common
+
+55%
+
+Uncommon
+
+25%
+
+Rare
+
+12%
+
+Epic
+
+5%
+
+Legendary
+
+2%
+
+Mythic
+
+0.8%
+
+Awakened
+
+0.2%
+229. ARMOR CRATE
+
+Contains:
+
+Armor pieces
+Armor cosmetics
+Set pieces
+
+Drop chances:
+
+Common
+
+50%
+
+Uncommon
+
+30%
+
+Rare
+
+15%
+
+Epic
+
+4%
+
+Legendary
+
+1%
+230. ENHANCEMENT CRATE
+
+Contains:
+
+Enhancement items
+
+Drop chances:
+
+Common
+
+60%
+
+Rare
+
+25%
+
+Epic
+
+12%
+
+Legendary
+
+3%
+231. COSMETIC CRATE
+
+Contains:
+
+Character skins
+Emotes
+Effects
+Profile cosmetics
+
+Drop chances:
+
+Common
+
+45%
+
+Uncommon
+
+30%
+
+Rare
+
+15%
+
+Epic
+
+7%
+
+Legendary
+
+2.5%
+
+Mythic
+
+0.5%
+232. SCRAP DROP SYSTEM
+
+Scrap can appear as crate rewards.
+
+Example:
+
+Common:
+
+100 Scrap
+
+Rare:
+
+300 Scrap
+
+Epic:
+
+750 Scrap
+
+Legendary:
+
+1500 Scrap
+
+233. DUPLICATE PROTECTION SYSTEM
+
+Duplicates are converted.
+
+Duplicate rewards become:
+
+Scrap
+Cosmetic tokens
+
+Higher rarity duplicates provide more value.
+
+234. SMART DUPLICATE SYSTEM
+
+Before giving a duplicate:
+
+System checks:
+
+Owned items
+Missing items
+Collection completion
+
+Priority:
+
+Unowned item
+
+↓
+
+Duplicate conversion
+
+235. PITY SYSTEM
+
+Pity protects players from extreme bad luck.
+
+Epic Pity
+
+After:
+
+50 openings
+
+without Epic+
+
+Guarantee:
+
+Epic+
+
+Legendary Pity
+
+After:
+
+150 openings
+
+without Legendary+
+
+Guarantee:
+
+Legendary+
+
+Awakened Pity
+
+After:
+
+500 openings
+
+without Awakened
+
+Guarantee:
+
+Awakened
+
+236. PITY RULES
+
+Pity resets when:
+
+Player receives the guaranteed rarity.
+
+Example:
+
+Player opens:
+
+499 crates.
+
+No Awakened.
+
+500th:
+
+Awakened guaranteed.
+
+237. CRATE TRANSPARENCY
+
+Players can view:
+
+Drop chances
+Possible rewards
+Pity progress
+
+Purpose:
+
+Trust.
+
+238. REWARD PREVIEW SYSTEM
+
+Before opening:
+
+Players can see:
+
+Possible rewards.
+
+Includes:
+
+Images
+Rarity
+Collection status
+239. CRATE ANIMATION SYSTEM
+
+Opening animation includes:
+
+Rarity reveal
+Visual effects
+
+Higher rarity:
+
+More dramatic presentation.
+
+240. AWAKENED CRATE EXPERIENCE
+
+Awakened rewards receive:
+
+Unique animation
+Special sound
+Screen effect
+241. CRATE FAIRNESS RULES
+
+Crates cannot:
+
+Hide odds
+Remove pity progress
+Create combat advantages
+242. CRATE ECONOMY PURPOSE
+
+Crates provide:
+
+Collection motivation
+Cosmetic progression
+Long-term goals
+243. COMPLETE CRATE LOOP
+Earn Keys
+
+↓
+
+Open Crates
+
+↓
+
+Receive Cosmetics/Materials
+
+↓
+
+Collect Items
+
+↓
+
+Salvage Duplicates
+
+↓
+
+Craft/Reforge
+
+↓
+
+Continue Progression
+E

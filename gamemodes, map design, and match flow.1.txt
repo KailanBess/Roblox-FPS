@@ -1,0 +1,396 @@
+VOLUME XI — GAME MODES, MAP DESIGN, AND MATCH FLOW
+PART 1 — CORE GAME MODES, MATCH STRUCTURE, OBJECTIVE DESIGN, SPAWN SYSTEMS, AND PLAYER EXPERIENCE FLOW
+466. GAME MODE OVERVIEW
+
+The FPS ecosystem supports multiple modes designed around different player motivations.
+
+The goal:
+
+Provide variety while maintaining the same combat foundation.
+
+466.1 GAME MODE PHILOSOPHY
+
+Every mode should reward:
+
+Mechanical skill
+Team coordination
+Strategy
+Adaptation
+
+Modes should not rely on:
+
+Random power advantages
+Unbalanced equipment
+467. GAME MODE CATEGORIES
+
+Modes are divided into:
+
+Competitive Modes
+
+Designed for Ranked.
+
+Focus:
+
+Skill evaluation.
+
+Casual Modes
+
+Designed for:
+
+Practice and fun.
+
+Event Modes
+
+Limited-time experiences.
+
+Workshop Modes
+
+Creator-focused experiments.
+
+468. CORE GAME MODES
+
+Recommended launch modes:
+
+Team Elimination
+Control
+Domination
+Search Style Mode
+Free For All
+Gun Game
+469. TEAM ELIMINATION MODE
+
+Primary FPS mode.
+
+Objective
+
+Eliminate opposing team.
+
+Team Size
+
+Recommended:
+
+5v5
+Round Structure
+
+Example:
+
+First team:
+
+50 eliminations
+
+wins.
+
+470. TEAM ELIMINATION DESIGN
+
+Rewards:
+
+Aim
+Positioning
+Teamplay
+471. CONTROL MODE
+
+Objective-based mode.
+
+Three zones:
+
+A
+
+B
+
+C
+
+Teams earn:
+
+Points by holding zones.
+
+472. CONTROL BALANCE
+
+Important:
+
+Objectives must be:
+
+Contestable
+Rotational
+Fair
+473. DOMINATION MODE
+
+Classic territory mode.
+
+Teams capture:
+
+Multiple points.
+
+Score increases over time.
+
+474. SEARCH STYLE MODE
+
+High strategy mode.
+
+Rules:
+
+Limited lives.
+
+Round ends when:
+
+Team eliminated
+Objective completed
+475. SEARCH MODE DESIGN
+
+Rewards:
+
+Communication
+Patience
+Tactical decisions
+476. FREE FOR ALL
+
+Individual competition.
+
+Purpose:
+
+Improve:
+
+Aim
+Movement
+Weapon skill
+477. GUN GAME
+
+Weapon progression mode.
+
+Players progress through:
+
+Weapon tiers.
+
+Victory:
+
+First player completes progression.
+
+478. EVENT GAME MODES
+
+Limited modes.
+
+Examples:
+
+Low Gravity Event
+
+Changes movement.
+
+Weapon Shuffle
+
+Random weapons.
+
+Creator Chaos
+
+Workshop weapons only.
+
+479. MATCH FLOW SYSTEM
+
+Every match follows:
+
+Lobby
+
+↓
+
+Team Setup
+
+↓
+
+Loadout Selection
+
+↓
+
+Match
+
+↓
+
+Results
+
+↓
+
+Rewards
+
+↓
+
+Progression
+480. PRE-MATCH PHASE
+
+Players receive:
+
+Map preview
+Team information
+Loadout preparation
+481. LOADOUT SYSTEM
+
+Players select:
+
+Weapon
+Armor
+Enhancements
+Pets
+482. LOADOUT RESTRICTIONS
+
+Ranked:
+
+Controlled customization.
+
+Casual:
+
+More freedom.
+
+483. SPAWN SYSTEM
+
+Spawns are server-controlled.
+
+Goals:
+
+Prevent:
+
+Spawn traps
+Unfair deaths
+484. SPAWN LOGIC
+
+Server considers:
+
+Enemy location
+Teammate location
+Recent deaths
+Objective locations
+485. SPAWN PROTECTION
+
+Short protection period after spawning.
+
+Example:
+
+0.5-1 second
+
+Purpose:
+
+Prevent instant deaths.
+
+486. MAP DESIGN OVERVIEW
+
+Maps are built around:
+
+Flow
+Counterplay
+Multiple routes
+487. MAP LAYOUT PRINCIPLES
+
+Every map should contain:
+
+Main Route
+
+Primary conflict.
+
+Side Routes
+
+Flanking opportunities.
+
+Power Positions
+
+Strong but contestable areas.
+
+488. MAP SIZE DESIGN
+
+Different sizes:
+
+Small Maps:
+
+Fast combat.
+
+Medium Maps:
+
+Competitive standard.
+
+Large Maps:
+
+Long-range gameplay.
+
+489. MAP VERTICALITY
+
+Vertical areas create:
+
+Positioning choices
+Tactical movement
+
+Must avoid:
+
+Unfair sniper dominance.
+
+490. COVER SYSTEM
+
+Maps require:
+
+Balanced cover.
+
+Too much cover:
+
+Slow gameplay.
+
+Too little:
+
+Creates unfair sightlines.
+
+491. COMPETITIVE MAP REQUIREMENTS
+
+Ranked maps require:
+
+Fair spawns
+Balanced routes
+Objective symmetry
+492. CASUAL MAP REQUIREMENTS
+
+Can include:
+
+More experimentation
+Unique mechanics
+493. MAP INTERACTION SYSTEM
+
+Recommended:
+
+Small interactive elements.
+
+Examples:
+
+Doors
+Moving objects
+Environmental paths
+
+Avoid:
+
+Random events affecting competitive outcomes.
+
+494. MAP TESTING PROCESS
+
+Maps go through:
+
+Prototype
+
+↓
+
+Internal Test
+
+↓
+
+Player Test
+
+↓
+
+Balance Update
+
+495. MAP ANALYTICS
+
+Track:
+
+Average fight distance
+Death locations
+Win rates
+Objective control
+496. PLAYER EXPERIENCE GOAL
+
+A player should feel:
+
+"I lost because of my decisions."
+
+Not:
+
+"The map decided."

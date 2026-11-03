@@ -1,0 +1,502 @@
+VOLUME X — WEAPON SYSTEM EXPANSION
+PART 1 — WEAPON FRAMEWORK, WEAPON MASTERY, INSPECTION SYSTEM, COSMETIC PROGRESSION, SKIN RARITIES, AND LONG-TERM WEAPON IDENTITY
+395. WEAPON SYSTEM OVERVIEW
+
+Weapons are the core identity of the FPS ecosystem.
+
+The weapon system focuses on:
+
+Mechanical skill
+Weapon preference
+Mastery progression
+Personal expression
+395.1 WEAPON DESIGN PHILOSOPHY
+
+Every weapon should have:
+
+A purpose.
+
+A weakness.
+
+A skill requirement.
+
+Weapons should not become:
+
+"Better versions of each other."
+
+396. WEAPON CLASS SYSTEM
+
+Classes:
+
+Assault Rifle
+
+SMG
+
+Shotgun
+
+Sniper
+
+Pistol
+
+LMG
+
+Marksman
+
+Knife
+397. WEAPON IDENTITY RULES
+
+Each class has:
+
+Strength
+
+What it does best.
+
+Weakness
+
+Where it struggles.
+
+Skill Expression
+
+How skilled players maximize it.
+
+398. ASSAULT RIFLE IDENTITY
+
+Role:
+
+General-purpose combat.
+
+Strength:
+
+Medium range
+Reliable damage
+
+Weakness:
+
+Not strongest close range
+Not strongest long range
+399. SMG IDENTITY
+
+Role:
+
+Aggressive close-range combat.
+
+Strength:
+
+Mobility
+Fire rate
+
+Weakness:
+
+Range
+Armor efficiency
+400. SHOTGUN IDENTITY
+
+Role:
+
+Close-range burst.
+
+Strength:
+
+High damage potential
+
+Weakness:
+
+Distance
+401. SNIPER IDENTITY
+
+Role:
+
+Precision elimination.
+
+Strength:
+
+Long range
+High headshot reward
+
+Weakness:
+
+Handling
+Miss punishment
+402. MARKSMAN IDENTITY
+
+Role:
+
+Precision mid-range.
+
+Strength:
+
+Accuracy
+Controlled damage
+
+Weakness:
+
+Lower close-range performance
+403. LMG IDENTITY
+
+Role:
+
+Sustained pressure.
+
+Strength:
+
+Large magazine
+
+Weakness:
+
+Mobility
+404. PISTOL IDENTITY
+
+Role:
+
+Secondary weapon.
+
+Strength:
+
+Emergency combat
+
+Weakness:
+
+Limited capacity
+405. KNIFE IDENTITY
+
+Role:
+
+High-risk melee.
+
+Strength:
+
+Speed
+Stealth
+
+Weakness:
+
+Requires close distance
+406. WEAPON PROGRESSION SYSTEM
+
+Weapons have:
+
+Level 1-50
+
+Weapon XP gained from:
+
+Eliminations
+Damage
+Headshots
+Match usage
+407. WEAPON XP VALUES
+
+Example:
+
+Elimination:
+
+High XP
+
+Assist:
+
+Medium XP
+
+Damage:
+
+Small XP
+
+Objective usage:
+
+Bonus XP
+
+408. WEAPON LEVEL REWARDS
+
+Weapon levels unlock:
+
+Cosmetic Rewards
+Skins
+Charms
+Effects
+Mastery Progress
+Challenges
+Badges
+Identity Rewards
+Titles
+Banners
+409. WEAPON MASTERY SYSTEM
+
+Each weapon has mastery challenges.
+
+Purpose:
+
+Reward dedication.
+
+410. MASTERY TIERS
+
+Example:
+
+Bronze Mastery
+
+Silver Mastery
+
+Gold Mastery
+
+Platinum Mastery
+
+Awakened Mastery
+411. MASTERY CHALLENGE TYPES
+Elimination Challenges
+
+Example:
+
+Get:
+
+500 eliminations.
+
+Precision Challenges
+
+Example:
+
+Get:
+
+100 headshots.
+
+Skill Challenges
+
+Example:
+
+Win fights while low health.
+
+412. CLASS MASTERY
+
+Players can master weapon categories.
+
+Example:
+
+Master:
+
+All assault rifles.
+
+Reward:
+
+Class title.
+
+413. MASTER WEAPON REWARDS
+
+Rewards:
+
+Animated skins
+Unique inspection animation
+Profile badge
+414. WEAPON INSPECTION SYSTEM
+
+Players can inspect weapons.
+
+Purpose:
+
+Show:
+
+Cosmetics
+Mastery
+Personalization
+415. INSPECTION FEATURES
+
+Includes:
+
+Weapon Rotation
+
+Player views weapon model.
+
+Animation
+
+Weapon-specific inspect motion.
+
+Cosmetic Display
+
+Shows:
+
+Skins
+Attachments
+Effects
+416. MASTER INSPECTION FEATURES
+
+High mastery weapons receive:
+
+Special animations.
+
+Examples:
+
+Energy effects
+Unique reload showcase
+Custom sounds
+417. WEAPON SKIN SYSTEM
+
+Skins are cosmetic.
+
+They change:
+
+Appearance
+Effects
+
+Not:
+
+Stats.
+
+418. SYSTEM WEAPON SKIN RARITIES
+
+Rarity progression:
+
+Common
+
+Uncommon
+
+Rare
+
+Epic
+
+Legendary
+
+Mythic
+
+Awakened
+419. COMMON SKINS
+
+Features:
+
+Color changes
+Simple patterns
+420. UNCOMMON SKINS
+
+Features:
+
+Improved materials
+More detailed designs
+421. RARE SKINS
+
+Features:
+
+Animated elements
+Unique colors
+422. EPIC SKINS
+
+Features:
+
+Custom effects
+Weapon themes
+423. LEGENDARY SKINS
+
+Features:
+
+Full redesign
+Special inspect effects
+424. MYTHIC SKINS
+
+Features:
+
+Animated materials
+Kill effects
+Unique presentation
+425. AWAKENED SKINS
+
+Highest cosmetic tier.
+
+Features:
+
+Reactive design
+Evolves during gameplay
+Special animations
+426. REACTIVE SKIN SYSTEM
+
+Awakened skins may change based on:
+
+Eliminations
+Match progress
+Streaks
+
+Example:
+
+Weapon becomes brighter after eliminations.
+
+427. KILL EFFECT SYSTEM
+
+Weapon cosmetics may unlock:
+
+Elimination effects
+Sound effects
+Visual effects
+
+Examples:
+
+Energy burst
+Digital dissolve
+Element effects
+428. KILL EFFECT LIMITS
+
+Effects must:
+
+Not obscure:
+
+Vision
+Gameplay information
+429. WEAPON CHARM SYSTEM
+
+Players equip:
+
+One charm.
+
+Charm categories:
+
+Achievements
+Events
+Collections
+430. WEAPON TITLE SYSTEM
+
+Mastery unlocks titles.
+
+Examples:
+
+"AR Specialist"
+
+"Precision Master"
+
+"Legendary Marksman"
+
+431. WEAPON COLLECTION SYSTEM
+
+Tracks:
+
+Owned weapons
+Skins
+Mastery
+
+Rewards:
+
+Badges
+Profile cosmetics
+432. WEAPON BALANCE PRINCIPLE
+
+Weapon updates prioritize:
+
+Class identity
+TTK consistency
+Skill expression
+433. WEAPON BALANCE LIMITS
+
+Changes cannot exceed:
+
+±25% TTK variance
+434. WEAPON CONTENT PIPELINE
+
+New weapons follow:
+
+Concept
+
+↓
+
+Prototype
+
+↓
+
+Testing
+
+↓
+
+Balance
+
+↓
+
+Release

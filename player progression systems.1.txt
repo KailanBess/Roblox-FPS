@@ -1,0 +1,536 @@
+VOLUME VI — PLAYER PROGRESSION SYSTEMS
+PART 1 — PLAYER LEVELING, EXPERIENCE, REWARDS, CURRENCY GENERATION, CHALLENGES, ACHIEVEMENTS, AND LONG-TERM PROGRESSION
+174. PLAYER PROGRESSION OVERVIEW
+
+Player progression represents overall account growth.
+
+It rewards:
+
+Time invested
+Skill improvement
+Participation
+Exploration of systems
+
+Player progression does not increase combat power.
+
+174.1 PROGRESSION PHILOSOPHY
+
+Progression should answer:
+
+"What have I accomplished?"
+
+Not:
+
+"How much stronger am I than new players?"
+
+175. PLAYER LEVEL SYSTEM
+
+Every account has:
+
+Player Level:
+
+1-200
+
+Player XP is earned from:
+
+Matches
+Objectives
+Eliminations
+Challenges
+Events
+Achievements
+176. PLAYER XP SOURCES
+Match Completion XP
+
+Reward:
+
+Playing matches.
+
+Purpose:
+
+Rewards participation.
+
+Combat XP
+
+Earned from:
+
+Eliminations
+Assists
+Damage dealt
+Objective XP
+
+Earned from:
+
+Captures
+Defending
+Team actions
+Support XP
+
+Earned from:
+
+Assists
+Revives (if enabled)
+Team actions
+177. PLAYER LEVEL REWARDS
+
+Every level grants rewards.
+
+Possible rewards:
+
+Coins
+Gems
+Keys
+Scrap
+Cosmetics
+Crates
+Example:
+
+Level 5:
+
+Reward:
+
+1000 Coins
+
+Level 10:
+
+Reward:
+
+Weapon Skin Key
+
+Level 25:
+
+Reward:
+
+Rare Cosmetic
+
+Level 50:
+
+Reward:
+
+Exclusive Title
+178. PLAYER LEVEL MILESTONES
+
+Major levels provide prestige rewards.
+
+Level 50
+
+Unlock:
+
+Profile badge.
+
+Level 100
+
+Unlock:
+
+Prestige option.
+
+Level 150
+
+Unlock:
+
+Special cosmetic.
+
+Level 200
+
+Unlock:
+
+Master player badge.
+
+179. PRESTIGE SYSTEM
+
+After reaching maximum level:
+
+Players may prestige.
+
+Prestige resets:
+
+Visible level
+
+Does not reset:
+
+Weapons
+Cosmetics
+Achievements
+
+Rewards:
+
+Prestige badge
+Profile effects
+Exclusive cosmetics
+180. WEAPON LEVEL SYSTEM EXPANSION
+
+Weapons:
+
+Level 1-50
+
+Weapon XP gained from:
+
+Kills
+Damage
+Headshots
+Match use
+181. WEAPON LEVEL REWARDS
+
+Weapon levels unlock:
+
+Cosmetic Rewards
+Skins
+Charms
+Badges
+Identity Rewards
+Titles
+Weapon banners
+Mastery Progress
+
+Unlocks:
+
+Advanced challenges
+182. CURRENCY SYSTEM OVERVIEW
+
+The game uses four primary resources.
+
+Coins
+
+Main gameplay currency.
+
+Gems
+
+Premium currency.
+
+Ranked Points
+
+Competitive currency.
+
+Scrap
+
+Crafting resource.
+
+183. COIN SYSTEM
+
+Coins are the primary earnable currency.
+
+Used for:
+
+Weapons
+Reforging
+Crafting
+Standard purchases
+183.1 COIN SOURCES
+
+Coins are earned from:
+
+All Game Modes
+
+Including:
+
+Casual
+Ranked
+Events
+Events
+
+Examples:
+
+Seasonal events
+Community events
+Challenges
+
+Examples:
+
+Daily
+Weekly
+Monthly
+Player Level Rewards
+
+Level-up milestones.
+
+Login Rewards
+
+Daily:
+
+Small amounts.
+
+Weekly:
+
+Medium rewards.
+
+Monthly:
+
+Large rewards.
+
+184. GEM SYSTEM
+
+Gems are premium-focused.
+
+Important Rule:
+
+Gems are NOT earned directly from normal game modes.
+
+Gem Sources:
+Challenges
+
+Special challenges.
+
+Login Rewards
+
+Rare login milestones.
+
+Workshop Achievements
+
+Creator accomplishments.
+
+Player Level Rewards
+
+Major milestones.
+
+Purchases
+
+Premium acquisition.
+
+185. RANKED POINT SYSTEM
+
+Ranked Points are competitive-only.
+
+Source:
+
+Only:
+
+Ranked Gameplay
+
+Earned from:
+
+Ranked wins
+Ranked performance
+Seasonal rewards
+
+Used for:
+
+Ranked shop
+Competitive cosmetics
+186. SCRAP SYSTEM
+
+Scrap is crafting currency.
+
+Earned from:
+
+Duplicate items
+Salvaging
+Events
+Achievements
+
+Used for:
+
+Crafting
+Reforging
+Enhancement systems
+187. DAILY CHALLENGE SYSTEM
+
+Daily challenges encourage returning.
+
+Examples:
+
+Combat Challenge
+
+Get:
+
+25 eliminations
+
+Reward:
+
+Coins + XP
+
+Weapon Challenge
+
+Deal:
+
+5000 damage with AR
+
+Reward:
+
+Weapon XP
+
+Objective Challenge
+
+Capture:
+
+10 objectives
+
+Reward:
+
+Coins
+
+188. WEEKLY CHALLENGES
+
+Longer goals.
+
+Examples:
+
+Win:
+
+20 matches
+
+Get:
+
+250 eliminations
+
+Complete:
+
+5 daily challenges
+
+Rewards:
+
+Gems
+Keys
+Crates
+Cosmetics
+189. MONTHLY CHALLENGES
+
+Large achievement-style goals.
+
+Examples:
+
+Reach:
+
+500 eliminations
+
+Complete:
+
+100 matches
+
+Master:
+
+One weapon
+
+Rewards:
+
+Exclusive cosmetics
+Large currency rewards
+190. LOGIN REWARD SYSTEM
+
+Designed for consistent engagement.
+
+Daily Login
+
+Rewards:
+
+Coins
+XP
+Scrap
+Weekly Login
+
+Rewards:
+
+Keys
+Gems
+Crates
+Monthly Login
+
+Rewards:
+
+Exclusive cosmetic
+Premium rewards
+191. ACHIEVEMENT SYSTEM
+
+Achievements provide permanent goals.
+
+Categories:
+
+Combat Achievements
+
+Examples:
+
+1000 eliminations
+
+Reward:
+
+Title
+
+Weapon Achievements
+
+Examples:
+
+Master a weapon
+
+Reward:
+
+Weapon badge
+
+Ranked Achievements
+
+Examples:
+
+Reach Diamond
+
+Reward:
+
+Profile effect
+
+Collection Achievements
+
+Examples:
+
+Collect 50 skins
+
+Reward:
+
+Rare title
+
+Creator Achievements
+
+Examples:
+
+Publish approved weapon
+
+Reward:
+
+Creator badge
+
+192. ACHIEVEMENT REWARD PHILOSOPHY
+
+Rewards should provide:
+
+Recognition
+Cosmetics
+Identity
+
+Not:
+
+Combat power
+193. PROGRESSION LOOP
+
+Complete player loop:
+
+Play
+
+↓
+
+Earn XP
+
+↓
+
+Level Up
+
+↓
+
+Receive Rewards
+
+↓
+
+Customize
+
+↓
+
+Improve Skill
+
+↓
+
+Continue Progression
+194. LONG-TERM PROGRESSION GOALS
+
+Players pursue:
+
+Maximum level
+Weapon mastery
+Ranked success
+Achievement completion
+Collections
+Creator reputation

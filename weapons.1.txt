@@ -1,0 +1,449 @@
+VOLUME III — WEAPONS
+PART 1 — WEAPON ECOSYSTEM, SYSTEM WEAPONS, ECONOMY, PROGRESSION, AND MASTERY FOUNDATION
+75. WEAPON ECOSYSTEM OVERVIEW
+
+Weapons are the core gameplay identity of the FPS ecosystem.
+
+The weapon system is designed around:
+
+Accessibility
+Mastery
+Personal preference
+Competitive balance
+Long-term progression
+
+Players should develop relationships with weapons.
+
+A weapon should not only be:
+
+"Something you equip."
+
+It should become:
+
+"Something you master."
+
+75.1 Weapon Categories
+
+The ecosystem contains:
+
+System Weapons
+
+Developer-created weapons.
+
+Purpose:
+
+Stable competitive foundation
+Consistent balance
+Ranked reliability
+Workshop Weapons
+
+Player-created weapons.
+
+Purpose:
+
+Creativity
+Community contribution
+Endless content expansion
+76. SYSTEM WEAPON PHILOSOPHY
+
+System weapons provide the baseline experience.
+
+They must:
+
+Be balanced
+Be readable
+Have clear roles
+Remain competitive forever
+
+System weapons should represent:
+
+Beginner accessibility
+Competitive options
+Mastery potential
+77. WEAPON ACQUISITION SYSTEM
+
+All weapons begin as:
+
+Level: 1
+
+Rarity: Common
+
+Enhancements: None
+
+Weapons are unlocked through:
+
+Coins
+Player progression
+Challenges
+Events
+78. WEAPON ECONOMY
+
+System weapons have permanent unlock costs.
+
+Range:
+
+5000 - 7500 Coins
+
+Example:
+
+M4A1
+
+Cost:
+
+5000 Coins
+AWM / High-End Sniper
+
+Cost:
+
+7500 Coins
+78.1 Economy Philosophy
+
+The first weapons should be achievable quickly.
+
+The goal:
+
+Reward progression.
+
+Not:
+
+Create barriers.
+
+79. SYSTEM WEAPON ROSTER
+ASSAULT RIFLES
+M4A1
+Role
+
+Balanced all-round rifle.
+
+Intended Player
+
+Players who value:
+
+Reliability
+Control
+Consistency
+Statistics
+Damage: 34
+
+RPM: 600
+
+Magazine: 30
+
+Range: 42
+
+Accuracy: 82
+
+Reload: 45
+
+Movement: 215
+
+Armor Pen: 65
+Strengths
+Easy control
+Reliable damage
+Strong general performance
+Weaknesses
+Not the strongest specialist weapon
+HK416
+Role
+
+Precision assault rifle.
+
+Statistics
+Damage: 33
+
+RPM: 650
+
+Magazine: 30
+
+Range: 41
+
+Accuracy: 85
+
+Reload: 48
+
+Movement: 218
+
+Armor Pen: 62
+Strengths
+High accuracy
+Fast handling
+Strong tracking weapon
+Weaknesses
+Slightly lower damage
+AK-103
+Role
+
+High-impact assault rifle.
+
+Statistics
+Damage: 38
+
+RPM: 540
+
+Magazine: 30
+
+Range: 44
+
+Accuracy: 76
+
+Reload: 42
+
+Movement: 210
+
+Armor Pen: 72
+Strengths
+High damage
+Strong armor performance
+Weaknesses
+Lower fire rate
+Lower accuracy
+SCAR-L
+Role
+
+Longer-range assault rifle.
+
+Statistics
+Damage: 36
+
+RPM: 570
+
+Magazine: 30
+
+Range: 48
+
+Accuracy: 80
+
+Reload: 43
+
+Movement: 212
+
+Armor Pen: 70
+Strengths
+Range
+Stability
+Weaknesses
+Lower close-range output
+FAMAS
+Role
+
+Aggressive high-fire-rate rifle.
+
+Statistics
+Damage: 31
+
+RPM: 720
+
+Magazine: 25
+
+Range: 39
+
+Accuracy: 78
+
+Reload: 46
+
+Movement: 220
+
+Armor Pen: 58
+Strengths
+High DPS
+Fast movement
+Weaknesses
+Lower magazine
+Lower armor performance
+80. FUTURE WEAPON EXPANSION RULES
+
+Every new weapon must have:
+
+Unique Identity
+
+Example:
+
+Not:
+
+"Better M4A1."
+
+Instead:
+
+"Faster but harder to control."
+
+81. WEAPON LEVEL SYSTEM
+
+Every weapon has:
+
+Weapon Level:
+
+1-50
+
+Weapon XP is earned through:
+
+Eliminations
+Damage dealt
+Assists
+Objective actions
+Match completion
+81.1 Weapon XP Rewards
+
+Higher levels unlock:
+
+Cosmetics:
+
+Skins
+Charms
+Badges
+Kill effects
+
+Customization:
+
+Inspect animations
+Weapon banners
+Profile rewards
+
+No rewards provide:
+
+Damage
+Fire rate
+Accuracy advantages
+82. WEAPON MASTERY SYSTEM
+
+Weapon mastery represents dedication.
+
+A player who masters a weapon receives permanent recognition.
+
+82.1 Mastery Levels
+
+Example:
+
+Level 1
+
+Novice
+
+Level 10
+
+Trained
+
+Level 25
+
+Expert
+
+Level 50
+
+Master
+82.2 Mastery Rewards
+
+Rewards include:
+
+Cosmetics
+Mastery skins
+Animated skins
+Weapon charms
+Weapon titles
+Identity
+Mastery badge
+Profile display
+Kill card
+Effects
+Kill effects
+Inspect animations
+83. WEAPON MASTERY CHALLENGES
+
+Each weapon has unique challenges.
+
+Combat Challenges
+
+Examples:
+
+Get 100 kills
+
+Get 500 kills
+
+Get 5000 damage
+
+Get 100 headshots
+Precision Challenges
+
+Examples:
+
+100 headshots
+
+50 longshots
+
+100 first-shot eliminations
+Skill Challenges
+
+Examples:
+
+Get double kills
+
+Win matches using weapon
+
+Get kill streaks
+Objective Challenges
+
+Examples:
+
+Capture objectives
+
+Defend objectives
+
+Earn assists
+Mastery Completion Reward
+
+Completing all challenges:
+
+Unlocks:
+
+Ultimate Mastery Skin
+
+Features:
+
+Unique appearance
+Animation
+Kill effect
+Weapon badge
+84. WEAPON TRACKING SYSTEM
+
+Weapons track:
+
+Total kills
+Headshots
+Damage
+Matches
+Time used
+Accuracy
+
+Players can display:
+
+Kill counters
+Mastery level
+Favorite weapon
+85. WEAPON INSPECTION SYSTEM
+
+Every weapon supports inspection.
+
+Standard Inspect
+
+Available to all weapons.
+
+Shows:
+
+Weapon model
+Skin details
+Animations
+Rare Skin Inspection
+
+Higher rarity skins unlock:
+
+Unique animations
+Special effects
+Custom sounds
+Awakened Skin Inspection
+
+Highest tier.
+
+Features:
+
+Multi-stage animation
+Reactive visuals
+Unique audio
+Special effects

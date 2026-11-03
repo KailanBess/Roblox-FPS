@@ -1,0 +1,467 @@
+VOLUME IV — ARMOR & EQUIPMENT SYSTEMS
+PART 1 — ARMOR FOUNDATION, ARMOR PIECES, DAMAGE MITIGATION, AFFIX SYSTEM, BALANCE RULES, AND EQUIPMENT IDENTITY
+122. ARMOR SYSTEM OVERVIEW
+
+Armor is a defensive customization system designed to provide:
+
+Build identity
+Strategic choices
+Long-term progression
+Cosmetic expression
+
+Armor does not replace player skill.
+
+Armor does not create large power gaps.
+
+Armor provides controlled defensive customization through:
+
+Damage reduction
+Affixes
+Set bonuses
+Cosmetic customization
+122.1 ARMOR DESIGN PHILOSOPHY
+
+Armor follows three principles:
+
+1. Defense Through Choice
+
+Players customize how they approach combat.
+
+Examples:
+
+A player may choose:
+
+More mobility
+Better reload
+Better weapon specialization
+2. Controlled Advantage
+
+Armor bonuses must remain small.
+
+Armor cannot:
+
+Create unbeatable builds
+Break TTK
+Replace gun skill
+3. Build Identity
+
+Armor should allow:
+
+"How do I want to play?"
+
+not:
+
+"How do I become stronger than everyone?"
+
+123. ARMOR BASE SYSTEM
+
+Armor consists of six equipment slots.
+
+Helmet
+
+Chest
+
+Back
+
+Leggings
+
+Gloves
+
+Shoes
+
+Each piece provides:
+
+Armor Value
+
+Determines damage reduction.
+
+Weapon Bonus
+
+Affects a weapon category.
+
+Universal Bonus
+
+Affects general gameplay.
+
+Cosmetic Appearance
+
+Allows customization.
+
+124. ARMOR VALUES
+
+Maximum:
+
+MAX_ARMOR = 150
+
+Armor does not add health.
+
+Player remains:
+
+200 HP
+125. ARMOR DAMAGE REDUCTION
+
+Maximum reduction:
+
+30%
+
+Formula:
+
+Armor Reduction =
+
+(Armor / 150)
+
+×
+
+30%
+
+Examples:
+
+150 Armor:
+
+30% Reduction
+
+75 Armor:
+
+15% Reduction
+
+0 Armor:
+
+0% Reduction
+126. ARMOR RARITY SYSTEM
+
+Armor rarity affects:
+
+Visual quality
+Affix quality
+Cosmetic options
+
+It does not create unfair combat advantages.
+
+Rarities:
+
+Common
+
+Uncommon
+
+Rare
+
+Epic
+
+Legendary
+
+Mythic
+COMMON ARMOR
+
+Contains:
+
+Basic visuals
+Standard affixes
+UNCOMMON ARMOR
+
+Adds:
+
+Better visuals
+Improved cosmetic options
+RARE ARMOR
+
+Adds:
+
+Higher customization potential
+EPIC ARMOR
+
+Adds:
+
+Special effects
+Better appearance
+LEGENDARY ARMOR
+
+Adds:
+
+Unique visual themes
+Special animations
+MYTHIC ARMOR
+
+Prestige tier.
+
+Includes:
+
+Full cosmetic identity
+Special effects
+127. ARMOR AFFIX SYSTEM
+
+Armor pieces contain:
+
+1 Weapon Bonus
+
++
+
+1 Universal Bonus
+
+Affixes provide small improvements.
+
+They are not direct power upgrades.
+
+128. WEAPON BONUS POOL
+
+Weapon categories:
+
+AR
+
+SMG
+
+Shotgun
+
+Sniper
+
+Pistol
+
+LMG
+
+Marksman
+
+Knife
+
+Possible bonuses:
+
+Damage
+Fire Rate
+Accuracy
+Range
+Movement
+Reload
+Magazine
+Armor Penetration
+129. WEAPON BONUS VALUES
+
+Each weapon-specific bonus:
+
+Damage
+
++0.5%
+Fire Rate
+
++1%
+Accuracy
+
++2
+Range
+
++2
+Movement
+
++2
+Reload
+
++2%
+Magazine
+
++1
+Armor Pen
+
++2
+130. UNIVERSAL BONUS POOL
+
+Universal bonuses:
+
+Damage
+
++0.25%
+Fire Rate
+
++0.5%
+Accuracy
+
++1
+Range
+
++1
+Movement
+
++1
+Reload
+
++1%
+Magazine
+
++1
+Armor Pen
+
++1
+131. ARMOR DUPLICATE RULES
+
+To prevent stacking abuse:
+
+Maximum:
+
+2 copies of same stat
+
+Allowed:
+
+Helmet:
+
+AR Damage
+
+Leggings:
+
+AR Damage
+
+Not allowed:
+
+Helmet:
+
+AR Damage
+
+Leggings:
+
+AR Damage
+
+Gloves:
+
+AR Damage
+
+132. ARMOR AFFIX BALANCE RECOMMENDATIONS
+
+Additional balance rules:
+
+Damage Affixes
+
+Should be low impact.
+
+Reason:
+
+Damage directly affects TTK.
+
+Fire Rate Affixes
+
+Require careful control.
+
+Reason:
+
+Fire rate affects DPS.
+
+Accuracy Affixes
+
+Can be slightly stronger.
+
+Reason:
+
+Improves consistency, not raw power.
+
+Movement Affixes
+
+Limited.
+
+Reason:
+
+Movement affects every fight.
+
+Armor Pen Affixes
+
+Limited heavily.
+
+Reason:
+
+Counters the defensive system.
+
+133. ARMOR BUILD EXAMPLES
+Assault Rifle Specialist
+
+Helmet:
+
+AR Damage
+
+Chest:
+
+AR Accuracy
+
+Gloves:
+
+Reload
+
+Playstyle:
+
+Balanced rifle player.
+
+Aggressive SMG Build
+
+Helmet:
+
+SMG Fire Rate
+
+Shoes:
+
+Movement
+
+Gloves:
+
+Reload
+
+Playstyle:
+
+Fast entry player.
+
+Sniper Build
+
+Helmet:
+
+Sniper Accuracy
+
+Chest:
+
+Range
+
+Back:
+
+Movement
+
+Playstyle:
+
+Positioning-focused.
+
+134. ARMOR COSMETICS
+
+Armor appearance is separate from stats.
+
+Players customize:
+
+Colors
+Materials
+Effects
+Themes
+
+Cosmetic armor examples:
+
+Cyber
+Military
+Fantasy
+Futuristic
+Seasonal
+135. ARMOR LOADOUT SYSTEM
+
+Players save:
+
+Armor Loadout Slots
+
+Example:
+
+Loadout 1:
+
+AR Build
+
+Loadout 2:
+
+Sniper Build
+
+Loadout 3:
+
+Movement Build
+
+136. EQUIPMENT IDENTITY
+
+Armor should communicate:
+
+"How does this player approach combat?"
+
+Not:
+
+"This player paid more."

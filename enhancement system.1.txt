@@ -1,0 +1,437 @@
+VOLUME V — ENHANCEMENT SYSTEMS
+PART 1 — ENHANCEMENT FOUNDATION, SLOT SYSTEM, OFFENSIVE ENHANCEMENTS, UTILITY ENHANCEMENTS, BALANCE RULES, AND COMPETITIVE LIMITATIONS
+157. ENHANCEMENT SYSTEM OVERVIEW
+
+Enhancements are controlled weapon modifiers designed to increase player choice without creating overwhelming power differences.
+
+Enhancements allow players to specialize weapons toward different playstyles.
+
+Examples:
+
+A player may customize an assault rifle into:
+
+Faster handling
+More consistent accuracy
+Better magazine efficiency
+
+However:
+
+Enhancements cannot transform a weapon into a completely different class.
+
+157.1 ENHANCEMENT PHILOSOPHY
+
+Enhancements follow:
+
+Choice Over Power
+
+The purpose is:
+
+"How do I want to use this weapon?"
+
+Not:
+
+"How do I make this weapon objectively stronger?"
+
+158. ENHANCEMENT SLOT SYSTEM
+
+Each weapon supports:
+
+Maximum Enhancements:
+
+2
+
+Available slots:
+
+Offensive Slot
+
+Utility Slot
+159. OFFENSIVE ENHANCEMENT SLOT
+
+Offensive enhancements modify combat characteristics.
+
+They affect:
+
+Damage
+Fire rate
+Accuracy
+Range
+Magazine
+Armor effectiveness
+160. UTILITY ENHANCEMENT SLOT
+
+Utility enhancements modify:
+
+Handling
+Mobility
+Recovery
+Usability
+161. ENHANCEMENT ACQUISITION
+
+Enhancements are obtained through:
+
+Enhancement crates
+Events
+Crafting
+Challenges
+Progression rewards
+162. ENHANCEMENT RARITY SYSTEM
+
+Enhancements use:
+
+Common
+
+Rare
+
+Epic
+
+Legendary
+
+Rarity changes:
+
+Visual quality
+Cosmetic presentation
+Availability
+
+Not:
+
+Massive power differences.
+
+163. OFFENSIVE ENHANCEMENTS
+163.1 HIGH-CALIBER ROUNDS
+
+Effect:
+
++5% Damage
+
+-5% Fire Rate
+
+Purpose:
+
+High impact builds.
+
+Tradeoff:
+
+Lower sustained DPS.
+
+163.2 RAPID CYCLING
+
+Effect:
+
++8% Fire Rate
+
+-4% Accuracy
+
+Purpose:
+
+Aggressive DPS builds.
+
+Tradeoff:
+
+Reduced consistency.
+
+163.3 PRECISION BARREL
+
+Effect:
+
++8 Accuracy
+
+-3% Movement
+
+Purpose:
+
+Long-range consistency.
+
+Tradeoff:
+
+Lower mobility.
+
+163.4 ARMOR PIERCER
+
+Effect:
+
++10 Armor Penetration
+
+-3% Reload
+
+Purpose:
+
+Counter armored opponents.
+
+Tradeoff:
+
+Lower combat flow.
+
+163.5 EXTENDED MAGAZINE
+
+Effect:
+
++20% Magazine
+
+-5% Reload
+
+Purpose:
+
+Sustained fights.
+
+Tradeoff:
+
+Longer reload windows.
+
+163.6 HOLLOW POINT
+
+Effect:
+
++10% Headshot Damage
+
+-5 Armor Penetration
+
+Purpose:
+
+Precision players.
+
+Tradeoff:
+
+Reduced armor effectiveness.
+
+164. UTILITY ENHANCEMENTS
+164.1 LIGHTWEIGHT FRAME
+
+Effect:
+
++5% Movement
+
+-3% Accuracy
+
+Purpose:
+
+Aggressive mobility.
+
+164.2 QUICK RELOAD
+
+Effect:
+
++10% Reload
+
+-5% Magazine
+
+Purpose:
+
+Fast combat reset.
+
+164.3 STABILIZER
+
+Effect:
+
+-10% Bloom Growth
+
+Purpose:
+
+Longer accurate firing.
+
+164.4 ENHANCED OPTICS
+
+Effect:
+
++ADS Stability
+
+Purpose:
+
+Scoped weapon control.
+
+164.5 TACTICAL GRIP
+
+Effect:
+
++Swap Speed
+
++Equip Speed
+
+Purpose:
+
+Faster weapon transitions.
+
+164.6 REINFORCED COMPONENTS
+
+Effect:
+
++Reload
+
++Recovery
+
+Purpose:
+
+General reliability.
+
+165. ENHANCEMENT BUILD EXAMPLES
+Aggressive SMG Build
+
+Enhancement:
+
+Rapid Cycling
+
+Lightweight Frame
+
+Playstyle:
+
+Fast entry player.
+
+Long Range AR Build
+
+Enhancement:
+
+Precision Barrel
+
+Stabilizer
+
+Playstyle:
+
+Accuracy-focused.
+
+Anti-Armor Rifle Build
+
+Enhancement:
+
+Armor Piercer
+
+Extended Magazine
+
+Playstyle:
+
+Sustained fights.
+
+166. ENHANCEMENT BALANCE RULES
+
+Enhancements must follow:
+
+Rule 1
+
+No enhancement may reduce TTK beyond balance limits.
+
+Rule 2
+
+Every advantage requires a weakness.
+
+Rule 3
+
+Enhancements cannot change weapon class identity.
+
+Example:
+
+A shotgun cannot become a sniper.
+
+Rule 4
+
+Stacking identical advantages is limited.
+
+167. ENHANCEMENT STACKING RULES
+
+Weapons cannot equip:
+
+Multiple offensive enhancements.
+
+Example:
+
+Not allowed:
+
+Damage enhancement
+
+Damage enhancement
+
+Reason:
+
+Prevents extreme builds.
+
+168. RANKED ENHANCEMENT RULES
+
+Ranked supports enhancements.
+
+However:
+
+All builds are monitored.
+
+Possible restrictions:
+
+Maximum stat increase limits
+Normalized values
+Competitive testing
+169. ENHANCEMENT NORMALIZATION
+
+Ranked checks:
+
+Damage
+
+Fire Rate
+
+Accuracy
+
+Range
+
+Mobility
+
+Goal:
+
+Allow creativity.
+
+Prevent abuse.
+
+170. ENHANCEMENT CRATE SYSTEM
+
+Enhancement crates contain:
+
+Enhancement items
+Enhancement scrap
+Crafting materials
+Example Drop Rates
+Common
+
+60%
+
+Rare
+
+25%
+
+Epic
+
+12%
+
+Legendary
+
+3%
+171. ENHANCEMENT DUPLICATES
+
+Duplicates convert into:
+
+Enhancement scrap
+
+Used for:
+
+Crafting
+Rerolling
+Upgrading visuals
+172. ENHANCEMENT CRAFTING
+
+Players can combine:
+
+Scrap
+
+Materials
+
+=
+
+Random enhancement
+
+Higher rarity requires:
+
+More resources.
+
+173. ENHANCEMENT LONG-TERM GOAL
+
+The enhancement system creates:
+
+Build experimentation
+Weapon identity
+Progression goals
+
+Without creating:
+
+Power creep.

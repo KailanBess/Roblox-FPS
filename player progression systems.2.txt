@@ -1,0 +1,438 @@
+VOLUME VI — PLAYER PROGRESSION SYSTEMS
+PART 2 — SEASONAL SYSTEMS, BATTLE PASS, DYNAMIC EVENTS, MATCH MVP, ECONOMY SINKS, AND LIVE-SERVICE REWARDS
+195. SEASONAL SYSTEM OVERVIEW
+
+Seasons provide structured content cycles.
+
+A season introduces:
+
+New progression path
+New cosmetics
+New challenges
+New events
+Competitive resets
+195.1 SEASON LENGTH
+
+Recommended:
+
+8-12 Weeks
+
+Purpose:
+
+Long enough for completion.
+
+Short enough for freshness.
+
+196. SEASON THEMES
+
+Each season has a theme.
+
+Examples:
+
+Cyber Warfare
+
+Content:
+
+Futuristic skins
+Digital effects
+Neon armor
+Tactical Operations
+
+Content:
+
+Military cosmetics
+Realistic weapon skins
+Creator Season
+
+Content:
+
+Workshop competitions
+Community designs
+197. SEASONAL CONTENT STRUCTURE
+
+Each season contains:
+
+Battle Pass
+Ranked Season
+Events
+Challenges
+Cosmetics
+198. BATTLE PASS SYSTEM
+
+The Battle Pass provides seasonal progression.
+
+Battle Pass Tracks
+
+Two tracks:
+
+Free Track
+
+Available to everyone.
+
+Contains:
+
+Coins
+Scrap
+Keys
+Basic cosmetics
+Premium Track
+
+Purchased with Gems.
+
+Contains:
+
+Exclusive skins
+Armor cosmetics
+Effects
+Titles
+199. BATTLE PASS LEVEL SYSTEM
+
+Battle Pass:
+
+Level 1-100
+
+XP earned from:
+
+Matches
+Challenges
+Events
+Objectives
+200. BATTLE PASS REWARD STRUCTURE
+
+Example:
+
+Level 5:
+
+Coins
+
+Level 10:
+
+Weapon charm
+
+Level 25:
+
+Rare skin
+
+Level 50:
+
+Legendary cosmetic
+
+Level 75:
+
+Armor effect
+
+Level 100:
+
+Season exclusive awakened cosmetic
+
+201. BATTLE PASS FAIRNESS RULES
+
+The Battle Pass does not contain:
+
+Damage boosts
+Weapon advantages
+Ranked advantages
+
+Premium rewards are:
+
+Cosmetic
+Identity-based
+202. BATTLE PASS BONUS RECOMMENDATION
+
+Add:
+
+Completion Prestige Reward
+
+Players who complete the pass receive:
+
+Exclusive badge
+Profile animation
+Seasonal title
+
+Purpose:
+
+Reward completion.
+
+203. DYNAMIC EVENT SYSTEM
+
+Dynamic events keep the game active.
+
+Events can be:
+
+Global
+Community
+Competitive
+Creator-focused
+204. EVENT TYPES
+Weekend Events
+
+Short-term bonuses.
+
+Examples:
+
+Double XP weekend
+
+Community Events
+
+Server-wide goals.
+
+Example:
+
+Community reaches:
+
+10 million eliminations
+
+Reward:
+
+Everyone receives cosmetic.
+
+Competitive Events
+
+Ranked-focused.
+
+Example:
+
+Tournament week.
+
+Creator Events
+
+Workshop-focused.
+
+Example:
+
+Weapon design contest.
+
+205. EVENT REWARD SYSTEM
+
+Events reward:
+
+Coins
+Gems
+Keys
+Scrap
+Cosmetics
+Titles
+
+Events should create:
+
+"Something is happening."
+
+206. EVENT CHALLENGE EXAMPLES
+Assault Event
+
+Requirement:
+
+Get AR eliminations.
+
+Reward:
+
+AR skin.
+
+Survival Event
+
+Requirement:
+
+Win matches.
+
+Reward:
+
+Badge.
+
+Creator Event
+
+Requirement:
+
+Rate workshop weapons.
+
+Reward:
+
+Keys.
+
+207. MATCH MVP SYSTEM
+
+Every match recognizes standout players.
+
+MVP PURPOSE
+
+Rewards:
+
+Skill
+Team contribution
+Performance
+208. MVP CALCULATION
+
+MVP considers:
+
+Combat
+Eliminations
+Damage
+Headshots
+Objective
+Captures
+Defense
+Team actions
+Support
+Assists
+Team contribution
+209. MVP TYPES
+
+Instead of only one MVP:
+
+Multiple categories.
+
+Combat MVP
+
+Highest combat performance.
+
+Objective MVP
+
+Best objective contribution.
+
+Support MVP
+
+Best teamwork.
+
+Clutch MVP
+
+Important late-round actions.
+
+210. MVP REWARDS
+
+Rewards:
+
+Extra XP
+Small coin bonus
+MVP badge tracking
+
+Cosmetic rewards:
+
+MVP animations
+Titles
+211. ECONOMY SINK SYSTEM
+
+A healthy economy requires spending opportunities.
+
+Currency sinks prevent inflation.
+
+212. COIN SINKS
+
+Coins are used for:
+
+Weapon Purchases
+
+Permanent unlocks.
+
+Reforging
+
+Armor optimization.
+
+Crafting
+
+Resources.
+
+Cosmetic Purchases
+
+Optional items.
+
+213. GEM SINKS
+
+Gems are used for:
+
+Premium Cosmetics
+Battle Pass
+Reforge Options
+Cosmetic Bundles
+Special Events
+214. SCRAP SINKS
+
+Scrap is used for:
+
+Crafting
+Salvage Conversion
+Enhancement Creation
+Armor Reforging
+215. KEY SINKS
+
+Keys are used for:
+
+Crates
+Special Event Chests
+Seasonal Rewards
+216. ECONOMY BALANCE RULES
+
+Avoid:
+
+Too much free currency.
+
+Avoid:
+
+Making progression impossible without purchases.
+
+Recommended:
+
+Players should always feel progress.
+
+217. REWARD DISTRIBUTION PRINCIPLE
+
+Different systems reward different behaviors.
+
+Gameplay:
+
+Coins + XP
+
+Competition:
+
+Ranked Points
+
+Creativity:
+
+Workshop rewards
+
+Collection:
+
+Cosmetics
+
+Achievement:
+
+Recognition
+
+218. LIVE SERVICE LOOP
+
+Complete loop:
+
+Play
+
+↓
+
+Earn XP/Currency
+
+↓
+
+Unlock Content
+
+↓
+
+Customize
+
+↓
+
+Participate in Events
+
+↓
+
+Return Next Season
+219. LONG TERM PLAYER MOTIVATION
+
+Players chase:
+
+Skill Goals
+Rank
+Mastery
+Collection Goals
+Skins
+Armor sets
+Creation Goals
+Workshop reputation
+Social Goals
+Clubs
+Friends

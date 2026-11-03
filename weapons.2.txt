@@ -1,0 +1,452 @@
+VOLUME III — WEAPONS
+PART 2 — WORKSHOP WEAPON SYSTEM, CREATOR ECOSYSTEM, REPUTATION, NORMALIZATION, AND COMMUNITY CONTENT
+87. WORKSHOP SYSTEM OVERVIEW
+
+The Workshop is the player creativity foundation of the FPS ecosystem.
+
+The purpose of the Workshop is to allow players to:
+
+Design weapons
+Create unique visual identities
+Share creations
+Participate in the game's content ecosystem
+Build a creator reputation
+
+The Workshop transforms players from only consumers into contributors.
+
+87.1 Workshop Philosophy
+
+The Workshop follows three principles:
+
+Creativity Without Competitive Chaos
+
+Players can create unlimited designs.
+
+However:
+
+Ranked gameplay requires balance.
+
+Expression Without Pay-To-Win
+
+Workshop weapons can be unique.
+
+They cannot become unfair.
+
+Community Driven Content
+
+The best creations should become visible.
+
+88. WORKSHOP CREATION TYPES
+
+Players can create:
+
+Weapon Models
+
+Custom:
+
+Shapes
+Designs
+Themes
+Animations
+Weapon Cosmetics
+
+Examples:
+
+Skins
+Colors
+Effects
+Visual themes
+Complete Weapons
+
+Advanced creators can design:
+
+Weapon model
+Animations
+Reload
+Fire effects
+Inspect animation
+Sound design
+89. WORKSHOP EDITOR SYSTEM
+
+The Workshop supports:
+
+2D Voxel Editor
+
+Purpose:
+
+Beginner-friendly creation.
+
+Allows:
+
+Pixel-style designs
+Simple weapon creation
+Fast iteration
+3D Voxel Editor
+
+Purpose:
+
+Advanced creation.
+
+Allows:
+
+Detailed models
+Custom geometry
+Professional-quality designs
+90. WORKSHOP REQUIREMENTS
+
+Before publishing:
+
+Creators must provide:
+
+Weapon Model
+
+Required.
+
+Must include:
+
+Proper dimensions
+Collision rules
+Visual clarity
+Animations
+
+Required:
+
+Equip
+Fire
+Reload
+Idle
+Inspect
+ADS Support
+
+Required for scoped weapons.
+
+Includes:
+
+Scope alignment
+Stability behavior
+Audio Requirements
+
+Optional but recommended:
+
+Fire sound
+Reload sound
+Inspect sounds
+91. WORKSHOP STAT SYSTEM
+
+Workshop weapons receive:
+
+25 Stat Points
+
+Creators distribute points into:
+
+Damage
+Fire Rate
+Accuracy
+Range
+Magazine
+Movement
+Reload
+92. WORKSHOP STAT TRADEOFF SYSTEM
+
+The system prevents perfect weapons.
+
+Every improvement creates a weakness.
+
+Damage Increase
+
+Tradeoff:
+
+Fire Rate decreases
+Accuracy decreases
+Fire Rate Increase
+
+Tradeoff:
+
+Damage decreases
+Accuracy decreases
+Accuracy Increase
+
+Tradeoff:
+
+Mobility decreases
+Range Increase
+
+Tradeoff:
+
+Movement decreases
+Magazine Increase
+
+Tradeoff:
+
+Reload speed decreases
+93. WORKSHOP WEAPON VALIDATION
+
+Before approval:
+
+Weapons are checked for:
+
+Gameplay Rules
+
+Cannot exceed:
+
+Damage limits
+Fire rate limits
+TTK limits
+Technical Rules
+
+Cannot contain:
+
+Broken animations
+Invalid assets
+Performance issues
+Community Rules
+
+Cannot contain:
+
+Inappropriate content
+Copyright violations
+Harmful designs
+94. WORKSHOP NORMALIZATION SYSTEM
+
+Workshop weapons are adjusted for competitive environments.
+
+Ranked Normalization
+
+Ranked checks:
+
+Damage
+
+Fire Rate
+
+Range
+
+Accuracy
+
+Mobility
+Purpose
+
+Prevents:
+
+Overpowered creations
+TTK breaking weapons
+Unfair builds
+95. CASUAL VS RANKED WORKSHOP RULES
+Casual
+
+Allows:
+
+More creativity
+Experimental builds
+Ranked
+
+Requires:
+
+Competitive validation
+Stat normalization
+96. WORKSHOP RATING SYSTEM
+
+Players can rate creations.
+
+Ratings:
+
+Gameplay
+Appearance
+Creativity
+Balance
+97. WORKSHOP DISCOVERY SYSTEM
+
+Featured sections:
+
+Trending
+
+Popular creations.
+
+Staff Picks
+
+Developer-selected quality content.
+
+Rising Creators
+
+New creators gaining attention.
+
+Competitive Approved
+
+Workshop weapons approved for ranked.
+
+98. WORKSHOP REPUTATION SYSTEM
+
+Creators have reputation.
+
+Reputation represents:
+
+Quality
+Reliability
+Community trust
+98.1 Reputation Gains
+
+Earned from:
+
+Published weapons
+Positive ratings
+Featured creations
+Approved content
+98.2 Reputation Loss
+
+Lost from:
+
+Removed content
+Exploits
+Abuse
+99. CREATOR LEVEL SYSTEM
+
+Creators level separately.
+
+Example:
+
+Creator Level 1-100
+
+Rewards:
+
+Creator badges
+Workshop tools
+Cosmetic rewards
+Profile recognition
+100. CREATOR ACHIEVEMENTS
+
+Examples:
+
+First Creation
+
+Reward:
+
+Creator badge
+
+Popular Designer
+
+Requirement:
+
+10,000 downloads
+
+Reward:
+
+Exclusive title
+
+Master Creator
+
+Requirement:
+
+Featured multiple times
+
+Reward:
+
+Unique creator cosmetics
+
+101. FEATURED CREATOR PROGRAM
+
+The game highlights exceptional creators.
+
+Benefits:
+
+Featured placement
+Special badge
+Community recognition
+
+Possible rewards:
+
+Exclusive cosmetics
+Creator currency
+Special events
+102. WORKSHOP EVENTS
+
+Seasonal events:
+
+Examples:
+
+Weapon Design Contest
+
+Players create weapons based on themes.
+
+Rewards:
+
+Featured placement
+Exclusive cosmetics
+Creator rewards
+Community Collection
+
+Players submit designs.
+
+Winning designs become official cosmetics.
+
+103. WORKSHOP ACHIEVEMENTS
+
+Examples:
+
+Beginner Builder
+
+Create first weapon.
+
+Reward:
+
+Workshop key
+
+Popular Creator
+
+Reach 1,000 ratings.
+
+Reward:
+
+Cosmetic title
+
+Competitive Designer
+
+Weapon approved for ranked.
+
+Reward:
+
+Exclusive badge
+
+Legendary Creator
+
+Multiple featured designs.
+
+Reward:
+
+Animated profile effect
+
+104. WORKSHOP ECONOMY
+
+Workshop does not sell power.
+
+Creators earn through:
+
+Recognition
+Cosmetic rewards
+Creator achievements
+
+Future option:
+
+Creator marketplace:
+
+Only cosmetic items.
+
+105. WORKSHOP MODERATION
+
+Systems:
+
+Automated checks
+Player reporting
+Manual review
+106. WORKSHOP LONG-TERM PURPOSE
+
+The Workshop creates:
+
+Infinite cosmetic possibilities
+Community engagement
+Creator careers
+Fresh content
+
+The ecosystem goal:
+
+Players should feel:
+
+"I can leave my mark on this game."

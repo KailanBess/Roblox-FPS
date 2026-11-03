@@ -1,0 +1,192 @@
+🛡️ Reforge Eligibility
+
+All armor pieces can be reforged:
+
+Helmet
+Chestpiece
+Backpiece
+Leggings
+Gloves
+Shoes
+
+Each armor piece contains:
+
+1 Weapon-Specific Bonus
++
+1 Universal Bonus
+
+Both stats are eligible for rerolling.
+
+💰 Standard Reforge
+
+Rerolls BOTH armor affixes.
+
+Cost:
+
+2,000 Coins
+
+OR
+
+90 Gems
+
+Result:
+
+Weapon Bonus = Randomized
+
+Universal Bonus = Randomized
+
+Both previous stats are replaced.
+
+🔒 Stat Lock Reforge
+
+Players may choose to keep ONE existing stat.
+
+Locked stats cannot change during the reforge.
+
+Cost:
+
+4,000 Coins
+
+OR
+
+180 Gems
+
+Result:
+
+Locked Stat = Preserved
+
+Unlocked Stat = Randomized
+Example
+
+Current Helmet:
+
+SMG Accuracy
+
+Universal Reload Speed
+
+Player locks:
+
+SMG Accuracy
+
+Reforge result:
+
+SMG Accuracy
+
+Universal Movement Speed
+
+Only the unlocked stat changes.
+
+🎲 Duplicate Validation
+
+Every reforge must obey the armor affix rules.
+
+Server validates:
+
+Maximum 2 identical Weapon Bonuses
+
+Maximum 2 identical Universal Bonuses
+
+Invalid rolls are automatically rerolled.
+
+Example:
+
+Already have:
+
+AR Damage
+AR Damage
+
+A third AR Damage roll cannot occur.
+
+🏆 Reforge Preview System
+
+Before confirming, players see:
+
+Current Bonuses
+
+New Bonuses
+
+Cost
+
+Locked Stat Indicator
+
+Buttons:
+
+Accept
+
+Decline
+
+Players are never forced to accept a reroll.
+
+♻️ Scrap Refund System
+
+Destroyed armor grants Scrap.
+
+Example:
+
+Common = 5 Scrap
+
+Uncommon = 10 Scrap
+
+Rare = 20 Scrap
+
+Epic = 40 Scrap
+
+Legendary = 80 Scrap
+
+Mythic = 150 Scrap
+
+Scrap can later support future crafting systems.
+
+📈 Long-Term Economy Impact
+Coin Sink
+Normal Reforge
+= 2,000 Coins
+
+Locked Reforge
+= 4,000 Coins
+
+Provides a strong repeatable sink for earned currency.
+
+Gem Sink
+Normal Reforge
+= 90 Gems
+
+Locked Reforge
+= 180 Gems
+
+Offers a premium shortcut without providing exclusive power.
+
+🔒 Competitive Safeguards
+
+Reforging cannot:
+
+Increase Damage Beyond Armor Caps
+
+Break TTK Limits
+
+Ignore Duplicate Rules
+
+Create Invalid Affix Combinations
+
+Exceed Ranked Stat Limits
+
+The system remains progression-focused rather than pay-to-win.
+
+Final Reforge Rules
+Standard Reforge:
+2,000 Coins OR 90 Gems
+
+Stat-Lock Reforge:
+4,000 Coins OR 180 Gems
+
+Maximum Locked Stats:
+1
+
+Maximum Identical Bonus Occurrences:
+2
+
+Accept/Decline Preview:
+Required
+
+Server Validation:
+Required

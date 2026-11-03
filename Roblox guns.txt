@@ -1,0 +1,426 @@
+🟨 ASSAULT RIFLES
+M4A1
+Damage: 34
+RPM: 600
+Mag: 30
+
+Range: 42
+Accuracy: 82
+Reload: 45
+Move: 215
+Armor Pen: 65
+AK-103
+Damage: 38
+RPM: 540
+Mag: 30
+
+Range: 44
+Accuracy: 76
+Reload: 42
+Move: 210
+Armor Pen: 72
+HK416
+Damage: 33
+RPM: 650
+Mag: 30
+
+Range: 41
+Accuracy: 85
+Reload: 48
+Move: 218
+Armor Pen: 62
+SCAR-L
+Damage: 36
+RPM: 570
+Mag: 30
+
+Range: 48
+Accuracy: 80
+Reload: 43
+Move: 212
+Armor Pen: 70
+FAMAS
+Damage: 31
+RPM: 720
+Mag: 25
+
+Range: 39
+Accuracy: 78
+Reload: 46
+Move: 220
+Armor Pen: 58
+🟩 SMGS
+MP5
+Damage: 25
+RPM: 750
+Mag: 30
+
+Range: 28
+Accuracy: 75
+Reload: 45
+Move: 225
+Armor Pen: 45
+MP7
+Damage: 23
+RPM: 820
+Mag: 35
+
+Range: 27
+Accuracy: 78
+Reload: 47
+Move: 230
+Armor Pen: 42
+UMP45
+Damage: 28
+RPM: 650
+Mag: 25
+
+Range: 31
+Accuracy: 80
+Reload: 44
+Move: 220
+Armor Pen: 50
+Vector
+Damage: 21
+RPM: 950
+Mag: 30
+
+Range: 24
+Accuracy: 70
+Reload: 48
+Move: 235
+Armor Pen: 40
+P90
+Damage: 22
+RPM: 850
+Mag: 50
+
+Range: 26
+Accuracy: 74
+Reload: 42
+Move: 228
+Armor Pen: 43
+🟧 SHOTGUNS
+M870
+Damage: 140
+RPM: 70
+Mag: 7
+
+Range: 14
+Accuracy: 45
+Reload: 32
+Move: 220
+Armor Pen: 70
+M1014
+Damage: 125
+RPM: 90
+Mag: 8
+
+Range: 13
+Accuracy: 42
+Reload: 30
+Move: 222
+Armor Pen: 65
+SPAS-12
+Damage: 135
+RPM: 80
+Mag: 8
+
+Range: 15
+Accuracy: 48
+Reload: 31
+Move: 218
+Armor Pen: 68
+KSG
+Damage: 145
+RPM: 65
+Mag: 10
+
+Range: 16
+Accuracy: 52
+Reload: 28
+Move: 215
+Armor Pen: 72
+Super 90
+Damage: 120
+RPM: 100
+Mag: 6
+
+Range: 12
+Accuracy: 40
+Reload: 35
+Move: 225
+Armor Pen: 60
+🎯 SNIPERS
+M24
+Damage: 150
+RPM: 45
+Mag: 5
+
+Range: 65
+Accuracy: 15
+Reload: 35
+Move: 205
+Armor Pen: 100
+
+Zoom: 3x
+AWM
+Damage: 170
+RPM: 35
+Mag: 5
+
+Range: 70
+Accuracy: 12
+Reload: 32
+Move: 195
+Armor Pen: 100
+
+Zoom: 4x
+R700
+Damage: 145
+RPM: 50
+Mag: 5
+
+Range: 63
+Accuracy: 16
+Reload: 36
+Move: 208
+Armor Pen: 95
+
+Zoom: 3x
+L96
+Damage: 155
+RPM: 42
+Mag: 5
+
+Range: 67
+Accuracy: 14
+Reload: 34
+Move: 202
+Armor Pen: 100
+
+Zoom: 4x
+Scout
+Damage: 130
+RPM: 65
+Mag: 10
+
+Range: 58
+Accuracy: 18
+Reload: 40
+Move: 220
+Armor Pen: 85
+
+Zoom: 2x
+🔵 PISTOLS
+M9
+Damage: 43
+RPM: 300
+Mag: 15
+
+Range: 30
+Accuracy: 88
+Reload: 50
+Move: 230
+Armor Pen: 55
+Glock 17
+Damage: 40
+RPM: 340
+Mag: 17
+
+Range: 28
+Accuracy: 85
+Reload: 52
+Move: 232
+Armor Pen: 52
+USP45
+Damage: 48
+RPM: 260
+Mag: 12
+
+Range: 32
+Accuracy: 90
+Reload: 48
+Move: 228
+Armor Pen: 58
+P226
+Damage: 44
+RPM: 290
+Mag: 15
+
+Range: 31
+Accuracy: 89
+Reload: 50
+Move: 230
+Armor Pen: 56
+Five-Seven
+Damage: 38
+RPM: 360
+Mag: 20
+
+Range: 27
+Accuracy: 84
+Reload: 53
+Move: 235
+Armor Pen: 50
+🟫 LMGS
+M249
+Damage: 28
+RPM: 550
+Mag: 60
+
+Range: 45
+Accuracy: 70
+Reload: 36
+Move: 195
+Armor Pen: 70
+PKM
+Damage: 32
+RPM: 500
+Mag: 75
+
+Range: 50
+Accuracy: 68
+Reload: 32
+Move: 190
+Armor Pen: 78
+RPK
+Damage: 30
+RPM: 540
+Mag: 60
+
+Range: 47
+Accuracy: 72
+Reload: 38
+Move: 198
+Armor Pen: 72
+MG36
+Damage: 27
+RPM: 620
+Mag: 50
+
+Range: 42
+Accuracy: 75
+Reload: 40
+Move: 200
+Armor Pen: 65
+Stoner 63
+Damage: 29
+RPM: 570
+Mag: 65
+
+Range: 46
+Accuracy: 71
+Reload: 35
+Move: 193
+Armor Pen: 73
+🔭 MARKSMAN RIFLES
+MK14 EBR
+Damage: 55
+RPM: 250
+Mag: 12
+
+Range: 53
+Accuracy: 85
+Reload: 38
+Move: 215
+Armor Pen: 75
+
+Zoom: 2x
+SR-25
+Damage: 58
+RPM: 230
+Mag: 10
+
+Range: 56
+Accuracy: 88
+Reload: 36
+Move: 212
+Armor Pen: 78
+
+Zoom: 3x
+G28
+Damage: 54
+RPM: 260
+Mag: 15
+
+Range: 52
+Accuracy: 84
+Reload: 40
+Move: 218
+Armor Pen: 72
+
+Zoom: 2x
+M110
+Damage: 60
+RPM: 220
+Mag: 10
+
+Range: 58
+Accuracy: 90
+Reload: 35
+Move: 208
+Armor Pen: 80
+
+Zoom: 3x
+SVD
+Damage: 62
+RPM: 210
+Mag: 10
+
+Range: 60
+Accuracy: 82
+Reload: 34
+Move: 205
+Armor Pen: 82
+
+Zoom: 3x
+🔪 KNIVES
+Combat Knife
+Damage: 110
+Attack Rate: 40
+
+Range: 3.5
+Move: 250
+
+Armor Pen: 100
+Tanto
+Damage: 100
+Attack Rate: 48
+
+Range: 3.2
+Move: 250
+
+Armor Pen: 100
+Kukri
+Damage: 125
+Attack Rate: 34
+
+Range: 3.8
+Move: 245
+
+Armor Pen: 100
+Karambit
+Damage: 95
+Attack Rate: 55
+
+Range: 3.0
+Move: 250
+
+Armor Pen: 100
+Bowie Knife
+Damage: 130
+Attack Rate: 30
+
+Range: 4.0
+Move: 240
+
+Armor Pen: 100
+Tactical Axe
+Damage: 145
+Attack Rate: 25
+
+Range: 4.2
+Move: 235
+
+Armor Pen: 100

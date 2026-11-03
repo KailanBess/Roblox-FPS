@@ -1,0 +1,465 @@
+VOLUME VIII — PET SYSTEMS & SOCIAL SYSTEMS
+PART 1 — PET FOUNDATION, PET PERSONALITIES, PASSIVE EFFECTS, BALANCE RULES, PROGRESSION, AND SOCIAL IDENTITY
+269. PET SYSTEM OVERVIEW
+
+Pets are a companion customization system.
+
+Pets provide:
+
+Personality
+Cosmetic identity
+Small passive gameplay assistance
+
+Pets are not combat replacements.
+
+They do not:
+
+Attack enemies
+Reveal enemies
+Provide unfair information
+Increase weapon power directly
+269.1 PET DESIGN PHILOSOPHY
+
+Pets should feel like:
+
+"An assistant that supports my playstyle."
+
+Not:
+
+"A second player helping me win."
+
+270. PET EQUIPMENT SYSTEM
+
+Players can equip:
+
+Maximum Pets Equipped:
+
+2
+
+Each pet has:
+
+Appearance
+Personality
+Passive effect
+Animation style
+Progression level
+271. PET RARITY SYSTEM
+
+Pet rarities:
+
+Common
+
+Uncommon
+
+Rare
+
+Epic
+
+Legendary
+
+Mythic
+
+Rarity affects:
+
+Visual design
+Animation quality
+Personality depth
+
+Not:
+
+Extreme power.
+
+272. PET PERSONALITY SYSTEM
+
+Pets have personalities that affect:
+
+Animations
+Dialogue
+Lobby behavior
+Reactions
+Personality Examples
+Brave
+
+Behavior:
+
+Celebrates victories
+Excited after eliminations
+Calm
+
+Behavior:
+
+Relaxed animations
+Tactical reactions
+Energetic
+
+Behavior:
+
+More movement
+Playful animations
+Tactical
+
+Behavior:
+
+Scanner-style animations
+Serious reactions
+Mischievous
+
+Behavior:
+
+Funny reactions
+Unique emotes
+273. PET PASSIVE SYSTEM
+
+Pets provide passive utility.
+
+Rules:
+
+Small bonuses
+Situational effects
+Balanced impact
+
+Maximum pet impact:
+
+3-5% gameplay influence
+274. PET EFFECT CATEGORIES
+
+Pet effects include:
+
+Recovery
+Economy
+Utility
+Progression
+Information quality
+
+Pets cannot provide:
+
+Damage increases
+Fire rate
+Accuracy
+Enemy tracking
+275. PET EFFECT EXAMPLES
+Syphon Pet
+
+Effect:
+
+When eliminating an enemy:
+
+Restore:
+
+35 Health
+
++
+
+50 Armor
+
+Cooldown:
+
+30 seconds
+
+Purpose:
+
+Rewards aggressive players.
+
+Balance:
+
+Cannot chain infinitely.
+
+276. MEDIC PET
+
+Effect:
+
+After avoiding damage:
+
+Gain:
+
+5% faster health recovery
+
+Duration:
+
+5 seconds.
+
+Cooldown:
+
+25 seconds.
+
+Purpose:
+
+Sustain.
+
+277. SCAVENGER PET
+
+Effect:
+
+Ammo pickups provide:
+
++10% ammo efficiency
+
+Purpose:
+
+Supports resource management.
+
+278. ENGINEER PET
+
+Effect:
+
+Equipment cooldown recovery:
+
++5%
+
+Purpose:
+
+Utility support.
+
+279. EXPLORER PET
+
+Effect:
+
+After moving continuously:
+
+Gain:
+
+Small movement recovery bonus
+
+Purpose:
+
+Mobility support.
+
+280. COMPANION PET
+
+Effect:
+
+Match XP:
+
+Maximum:
+
+Purpose:
+
+Progression support.
+
+281. LUCK PET
+
+Effect:
+
+Small increase:
+
+to:
+
+Scrap/event reward chances.
+
+Cannot affect:
+
+Competitive rewards.
+
+282. PET COMBINATION RULES
+
+Players can equip two pets.
+
+However:
+
+Similar effects have reduced stacking.
+
+Example:
+
+Two healing pets:
+
+Not:
+
+70 HP recovery.
+
+Instead:
+
+Reduced effectiveness.
+
+283. PET LEVEL SYSTEM
+
+Pets have:
+
+XP gained from:
+
+Matches
+Time equipped
+Challenges
+284. PET LEVEL REWARDS
+
+Rewards:
+
+New animations
+Personality upgrades
+Cosmetic changes
+
+Not:
+
+Major power increases.
+
+285. PET EVOLUTION SYSTEM
+
+High-level pets may evolve visually.
+
+Example:
+
+Level 50:
+
+Unlock:
+
+New appearance
+Special animation
+Title
+286. PET COLLECTION SYSTEM
+
+Players collect:
+
+Species
+Personalities
+Variants
+
+Collection rewards:
+
+Badges
+Profile cosmetics
+287. SOCIAL SYSTEM OVERVIEW
+
+Social systems create community retention.
+
+Includes:
+
+Friends
+Squads
+Clubs
+Communication
+Shared progression
+288. FRIEND SYSTEM
+
+Players can:
+
+Add friends
+Join games
+View profiles
+Compare achievements
+289. FRIEND REWARDS
+
+Recommended:
+
+Friend activity rewards.
+
+Examples:
+
+Play with friends:
+
+Earn:
+
+Small XP bonus.
+
+Purpose:
+
+Encourages teamwork.
+
+290. SQUAD SYSTEM
+
+Players create squads.
+
+Maximum:
+
+5 Players
+
+Squads provide:
+
+Team identity
+Shared progression
+291. SQUAD XP SYSTEM
+
+Squads earn XP from:
+
+Playing together
+Winning matches
+Events
+292. SQUAD LEVELS
+
+Example:
+
+Squad Level 1-100
+
+Rewards:
+
+Squad banner
+Cosmetic rewards
+Titles
+293. CLUB SYSTEM
+
+Clubs are larger communities.
+
+Features:
+
+Owner permissions
+Co-owner permissions
+Roles
+Club progression
+294. CLUB PERMISSIONS
+
+Owner:
+
+Full management.
+
+Co-owner:
+
+Administrative controls.
+
+Members:
+
+Participation.
+
+295. CLUB MISSIONS
+
+Examples:
+
+Community goals:
+
+Win:
+
+100 matches.
+
+Earn:
+
+100,000 XP.
+
+Rewards:
+
+Club XP.
+
+296. CLUB PROGRESSION REWARDS
+
+Rewards:
+
+Club banners
+Colors
+Effects
+Titles
+297. SOCIAL IDENTITY SYSTEM
+
+Players display:
+
+Titles
+Badges
+Mastery
+Achievements
+Favorite weapons
+Pets
+298. SOCIAL PROFILE SYSTEM
+
+Profile contains:
+
+Combat
+Wins
+Eliminations
+Accuracy
+Collection
+Skins
+Pets
+Armor
+Achievements
+Titles
+Badges
+299. SOCIAL GOAL
+
+The game should allow players to answer:
+
+"Who am I in this ecosystem?"

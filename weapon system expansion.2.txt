@@ -1,0 +1,487 @@
+VOLUME X — WEAPON SYSTEM EXPANSION
+PART 2 — WEAPON BALANCE FRAMEWORK, STAT SYSTEM, TTK CONTROL, ENHANCEMENT INTERACTION, RANKED WEAPON RULES, AND FUTURE CONTENT PIPELINE
+435. WEAPON BALANCE OVERVIEW
+
+The weapon ecosystem is built around predictable competitive balance.
+
+Every weapon must have:
+
+A clear role
+A specific combat range
+A skill requirement
+Counterplay options
+435.1 BALANCE PHILOSOPHY
+
+Weapons are balanced through:
+
+Time To Kill
+
+Primary metric.
+
+Ease Of Use
+
+Secondary metric.
+
+Combat Range
+
+Role identity.
+
+Mobility
+
+Positioning strength.
+
+436. CORE WEAPON STAT SYSTEM
+
+Every weapon contains:
+
+Damage
+
+Fire Rate
+
+Magazine
+
+Range
+
+Accuracy
+
+Reload
+
+Mobility
+
+Armor Penetration
+437. DAMAGE STAT
+
+Controls:
+
+Base damage per shot.
+
+Affected by:
+
+Headshots
+Armor
+Enhancements
+
+Damage cannot exceed:
+
+Class balance limits.
+
+438. FIRE RATE STAT
+
+Measured:
+
+RPM
+
+Higher RPM:
+
+Advantages:
+
+Faster TTK
+Better pressure
+
+Weakness:
+
+Lower per-shot damage
+More ammo consumption
+439. MAGAZINE STAT
+
+Controls:
+
+Rounds before reload.
+
+Higher magazine:
+
+Advantage:
+
+Longer fights.
+
+Weakness:
+
+Usually:
+
+Lower reload speed
+Lower mobility
+440. RANGE STAT
+
+Controls:
+
+Damage consistency over distance.
+
+Higher range:
+
+Means:
+
+Slower damage falloff
+Better long-range performance
+441. ACCURACY STAT
+
+Controls:
+
+Spread
+Bloom
+Crosshair size
+
+Formula:
+
+Crosshair Size = 136 - Accuracy
+442. RELOAD STAT
+
+Controls:
+
+Time between magazines.
+
+Important for:
+
+Aggressive players
+Sustained fights
+443. MOBILITY STAT
+
+Controls:
+
+Movement while equipped.
+
+Higher mobility:
+
+Advantage:
+
+Positioning
+
+Weakness:
+
+Usually:
+
+Lower control
+444. ARMOR PENETRATION STAT
+
+Controls effectiveness against armor.
+
+Does not ignore armor.
+
+It reduces armor protection.
+
+445. TTK BALANCE FRAMEWORK
+
+Every weapon is evaluated using:
+
+Shots To Kill
+
+×
+
+Fire Interval
+
+Formula:
+
+Shots To Kill =
+Ceiling(Target HP / Damage)
+TTK =
+(Shots To Kill - 1)
+×
+
+(60 / RPM)
+446. TARGET HEALTH MODEL
+
+Standard target:
+
+200 HP
+
+150 Armor Maximum
+
+Weapons must perform within acceptable ranges.
+
+447. CLASS TTK EXPECTATIONS
+Assault Rifle
+
+Designed:
+
+Medium TTK.
+
+Strength:
+
+Consistency.
+
+SMG
+
+Designed:
+
+Fast close-range TTK.
+
+Weakness:
+
+Distance.
+
+Shotgun
+
+Designed:
+
+High burst.
+
+Weakness:
+
+Misses are costly.
+
+Sniper
+
+Designed:
+
+High precision reward.
+
+Weakness:
+
+Low forgiveness.
+
+LMG
+
+Designed:
+
+Sustained damage.
+
+Weakness:
+
+Handling.
+
+448. WEAPON COUNTER SYSTEM
+
+Every weapon must have counters.
+
+Example:
+
+SMG:
+
+Counter:
+
+Range.
+
+Sniper:
+
+Counter:
+
+Movement pressure.
+
+Shotgun:
+
+Counter:
+
+Spacing.
+
+449. ENHANCEMENT INTERACTION RULES
+
+Enhancements modify weapons.
+
+They cannot bypass balance.
+
+Example:
+
+High Caliber:
+
+Damage increase.
+
+But:
+
+Fire rate decrease.
+
+450. ENHANCEMENT LIMITS
+
+Enhancements cannot create:
+
+Instant kills
+Unlimited range
+Zero recoil weapons
+451. WORKSHOP WEAPON BALANCE
+
+Workshop weapons use:
+
+Same framework.
+
+Creator controls:
+
+Model
+Animation
+Theme
+
+System controls:
+
+Competitive values
+452. WORKSHOP STAT VALIDATION
+
+The system checks:
+
+Damage Budget
+
+RPM Budget
+
+Accuracy Budget
+
+Mobility Budget
+453. RANKED WEAPON NORMALIZATION
+
+Ranked applies:
+
+Competitive limits.
+
+Possible adjustments:
+
+Stat caps
+Normalized values
+Restricted combinations
+454. RANKED APPROVED WEAPON TAG
+
+Approved weapons receive:
+
+"Competitive Ready"
+
+badge.
+
+455. WEAPON TESTING ENVIRONMENT
+
+Recommended:
+
+Weapon Lab.
+
+Players can test:
+
+Damage
+Recoil
+Accuracy
+TTK
+456. WEAPON RANGE MODE
+
+Dedicated testing area.
+
+Features:
+
+Targets
+Damage numbers
+Distance testing
+Armor testing
+457. DAMAGE TESTING TARGETS
+
+Targets include:
+
+Normal Target
+
+200 HP.
+
+Armored Target
+
+200 HP + 150 Armor.
+
+Moving Target
+
+Movement simulation.
+
+458. RECOIL SYSTEM RULES
+
+Only recoil weapons:
+
+Sniper
+Marksman
+Scoped workshop weapons
+
+Other weapons use:
+
+Bloom
+Spread
+Accuracy recovery
+459. WEAPON RECOVERY SYSTEM
+
+Accuracy recovers after firing.
+
+Affected by:
+
+Weapon type
+Enhancements
+Stability
+460. CLASS BALANCE MONITORING
+
+Developers monitor:
+
+Pick Rate
+
+Win Impact
+
+Kill Efficiency
+
+Player Satisfaction
+
+461. UNDERUSED WEAPON SOLUTIONS
+
+Possible improvements:
+
+Cosmetic buffs
+Handling improvements
+Role adjustments
+
+Avoid:
+
+Simply increasing damage.
+
+462. OVERPOWERED WEAPON SOLUTIONS
+
+Possible changes:
+
+Reduce range
+Increase recoil
+Reduce efficiency
+
+Avoid:
+
+Destroying identity.
+
+463. FUTURE WEAPON RELEASE RULES
+
+Every new weapon requires:
+
+Design Document
+
+Purpose.
+
+Prototype
+
+Gameplay testing.
+
+Balance Review
+
+TTK analysis.
+
+Community Testing
+
+Feedback.
+
+Final Release
+
+Live monitoring.
+
+464. WEAPON CONTENT ROADMAP
+
+Future additions:
+
+New system weapons
+New workshop tools
+New cosmetics
+New mastery challenges
+465. COMPLETE WEAPON LOOP
+Unlock Weapon
+
+↓
+
+Play Weapon
+
+↓
+
+Gain XP
+
+↓
+
+Complete Mastery
+
+↓
+
+Earn Cosmetics
+
+↓
+
+Customize
+
+↓
+
+Show Identity
+E

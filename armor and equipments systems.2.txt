@@ -1,0 +1,426 @@
+VOLUME IV — ARMOR & EQUIPMENT SYSTEMS
+PART 2 — ARMOR SETS, REFORGING, SCRAP ECONOMY, EQUIPMENT PROGRESSION, AND ARMOR CONTENT SYSTEMS
+137. ARMOR SET SYSTEM OVERVIEW
+
+Armor sets provide long-term collection goals while adding additional identity to equipment.
+
+A complete armor set provides a small bonus.
+
+The purpose is:
+
+Encourage collecting
+Create visual identity
+Reward completion
+
+The purpose is not to create stronger players.
+
+137.1 ARMOR SET PHILOSOPHY
+
+Armor sets follow:
+
+Collection > Power
+
+Completing a set should feel rewarding.
+
+However:
+
+A skilled player with incomplete armor should still compete.
+
+138. ARMOR SET STRUCTURE
+
+A full armor set contains:
+
+Helmet
+
+Chest
+
+Back
+
+Leggings
+
+Gloves
+
+Shoes
+
+Set completion:
+
+Requires:
+
+6/6 Pieces Equipped
+
+Partial sets:
+
+No bonus.
+
+139. ARMOR SET BONUS RULES
+
+Set bonuses are:
+
+Small
+Utility-focused
+Non-TTK breaking
+
+Maximum impact:
+
+3-5% gameplay influence maximum
+140. ARMOR SET BONUS EXAMPLES
+Vanguard Assault Set
+
+Theme:
+
+Aggressive rifle combat.
+
+Completion bonus:
+
++3% Weapon Swap Speed
+
++3% Reload Speed
+
+Purpose:
+
+Improves flow.
+
+Does not increase damage.
+
+Shadow Recon Set
+
+Theme:
+
+Stealth mobility.
+
+Bonus:
+
+-5% Sprint Noise
+
++3 Movement
+
+Purpose:
+
+Positioning advantage.
+
+Guardian Set
+
+Theme:
+
+Defensive player.
+
+Bonus:
+
++5% Armor Recovery Speed
+
+Purpose:
+
+Improves sustain.
+
+Marksman Set
+
+Theme:
+
+Precision.
+
+Bonus:
+
++3 ADS Stability
+
++2 Scope Recovery
+
+Purpose:
+
+Improves handling.
+
+141. SET BALANCE RULES
+
+Armor sets cannot provide:
+
+Damage increase above allowed limits
+Extra health
+Extra armor
+Instant healing
+Faster kill speed
+142. ARMOR COLLECTION SYSTEM
+
+Players track:
+
+Owned pieces
+Completed sets
+Missing items
+
+Collections provide:
+
+Badges
+Titles
+Cosmetics
+143. ARMOR COSMETIC EFFECTS
+
+Armor can have:
+
+Visual Effects
+
+Examples:
+
+Energy glow
+Particle trails
+Animated materials
+Completion Effects
+
+Full sets unlock:
+
+Spawn effects
+Lobby visuals
+Profile display
+144. ARMOR CRATE SYSTEM
+
+Armor is obtained through:
+
+Armor crates
+Events
+Progression
+Crafting
+Armor crates contain:
+Armor pieces
+Armor cosmetics
+Set pieces
+Scrap
+145. ARMOR CRATE DROP STRUCTURE
+
+Example:
+
+Armor Crate:
+
+Common Armor
+
+50%
+
+Uncommon Armor
+
+30%
+
+Rare Armor
+
+15%
+
+Epic Armor
+
+4%
+
+Legendary Armor
+
+1%
+146. ARMOR DUPLICATE HANDLING
+
+Duplicate armor converts into:
+
+Scrap
+Cosmetic materials
+Reforge resources
+147. ARMOR REFORGING SYSTEM
+
+Players can reroll armor bonuses.
+
+Two options:
+
+Normal Reforge
+
+Cost:
+
+2000 Coins
+
+OR
+
+90 Gems
+
+Rerolls:
+
+Weapon Bonus
+Universal Bonus
+Locked Stat Reforge
+
+Cost:
+
+4000 Coins
+
+OR
+
+180 Gems
+
+Result:
+
+One stat remains.
+
+One stat rerolls.
+
+148. REFORGE LIMITS
+
+To prevent endless perfect armor:
+
+Each armor piece has:
+
+Reforge Count
+
+High reforge counts require:
+
+More coins
+More scrap
+149. SCRAP SYSTEM OVERVIEW
+
+Scrap is the crafting and equipment resource.
+
+Used for:
+
+Reforging
+Crafting
+Upgrading cosmetics
+Event systems
+150. SCRAP RARITIES
+
+Scrap has five rarities.
+
+COMMON SCRAP
+
+Obtained from:
+
+Common duplicates
+Normal gameplay
+
+Used for:
+
+Basic crafting.
+
+UNCOMMON SCRAP
+
+Obtained from:
+
+Uncommon items
+
+Used for:
+
+Improved crafting.
+
+RARE SCRAP
+
+Obtained from:
+
+Rare duplicates
+Events
+
+Used for:
+
+Advanced crafting.
+
+EPIC SCRAP
+
+Obtained from:
+
+Epic duplicates
+Difficult challenges
+
+Used for:
+
+High-value crafting.
+
+LEGENDARY SCRAP
+
+Obtained from:
+
+Legendary duplicates
+Seasonal rewards
+
+Used for:
+
+Prestige crafting.
+
+151. SCRAP CONVERSION
+
+Players can convert:
+
+Higher rarity:
+
+↓
+
+Lower rarity
+
+Example:
+
+1 Legendary Scrap
+
+=
+
+5 Epic Scrap
+
+Reverse conversion is unavailable.
+
+152. SCRAP SOURCES
+
+Scrap is earned from:
+
+Duplicate crates
+Events
+Challenges
+Salvaging
+Achievements
+153. EQUIPMENT SALVAGE SYSTEM
+
+Players can dismantle unwanted items.
+
+Receive:
+
+Scrap
+Cosmetic materials
+
+Higher rarity:
+
+More scrap.
+
+154. EQUIPMENT PROGRESSION LOOP
+
+Complete loop:
+
+Play Matches
+
+↓
+
+Earn Rewards
+
+↓
+
+Obtain Armor
+
+↓
+
+Customize Build
+
+↓
+
+Collect Sets
+
+↓
+
+Reforge
+
+↓
+
+Complete Collection
+155. ARMOR BALANCE MONITORING
+
+Developers monitor:
+
+Usage Rate
+
+Are certain builds dominating?
+
+Win Rate
+
+Are bonuses creating unfair advantages?
+
+Pick Rate
+
+Are players ignoring certain sets?
+
+156. FUTURE ARMOR EXPANSION
+
+Future content:
+
+New sets
+Seasonal armor
+Event armor
+Creator-designed armor

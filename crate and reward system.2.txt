@@ -1,0 +1,425 @@
+VOLUME VII — CRATE AND REWARD SYSTEMS
+PART 2 — ECONOMY STORES, SHOP SYSTEM, RANKED STORE, EVENT STORES, CLUB ECONOMY, MONETIZATION RULES, AND FAIRNESS SAFEGUARDS
+244. ECONOMY STORE OVERVIEW
+
+The store system provides players with controlled ways to obtain:
+
+Cosmetics
+Weapons
+Customization items
+Progression materials
+
+The store is designed around:
+
+Player choice
+Fair monetization
+Cosmetic value
+244.1 STORE PHILOSOPHY
+
+The store must follow:
+
+Cosmetic First
+
+Players purchase:
+
+Appearance
+Identity
+Expression
+
+Not:
+
+Combat advantages
+245. MAIN STORE STRUCTURE
+
+The store contains:
+
+Featured Store
+
+Weapon Store
+
+Armor Store
+
+Cosmetic Store
+
+Season Store
+
+Ranked Store
+
+Event Store
+246. FEATURED STORE
+
+Rotating cosmetic shop.
+
+Refresh:
+
+Daily or weekly.
+
+Contains:
+
+Skins
+Effects
+Charms
+Animations
+246.1 FEATURED STORE PURPOSE
+
+Creates:
+
+Discovery
+Collection goals
+Seasonal excitement
+247. WEAPON STORE
+
+Contains:
+
+System Weapons
+
+Purchased with:
+
+Coins
+
+Weapon Cosmetics
+
+Purchased with:
+
+Gems
+
+or
+
+Keys
+
+248. WEAPON PURCHASE RULES
+
+Weapons:
+
+Never sold for premium currency only.
+
+Players can unlock competitive weapons through:
+
+Gameplay
+Coins
+Progression
+249. ARMOR STORE
+
+Contains:
+
+Armor cosmetics
+Armor sets
+Visual effects
+
+Does not sell:
+
+Higher combat stats.
+
+250. COSMETIC STORE
+
+Contains:
+
+Character Cosmetics
+Outfits
+Effects
+Emotes
+Weapon Cosmetics
+Skins
+Charms
+Kill effects
+Profile Cosmetics
+Banners
+Titles
+Animations
+251. SEASON STORE
+
+Season-specific store.
+
+Currency:
+
+Season Tokens.
+
+Season Tokens obtained from:
+
+Battle Pass
+Events
+Challenges
+
+Items:
+
+Seasonal cosmetics
+Limited items
+252. RANKED STORE
+
+Competitive-exclusive store.
+
+Currency:
+
+Ranked Points.
+
+Ranked Store Items:
+Ranked weapon skins
+Rank badges
+Titles
+Competitive cosmetics
+253. RANKED STORE PHILOSOPHY
+
+Rewards:
+
+Achievement.
+
+Not:
+
+Power.
+
+A Champion player should look prestigious.
+
+Not stronger.
+
+254. EVENT STORE
+
+Limited-time store.
+
+Uses:
+
+Event Tokens.
+
+Examples:
+
+Halloween Event:
+
+Themed skins
+Armor effects
+
+Winter Event:
+
+Seasonal cosmetics
+255. CLUB ECONOMY
+
+Clubs have their own progression.
+
+Club resources:
+
+Club XP
+
+Earned through:
+
+Member activity
+Matches
+Events
+256. CLUB LEVEL SYSTEM
+
+Example:
+
+Club Level 1-50
+
+Rewards:
+
+Club banners
+Club cosmetics
+Club effects
+257. CLUB UPGRADES
+
+Possible upgrades:
+
+Club Size
+
+More members.
+
+Club Cosmetics
+
+Custom identity.
+
+Club Missions
+
+Shared goals.
+
+258. PREMIUM CURRENCY SYSTEM
+
+Gems are premium currency.
+
+Used for:
+
+Cosmetics
+Battle Pass
+Convenience systems
+
+Gems are not used for:
+
+Damage
+Better weapons
+Ranked advantage
+259. MONETIZATION OPTIONS
+
+Allowed:
+
+Cosmetic Bundles
+
+Contains:
+
+Skins
+Effects
+Animations
+Battle Pass
+
+Season cosmetics.
+
+Key Bundles
+
+For crates.
+
+Event Packs
+
+Limited cosmetics.
+
+260. MONETIZATION RESTRICTIONS
+
+Cannot sell:
+
+Damage boosts
+XP boosts affecting ranked power
+Better armor
+Stronger weapons
+261. PAY-TO-WIN PROTECTION
+
+Rules:
+
+Weapons:
+
+Earnable through gameplay.
+
+Armor:
+
+Cannot directly purchase stronger versions.
+
+Enhancements:
+
+Must follow balance systems.
+
+Ranked:
+
+Same competitive rules.
+
+262. ROTATING SHOP SYSTEM
+
+Recommended:
+
+Daily refresh:
+
+Small cosmetics.
+
+Weekly refresh:
+
+Featured cosmetics.
+
+Seasonal:
+
+Major collections.
+
+263. COSMETIC BUNDLE SYSTEM
+
+Bundles provide themed collections.
+
+Examples:
+
+Tactical Bundle
+
+Contains:
+
+Weapon skin
+Armor skin
+Charm
+Cyber Bundle
+
+Contains:
+
+Animated effects
+Profile theme
+264. COLLECTION BONUS SYSTEM
+
+Optional cosmetic collections.
+
+Examples:
+
+Own:
+
+5 cyber cosmetics
+
+Reward:
+
+Cyber title.
+
+Own:
+
+Full armor cosmetic set
+
+Reward:
+
+Profile effect.
+
+265. SHOP ROTATION FAIRNESS
+
+Important cosmetics may return.
+
+Avoid:
+
+Artificial scarcity.
+
+Limited items may return through:
+
+Events
+Special rotations
+266. ECONOMY MONITORING
+
+Developers track:
+
+Currency Generation
+
+How much currency enters.
+
+Currency Spending
+
+Where currency leaves.
+
+Inflation
+
+Too much saved currency.
+
+267. ECONOMY BALANCE TARGET
+
+Players should always have:
+
+A meaningful goal.
+
+Examples:
+
+Short-term:
+
+Daily cosmetics.
+
+Medium-term:
+
+Weapon mastery.
+
+Long-term:
+
+Collections.
+
+268. COMPLETE ECONOMY LOOP
+Play Game
+
+↓
+
+Earn Currency
+
+↓
+
+Unlock Content
+
+↓
+
+Customize
+
+↓
+
+Show Identity
+
+↓
+
+Continue Progression
+E

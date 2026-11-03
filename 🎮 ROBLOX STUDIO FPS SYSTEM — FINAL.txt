@@ -1,0 +1,294 @@
+🎮 ROBLOX STUDIO FPS SYSTEM — FINAL MASTER DESIGN
+
+Create a fully functional Roblox multiplayer FPS with deep progression, weapon customization, competitive systems, and a unified economy. The architecture is strictly divided into Visual Systems, Meta Progression Systems, and Gameplay Systems.
+
+🧱 CORE SYSTEM ARCHITECTURE
+🎯 3-LAYER STRUCTURE
+🧱 1. VISUAL / CREATOR LAYER (COSMETIC ONLY)
+
+No gameplay impact:
+
+Voxel/grid weapon workshop (2D + 3D)
+Custom armor creation (cosmetic only)
+Skins, borders, effects
+Profile customization
+Pet visuals
+Weapon animation creation system
+🏆 2. META PROGRESSION LAYER (NO GAMEPLAY IMPACT)
+
+Progression/status systems only:
+
+Ranked system
+Player level system
+Prestige system
+Titles
+Leaderboards
+
+⚠️ These systems do NOT affect combat.
+
+🔫 3. GAMEPLAY LAYER (SERVER-CONTROLLED COMBAT ONLY)
+
+Systems affecting gameplay:
+
+Weapon stats
+Weapon leveling (primary power system)
+System armor (percentage-based damage reduction)
+Enhancements
+Pets stat bonuses
+Match + damage systems
+🧭 MAIN MENU SYSTEM (NEW CORE FEATURE)
+
+When players enter the game, they spawn into a Main Menu Hub UI.
+
+🎮 MAIN MENU OPTIONS
+🏠 CORE NAVIGATION
+Play / Game Mode Selection (not listed but implied entry point)
+Inventory
+Crates
+Store (System Weapons)
+Profile
+Leaderboards
+Club
+Friends
+Pets
+Custom Workshop
+Settings
+Events
+Login Rewards (Daily / Weekly / Monthly)
+💬 CHAT SYSTEM HUB
+
+Accessible from Main Menu and hub UI:
+
+CHAT TYPES
+🌍 World Chat (lobby only)
+🎮 Match Chat (in-game only)
+👥 Friend Chat
+🏰 Club Chat
+🔒 Private Chat
+📅 LOGIN REWARD SYSTEM
+Daily rewards
+Weekly rewards
+Monthly rewards
+Increasing streak bonuses
+
+Rewards include:
+
+Coins
+Gems
+Cosmetics
+Pets
+Enhancement items
+Borders
+🔫 WEAPON SYSTEM
+🧱 VOXEL WORKSHOP (VISUAL ONLY)
+
+Players create weapons using:
+
+2D grid editor
+3D voxel editor
+Paint / fill / mirror tools
+Free camera editing
+⚠️ RULE
+
+Voxel structure is purely visual and does NOT affect gameplay stats.
+
+🎯 FUNCTIONAL WEAPON DESIGN (NEW REQUIREMENT)
+
+After 3D creation, players define:
+
+🔫 FIRE ORIGIN POINT
+Bullet spawn location
+✋ HOLD POSITION POINT
+Weapon grip positioning for first/third person
+🎬 ANIMATION SYSTEM
+
+Players create per-weapon animations:
+
+Idle
+Fire
+Reload
+Sprint
+ADS
+Inspect
+Equip / Unequip
+
+Keyframe-based editor with preview system.
+
+🔧 POST-CREATION EDITING
+
+Players can:
+
+Edit voxel model after saving
+Change fire origin
+Change hold position
+Update animations
+🔫 UNIFIED WEAPON POOL
+
+All weapons are usable in all modes:
+
+System weapons (crate + store)
+Workshop weapons
+Event weapons
+📊 WEAPON STATS
+Damage
+Fire Rate
+Accuracy
+Range
+Reload Speed
+Magazine Size
+Armor Penetration
+⚙️ WEAPON LEVEL SYSTEM (PRIMARY POWER SYSTEM)
+Max Level: 7
+Applies to all weapons
+Uses Coins or Gems
+EFFECT:
+
+Increases ALL stats:
+
+Damage
+Fire Rate
+Accuracy
+Range
+Reload Speed
+Magazine Size
+Armor Penetration
+🧬 RARITY SYSTEM
+Common
+Uncommon
+Rare
+Epic
+Legendary
+Awakened
+⚙️ RARITY FUNCTIONS
+Unlocks enhancement tiers
+Provides small stat bonuses
+🛠️ WORKSHOP VS SYSTEM WEAPONS
+🏪 SYSTEM WEAPONS
+Pre-balanced weapons
+Fixed stat distribution
+No stat allocation control
+🛠️ WORKSHOP WEAPONS
+Full player creation
+Players can assign rarity stat bonus into:
+Damage
+Fire Rate
+Accuracy
+Range
+Reload Speed
+Magazine Size
+Armor Penetration
+⚔️ AWAKENED ABILITIES
+Passive + Active abilities
+Toggle system (ON/OFF)
+⚙️ ENHANCEMENT SYSTEM
+Max 2 per weapon
+Rarity gated system (Common → Awakened)
+Adds modifiers and special effects
+🎁 RANDOM CRATE SYSTEM
+
+Drops:
+
+Coins
+Gems
+Pets
+Enhancements
+System weapons
+System armor
+Materials
+
+No duplicate weapon/armor drops.
+
+🏪 STORE SYSTEM
+Only system weapons
+Same pool as crates
+🛡️ ARMOR SYSTEM
+SYSTEM ARMOR
+Max 150 Armor Points
+Reduces damage via percentage reduction
+Depletes during combat
+CUSTOM ARMOR
+Cosmetic only (voxel-based)
+🐾 PET SYSTEM
+Max 2 equipped
+3 stat boosts
+Passive or active abilities
+Visibility toggle
+🎒 LOADOUT SYSTEM
+
+Created before match:
+
+Weapons
+System armor
+Cosmetic armor
+Pets
+Enhancements
+
+Locked during match.
+
+🏆 RANKED SYSTEM (META ONLY)
+Competitive ladder
+Seasonal resets
+Rewards only (no gameplay impact)
+⭐ PLAYER LEVEL SYSTEM (META ONLY)
+Infinite progression
+Prestige at level 100
+No gameplay effect
+🏷️ TITLES SYSTEM
+
+Earned from ranked, events, workshop, challenges.
+
+🧱 WORKSHOP REWARDS
+Coins
+Gems
+Borders
+Titles
+Effects
+
+Based on downloads and popularity.
+
+🎮 GAME MODES
+Ranked
+Free For All
+Team Deathmatch
+Zombie
+Capture the Flag
+Domination
+Snipers Only
+Melees Only
+⚙️ SETTINGS SYSTEM
+Sensitivity
+FOV
+Graphics
+Audio
+UI scaling
+Effects
+🔫 COMBAT SYSTEM
+Raycast-based shooting
+Server authoritative damage
+Headshots = 2x damage
+Armor reduces damage via percentage system
+🔫 KILL FEED
+
+Format:
+
+Killer → Weapon → Victim
+
+🔐 SECURITY SYSTEM
+Fully server-controlled combat
+No client stat authority
+Secure crate RNG
+Anti-exploit protection
+Loadout locking per match
+🧠 CORE GAME LOOP
+Enter Main Menu
+Choose system (Play, Inventory, Workshop, etc.)
+Create loadout
+Select game mode
+Match starts
+Combat gameplay
+Earn rewards (coins, gems, meta progression)
+End match summary
+Save server data
+🎯 FINAL RESULT
+
+A fully server-secure Roblox FPS ecosystem with a unified main menu hub, deep voxel-based weapon creation, structured combat systems, strict server authority, meta-only progression systems, and a fully modular economy driven by crates, store weapons, enhancements, and workshop content.

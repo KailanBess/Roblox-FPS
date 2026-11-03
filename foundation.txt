@@ -1,0 +1,518 @@
+VOLUME I — FOUNDATION
+PART 2 — TARGET AUDIENCE, PLAYER MOTIVATION, RETENTION STRATEGY, LIVE SERVICE PHILOSOPHY, DEVELOPMENT PRIORITIES, AND DESIGN CONSTRAINTS
+12. TARGET AUDIENCE
+12.1 Primary Audience
+
+The Roblox FPS Ecosystem is designed primarily for players who enjoy:
+
+Competitive shooters
+Skill-based gameplay
+Weapon customization
+Progression systems
+Social multiplayer experiences
+Creative tools
+Collection systems
+
+The target audience includes players who enjoy games such as:
+
+Competitive FPS games
+Arena shooters
+Tactical shooters
+Roblox combat experiences
+Creator-driven games
+12.2 Player Groups
+
+The ecosystem is designed around multiple player types.
+
+TYPE 1 — Competitive Players
+Player Motivation
+
+These players want:
+
+Ranking
+Improvement
+Competition
+Recognition
+
+They care about:
+
+Aim
+Strategy
+Statistics
+Leaderboards
+Systems They Engage With
+Ranked
+Leaderboards
+Competitive events
+Weapon mastery
+Match statistics
+MVP rewards
+TYPE 2 — Casual Players
+Player Motivation
+
+These players want:
+
+Fun matches
+Progression
+Customization
+Social experiences
+
+They care about:
+
+Unlocking items
+Trying weapons
+Playing with friends
+Systems They Engage With
+Casual modes
+Challenges
+Battle Pass
+Cosmetics
+Pets
+Events
+TYPE 3 — Collectors
+Player Motivation
+
+Collectors enjoy:
+
+Rare items
+Completion
+Prestige
+
+They pursue:
+
+Skins
+Armor sets
+Pets
+Titles
+Achievements
+Systems They Engage With
+Crates
+Collections
+Achievements
+Seasonal rewards
+Cosmetic events
+TYPE 4 — Creators
+Player Motivation
+
+Creators want:
+
+Recognition
+Expression
+Contribution
+
+They engage with:
+
+Workshop
+Community feedback
+Creator reputation
+Featured content
+TYPE 5 — Social Players
+Player Motivation
+
+Social players enjoy:
+
+Friends
+Clubs
+Squads
+Shared progression
+
+They engage with:
+
+Clubs
+Group rewards
+Social events
+Community challenges
+13. PLAYER MOTIVATION FRAMEWORK
+
+The game is designed around five motivation categories.
+
+13.1 Mastery
+
+Players improve through:
+
+Better aim
+Better movement
+Better decision making
+Weapon understanding
+
+Examples:
+
+Ranked improvement
+Weapon mastery
+Achievement completion
+13.2 Progression
+
+Players should always feel advancement.
+
+Progression includes:
+
+Player level
+Weapon level
+Battle Pass
+Achievements
+Collections
+13.3 Expression
+
+Players express identity through:
+
+Skins
+Armor appearances
+Pets
+Titles
+Profiles
+Workshop creations
+13.4 Competition
+
+Competition exists through:
+
+Ranked
+Leaderboards
+Events
+Challenges
+13.5 Contribution
+
+Players contribute through:
+
+Workshop creations
+Clubs
+Community participation
+14. EMOTIONAL EXPERIENCE GOALS
+
+The game should create specific feelings.
+
+14.1 Improvement
+
+Players should feel:
+
+"I am getting better."
+
+Supported by:
+
+Skill-based matchmaking
+Statistics
+Training tools
+Ranked progression
+14.2 Ownership
+
+Players should feel:
+
+"This account represents me."
+
+Supported by:
+
+Cosmetics
+Collections
+Titles
+Custom weapons
+14.3 Achievement
+
+Players should feel:
+
+"I earned this."
+
+Supported by:
+
+Mastery
+Ranked rewards
+Achievements
+Creator recognition
+14.4 Discovery
+
+Players should feel:
+
+"There is always something new."
+
+Supported by:
+
+Events
+Seasons
+Workshop content
+New cosmetics
+15. CORE GAME MODES
+
+The ecosystem supports multiple experiences.
+
+15.1 Casual Multiplayer
+Purpose
+
+Primary gameplay mode.
+
+Allows players to:
+
+Learn weapons
+Complete challenges
+Earn progression
+
+Possible modes:
+
+Team Deathmatch
+
+Goal:
+
+Eliminate enemy players.
+
+Domination
+
+Goal:
+
+Capture and control objectives.
+
+Hardpoint
+
+Goal:
+
+Control rotating objectives.
+
+Search and Destroy
+
+Goal:
+
+Complete tactical objectives with limited lives.
+
+Escort
+
+Goal:
+
+Push or defend an objective.
+
+15.2 Ranked Mode
+Purpose
+
+Competitive environment.
+
+Rules:
+
+Skill-based matchmaking
+Limited exploit potential
+Balanced weapon environment
+15.3 Limited-Time Modes
+
+Purpose:
+
+Create variety.
+
+Examples:
+
+Sniper Only
+Shotgun Only
+Knife Only
+Hardcore
+Low Gravity
+Random Weapons
+Workshop Showcase
+15.4 Creator Modes
+
+Future expansion:
+
+Allow community-designed experiences using:
+
+Workshop weapons
+Custom rules
+Community maps
+16. RETENTION STRATEGY
+
+The game uses multiple retention layers.
+
+16.1 Short-Term Retention
+
+Goals within minutes.
+
+Systems:
+
+Fast matches
+Match rewards
+Daily challenges
+First-time unlocks
+16.2 Medium-Term Retention
+
+Goals within weeks.
+
+Systems:
+
+Weapon leveling
+Battle Pass
+Ranked placement
+Collections
+Events
+16.3 Long-Term Retention
+
+Goals over months.
+
+Systems:
+
+Prestige
+Mastery
+Achievements
+Creator reputation
+Seasonal rewards
+17. LIVE-SERVICE PHILOSOPHY
+
+The game should feel alive without overwhelming players.
+
+17.1 Content Philosophy
+
+New content should focus on:
+
+Quality
+Balance
+Player choice
+
+Not:
+
+Constant power creep
+17.2 Seasonal Structure
+
+Each season should contain:
+
+New Content
+
+Examples:
+
+Weapons
+Skins
+Pets
+Events
+Competitive Update
+
+Examples:
+
+Ranked reset
+Leaderboard rewards
+Balance changes
+Community Content
+
+Examples:
+
+Workshop highlights
+Creator features
+18. DEVELOPMENT PRIORITIES
+
+Development order should follow player impact.
+
+Priority 1 — Core Combat
+
+Must be completed first:
+
+Shooting
+Movement
+Hit detection
+Server authority
+Weapon balance
+Priority 2 — Progression
+
+Needed for retention:
+
+XP
+Levels
+Rewards
+Economy
+Priority 3 — Competitive Systems
+
+Needed for long-term players:
+
+Ranked
+Leaderboards
+Matchmaking
+Priority 4 — Creator Ecosystem
+
+Needed for expansion:
+
+Workshop
+Reputation
+Publishing
+Priority 5 — Social Features
+
+Needed for community:
+
+Clubs
+Squads
+Friends
+Priority 6 — Live Service
+
+Needed for longevity:
+
+Seasons
+Events
+Battle Pass
+19. DESIGN CONSTRAINTS
+
+These rules apply to all future development.
+
+Constraint 1 — No Pay To Win
+
+Purchases cannot provide:
+
+Combat advantage
+Exclusive power
+Better stats
+Constraint 2 — Competitive Balance
+
+All weapons must respect:
+
+MAX TTK VARIANCE ±25%
+
+CLASS DPS VARIANCE ±15%
+Constraint 3 — Customization Limits
+
+Customization cannot break:
+
+Weapon identity
+Competitive integrity
+Match fairness
+Constraint 4 — Economy Stability
+
+Avoid:
+
+Excessive inflation
+Unlimited currency generation
+Uncontrolled rare item values
+Constraint 5 — Accessibility
+
+New players must have:
+
+Clear progression
+Beginner weapons
+Learning systems
+20. DESIGN SUCCESS CRITERIA
+
+The game succeeds when:
+
+Players say:
+
+"I improved because I practiced."
+
+Creators say:
+
+"My creations matter."
+
+Competitive players say:
+
+"The best players win."
+
+Casual players say:
+
+"There is always something fun to unlock."
+
+Community says:
+
+"This game keeps evolving."
+
+21. FOUNDATION SUMMARY
+
+The Roblox FPS Ecosystem is built on four permanent values:
+
+Skill
+
+Gameplay is earned.
+
+Creativity
+
+Players contribute.
+
+Progression
+
+Time creates identity.
+
+Fairness
+
+Competition remains meaningful.

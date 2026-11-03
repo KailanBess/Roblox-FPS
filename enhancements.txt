@@ -1,0 +1,149 @@
+🔥 High-Caliber Rounds
+
+Increases weapon damage.
+
++5% Damage
+-5% Fire Rate
+
+Purpose:
+
+Higher per-shot impact
+Slightly slower TTK consistency
+⚡ Rapid Cycling
+
+Increases firing speed.
+
++8% Fire Rate
+-4% Accuracy
+
+Purpose:
+
+Aggressive playstyles
+Faster close-range pressure
+🎯 Precision Barrel
+
+Improves shot consistency.
+
++8% Accuracy
+-3% Movement Speed
+
+Purpose:
+
+Better long-range reliability
+🛡 Armor Piercer
+
+Improves armor penetration.
+
++10 Armor Penetration
+-3% Reload Speed
+
+Purpose:
+
+Better against armored opponents
+📦 Extended Magazine
+
+Larger magazine capacity.
+
++20% Magazine Capacity
+-5% Reload Speed
+
+Purpose:
+
+Longer engagements
+Better multi-kill potential
+💥 Hollow Point
+
+Increases headshot lethality.
+
++10% Headshot Damage
+-5 Armor Penetration
+
+Purpose:
+
+Rewards precision aim
+🛠️ UTILITY ENHANCEMENTS (6)
+
+Only one Utility Enhancement may be equipped.
+
+🏃 Lightweight Frame
+
+Improves mobility.
+
++5% Movement Speed
+-3% Accuracy
+
+Purpose:
+
+Faster positioning
+Aggressive flanking
+🔄 Quick Reload
+
+Faster reloads.
+
++10% Reload Speed
+-5% Magazine Capacity
+
+Purpose:
+
+Reduced downtime
+🎯 Stabilizer
+
+Reduces bloom growth.
+
+-10% Bloom Growth
++5% Bloom Recovery
+
+Purpose:
+
+Better sustained fire control
+🔍 Enhanced Optics
+
+Scoped weapons only.
+
++10% ADS Stability
++5% Scope Recovery
+
+Purpose:
+
+Better precision shooting
+
+For non-scoped weapons:
+
+Automatically converts to Stabilizer
+⚙ Tactical Grip
+
+Improves weapon handling.
+
++5% Weapon Swap Speed
++5% Equip Speed
+
+Purpose:
+
+Faster reaction time
+🧰 Reinforced Components
+
+Improves reliability.
+
++5% Reload Speed
++5% Accuracy Recovery
+
+Purpose:
+
+General-purpose enhancement
+🎲 Enhancement Rarity Tiers
+
+Enhancements themselves can have rarity:
+
+Common
+Uncommon
+Rare
+Epic
+Legendary
+
+Rarity affects:
+
+Cosmetic appearance
+Drop rate
+Scrap value
+
+Never affects stats.

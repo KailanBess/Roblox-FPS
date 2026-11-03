@@ -1,0 +1,184 @@
+Planned Structure (v4.0)
+
+Volume I — Foundation
+
+Cover Page
+Document Information
+Table of Contents
+Executive Summary
+Game Vision
+Design Philosophy
+Core Design Pillars
+Gameplay Loop
+Player Experience Goals
+Competitive Philosophy
+
+Volume II — Core Gameplay
+11. Combat
+12. Health
+13. Armor
+14. Damage
+15. Armor Penetration
+16. Movement
+17. Accuracy
+18. Bloom
+19. Recoil
+20. Weapon Handling
+21. Headshots
+22. Hit Detection
+23. Damage Falloff
+24. Balance Rules
+
+Volume III — Weapons
+25. Weapon Classes
+26. Weapon Roles
+27. Complete System Weapon Roster
+28. Weapon Statistics
+29. Weapon Progression
+30. Weapon Mastery
+31. Weapon Challenges
+32. Weapon Skins
+33. Weapon Collections
+34. Weapon Inspection
+35. Awakened Skins
+
+Volume IV — Workshop
+36. Weapon Creator
+37. Voxel Editor
+38. Animation Requirements
+39. Workshop Statistics
+40. Publishing
+41. Moderation
+42. Creator Reputation
+43. Creator Levels
+44. Featured Creator Program
+45. Ranked Normalization
+
+Volume V — Equipment
+46. Armor
+47. Armor Rarities
+48. Armor Affixes
+49. Armor Sets
+50. Armor Cosmetics
+51. Armor Balance Rules
+52. Armor Reforging
+
+Volume VI — Enhancements
+53. Enhancement System
+54. Offensive Enhancements
+55. Utility Enhancements
+56. Enhancement Balance
+
+Volume VII — Progression
+57. Player Levels
+58. Weapon Levels
+59. Prestige
+60. Challenges
+61. Login Rewards
+62. Seasonal Progression
+63. Achievements
+
+Volume VIII — Economy
+64. Coins
+65. Gems
+66. Ranked Points
+67. Scrap
+68. Scrap Rarities
+69. Currency Sources
+70. Currency Sinks
+71. Crafting
+72. Salvaging
+
+Volume IX — Crates
+73. Crate Philosophy
+74. Keys
+75. Standard Crate
+76. Enhancement Crate
+77. Armor Crate
+78. Cosmetic Crate
+79. Premium Crate
+80. Weapon Skin Crate
+81. Drop Tables
+82. Duplicate Protection
+83. Pity System
+
+Volume X — Cosmetics
+84. Weapon Skins
+85. Armor Effects
+86. Charms
+87. Titles
+88. Player Cards
+89. Kill Effects
+90. Death Effects
+91. Emotes
+92. Loading Screens
+93. Collections
+
+Volume XI — Pets
+94. Pet System
+95. Passive Effects
+96. Personalities
+97. Animations
+98. Balance Rules
+
+Volume XII — Ranked
+99. Ranked Rules
+100. Placement
+101. MMR
+102. Seasonal Rewards
+103. Top 500
+104. Ranked Store
+
+Volume XIII — Live Service
+105. Battle Pass
+106. Dynamic Events
+107. Weekly Rotations
+108. Featured Workshop
+109. Seasonal Content
+
+Volume XIV — Social
+110. Friends
+111. Squads
+112. Clubs
+113. Club Progression
+
+Volume XV — Match Systems
+114. MVP
+115. Match Rewards
+116. Career Statistics
+117. Replay
+118. Match History
+
+Volume XVI — Security
+119. Server Authority
+120. Networking
+121. Anti-Cheat
+122. Replay Validation
+123. Packet Validation
+
+Volume XVII — UI
+124. Menus
+125. HUD
+126. Inventory
+127. Store
+128. Workshop UI
+129. Ranked UI
+130. Match UI
+
+Volume XVIII — Backend
+131. Data Storage
+132. Matchmaking
+133. Analytics
+134. Live Operations
+135. Version Control
+
+Volume XIX — Content Pipeline
+136. Weapon Releases
+137. Seasonal Releases
+138. Balance Updates
+139. Workshop Pipeline
+
+Volume XX — Future Expansion
+140. Planned Systems
+141. DLC Philosophy
+142. Long-Term Roadmap

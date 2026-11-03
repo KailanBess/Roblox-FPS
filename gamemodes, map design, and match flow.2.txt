@@ -1,0 +1,426 @@
+VOLUME XI — GAME MODES, MAP DESIGN, AND MATCH FLOW
+PART 2 — MAP ECOSYSTEM, ROTATIONS, MATCHMAKING EXPERIENCE, NEW PLAYER EXPERIENCE, AND PLAYER RETENTION DESIGN
+497. MAP ECOSYSTEM OVERVIEW
+
+The map ecosystem provides variety while maintaining competitive fairness.
+
+Maps are designed around:
+
+Combat pacing
+Strategic decisions
+Player skill expression
+Visual identity
+497.1 MAP DESIGN PHILOSOPHY
+
+A good FPS map creates:
+
+Multiple choices.
+
+A bad FPS map creates:
+
+One correct strategy.
+
+498. MAP ARCHETYPE SYSTEM
+
+Maps are categorized by gameplay style.
+
+Close Combat Maps
+
+Focus:
+
+SMG
+Shotgun
+Aggressive movement
+Balanced Maps
+
+Focus:
+
+All weapon classes
+Long Range Maps
+
+Focus:
+
+Sniper
+Marksman
+Objective Maps
+
+Focus:
+
+Team strategy
+499. MAP THEME EXAMPLES
+Urban District
+
+Theme:
+
+City combat.
+
+Features:
+
+Buildings
+Streets
+Interior fights
+Industrial Facility
+
+Theme:
+
+Factory environment.
+
+Features:
+
+Vertical areas
+Machinery
+Desert Outpost
+
+Theme:
+
+Open tactical combat.
+
+Features:
+
+Long sightlines
+Cover placement
+Arctic Research Base
+
+Theme:
+
+Cold environment.
+
+Features:
+
+Indoor/outdoor transitions
+Cyber Arena
+
+Theme:
+
+Futuristic combat.
+
+Features:
+
+Digital effects
+Dynamic visuals
+500. MAP FLOW DESIGN
+
+Every map requires:
+
+Entry Points
+
+Where players enter combat.
+
+Conflict Areas
+
+Where fights naturally happen.
+
+Recovery Areas
+
+Where players reset.
+
+501. THREE-LANE DESIGN RECOMMENDATION
+
+Competitive maps use:
+
+Left Lane
+
+Middle Lane
+
+Right Lane
+
+Purpose:
+
+Create:
+
+Predictable flow
+Strategic choices
+502. POWER POSITION SYSTEM
+
+Strong positions exist.
+
+However:
+
+They require:
+
+Skill
+Risk
+Counterplay
+
+Example:
+
+Sniper tower.
+
+Counter:
+
+Multiple entry routes.
+
+503. MAP ROTATION SYSTEM
+
+Maps rotate based on:
+
+Mode.
+
+Player population.
+
+Competitive balance.
+
+504. RANKED MAP ROTATION
+
+Ranked uses:
+
+Smaller curated pool.
+
+Purpose:
+
+Maintain:
+
+Competitive quality
+Player familiarity
+505. CASUAL MAP ROTATION
+
+Casual includes:
+
+More variety.
+
+Includes:
+
+Experimental maps
+New content
+506. EVENT MAP ROTATION
+
+Special maps:
+
+Limited time.
+
+Examples:
+
+Seasonal themes.
+
+507. MAP VOTING SYSTEM
+
+Recommended:
+
+Players vote between:
+
+2-3 maps.
+
+Ranked:
+
+No voting.
+
+Uses controlled rotation.
+
+508. MAP BANNING SYSTEM
+
+Advanced ranked feature.
+
+Players may ban:
+
+One disliked map.
+
+Purpose:
+
+Competitive preference.
+
+509. MATCHMAKING SYSTEM
+
+The system creates matches based on:
+
+Skill
+Region
+Party size
+Mode
+510. MATCHMAKING PRIORITY
+
+Priority:
+
+Fair match
+Good connection
+Fast queue
+511. PARTY MATCHMAKING
+
+Groups are considered.
+
+A coordinated team:
+
+Matches against:
+
+Similar groups.
+
+512. NEW PLAYER EXPERIENCE OVERVIEW
+
+New players require:
+
+A smooth introduction.
+
+Goals:
+
+Teach:
+
+Shooting
+Movement
+Loadouts
+Progression
+513. TRAINING MODE
+
+New players enter:
+
+Training environment.
+
+Includes:
+
+Weapon testing
+Targets
+Movement tutorial
+514. TUTORIAL STRUCTURE
+Step 1
+
+Movement.
+
+Teach:
+
+Sprint
+Jump
+Positioning
+Step 2
+
+Combat.
+
+Teach:
+
+Shooting
+Reloading
+Aim
+Step 3
+
+Customization.
+
+Teach:
+
+Weapons
+Armor
+Enhancements
+Step 4
+
+Progression.
+
+Teach:
+
+XP
+Rewards
+515. BEGINNER LOADOUT SYSTEM
+
+New players receive:
+
+Starter weapons.
+
+Example:
+
+M4A1
+
+Basic pistol
+
+Starter armor
+
+516. BEGINNER PROTECTION
+
+New accounts receive:
+
+Early matchmaking protection.
+
+Purpose:
+
+Avoid immediate high-level opponents.
+
+517. LEARNING CHALLENGES
+
+Beginner challenges:
+
+Examples:
+
+Get:
+
+10 eliminations.
+
+Complete:
+
+3 matches.
+
+Rewards:
+
+Coins
+Keys
+Cosmetics
+518. PLAYER RETENTION SYSTEM
+
+Retention comes from:
+
+Short-term goals.
+
+Medium-term progression.
+
+Long-term mastery.
+
+519. SHORT-TERM GOALS
+
+Examples:
+
+Daily challenges.
+
+Match rewards.
+
+520. MEDIUM-TERM GOALS
+
+Examples:
+
+Weapon leveling.
+
+Rank climbing.
+
+Armor collection.
+
+521. LONG-TERM GOALS
+
+Examples:
+
+Prestige
+Mastery
+Collections
+Creator reputation
+522. RETURNING PLAYER SYSTEM
+
+Players returning after absence receive:
+
+Welcome rewards.
+
+Examples:
+
+XP boost
+Cosmetic reward
+Challenge refresh
+523. PLAYER JOURNEY
+
+New player:
+
+Tutorial
+
+↓
+
+First Weapon
+
+↓
+
+First Cosmetic
+
+↓
+
+First Mastery
+
+↓
+
+Competitive Play
+
+↓
+
+Collection Goals
+524. PLAYER EXPERIENCE PRINCIPLE
+
+The ecosystem should constantly answer:
+
+"What should I do next?"

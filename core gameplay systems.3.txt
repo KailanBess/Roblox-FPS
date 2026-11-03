@@ -1,0 +1,490 @@
+VOLUME II — CORE GAMEPLAY SYSTEMS
+PART 3 — WEAPON BALANCE FRAMEWORK, CLASS IDENTITY, STAT DEFINITIONS, AND COMPETITIVE WEAPON RULES
+53. WEAPON SYSTEM OVERVIEW
+
+Weapons are the primary gameplay expression system.
+
+The weapon ecosystem is designed around:
+
+Different playstyles
+Clear strengths and weaknesses
+Skill expression
+Balanced competitive choices
+
+The goal is not:
+
+"One strongest weapon."
+
+The goal is:
+
+"Many weapons with different reasons to exist."
+
+53.1 Weapon Design Philosophy
+
+Every weapon must answer:
+
+Who is this weapon for?
+What range does it dominate?
+What weakness balances it?
+What skill does it reward?
+
+Example:
+
+A sniper is not balanced because it does low damage.
+
+A sniper is balanced because:
+
+It requires precision
+It sacrifices close-range flexibility
+It punishes mistakes
+54. WEAPON CLASS SYSTEM
+
+The game contains eight primary weapon classes.
+
+Assault Rifle
+
+SMG
+
+Shotgun
+
+Sniper
+
+Pistol
+
+LMG
+
+Marksman
+
+Knife
+
+Each class has:
+
+Intended range
+Damage profile
+Mobility identity
+Accuracy expectations
+Competitive purpose
+55. ASSAULT RIFLE CLASS
+Purpose
+
+General-purpose primary weapons.
+
+Designed for:
+
+Mid-range fights
+Flexible positioning
+Consistent performance
+Strengths
+Balanced damage
+Good range
+Reliable accuracy
+Adaptability
+Weaknesses
+Not strongest in any single category
+Requires consistent aim
+Design Goal
+
+Assault rifles should be the default competitive foundation.
+
+56. SMG CLASS
+Purpose
+
+Close-range aggressive weapons.
+
+Designed for:
+
+Fast movement
+Entry fights
+Flanking
+Strengths
+High mobility
+Fast handling
+Strong close-range DPS
+Weaknesses
+Poor range
+Lower armor effectiveness
+Reduced long-distance accuracy
+Design Goal
+
+SMGs reward aggressive players.
+
+57. SHOTGUN CLASS
+Purpose
+
+Close-range burst weapons.
+
+Strengths
+Extreme close-range power
+Area control
+Punishes poor positioning
+Weaknesses
+Limited range
+Requires commitment
+Design Goal
+
+Shotguns should dominate rooms, not entire maps.
+
+58. SNIPER CLASS
+Purpose
+
+Long-range precision.
+
+Strengths
+High damage
+Precision advantage
+Long-range control
+Weaknesses
+Slow handling
+Requires accuracy
+Vulnerable to pressure
+Design Goal
+
+Snipers reward patience and precision.
+
+59. PISTOL CLASS
+Purpose
+
+Secondary weapons.
+
+Strengths
+Fast swap speed
+Emergency combat
+High mobility
+Weaknesses
+Limited range
+Lower sustained damage
+Design Goal
+
+Pistols should be useful, not disposable.
+
+60. LMG CLASS
+Purpose
+
+Sustained fire weapons.
+
+Strengths
+Large magazines
+Suppression
+Extended fights
+Weaknesses
+Slow handling
+Lower mobility
+Design Goal
+
+LMGs reward positioning.
+
+61. MARKSMAN CLASS
+Purpose
+
+Precision semi-automatic weapons.
+
+Strengths
+Accuracy
+Range
+Controlled damage
+Weaknesses
+Requires precision
+Lower forgiveness
+Design Goal
+
+Marksman weapons reward accuracy.
+
+62. KNIFE CLASS
+Purpose
+
+Melee option.
+
+Strengths
+Maximum mobility
+Silent playstyle
+Weaknesses
+Requires close range
+Design Goal
+
+Knife gameplay is risk versus reward.
+
+63. WEAPON STAT FRAMEWORK
+
+Every weapon uses standardized statistics.
+
+63.1 Core Combat Stats
+Damage
+
+Amount of health removed per shot.
+
+Fire Rate
+
+Rounds per minute.
+
+Formula:
+
+RPM =
+Shots fired per minute
+Magazine
+
+Number of rounds before reload.
+
+Range
+
+Distance before damage reduction begins.
+
+Accuracy
+
+Controls:
+
+Spread
+Bloom
+Consistency
+Reload
+
+Time required to restore ammunition.
+
+Mobility
+
+Movement speed while equipped.
+
+Armor Penetration
+
+Effectiveness against armor.
+
+64. ADVANCED WEAPON STATS
+
+Every weapon also has hidden handling values.
+
+ADS Speed
+
+How quickly the weapon aims.
+
+Equip Speed
+
+How quickly the weapon becomes active.
+
+Sprint Out Time
+
+Delay after sprinting.
+
+First Shot Accuracy
+
+Initial precision.
+
+Bloom Growth
+
+Accuracy loss during fire.
+
+Bloom Recovery
+
+Accuracy restoration.
+
+ADS Stability
+
+Scoped steadiness.
+
+Flinch Resistance
+
+Aim disruption resistance.
+
+65. WEAPON BALANCE EQUATION
+
+Weapons are balanced through:
+
+Power Budget
+
+Every advantage must cost something.
+
+Example:
+
+High Damage
+
+Requires:
+
+Lower:
+
+Fire rate
+Mobility
+Accuracy
+
+High Fire Rate
+
+Requires:
+
+Lower:
+
+Damage
+Range
+Control
+
+High Accuracy
+
+Requires:
+
+Lower:
+
+Damage
+Mobility
+66. DPS BALANCE
+
+DPS:
+
+Damage per second.
+
+Formula:
+
+DPS =
+
+Damage × Fire Rate / 60
+
+DPS is not the only factor.
+
+Weapons are balanced through:
+
+DPS
+TTK
+Range
+Accuracy
+Handling
+67. TTK BALANCE RULES
+
+All weapon classes follow:
+
+MAX TTK VARIANCE
+
+±25%
+
+Meaning:
+
+No weapon should kill dramatically faster without meaningful weakness.
+
+68. RANGE BALANCE
+
+Range determines identity.
+
+Example:
+
+SMG
+
+Strong:
+
+0-20 meters
+
+AR
+
+Strong:
+
+20-60 meters
+
+Sniper
+
+Strong:
+
+60+ meters
+
+69. WEAPON COUNTER SYSTEM
+
+Every weapon has counters.
+
+Example:
+
+Sniper
+
+Counter:
+
+Close pressure
+Movement
+Flanking
+
+Shotgun
+
+Counter:
+
+Distance
+Open areas
+
+LMG
+
+Counter:
+
+Mobility
+Aggressive pushes
+70. WEAPON RARITY RULES
+
+Weapon rarity is cosmetic only.
+
+Rarity does not affect:
+
+Damage
+Fire rate
+Accuracy
+
+Weapon rarity affects:
+
+Skin quality
+Effects
+Animations
+Visual identity
+71. WEAPON CUSTOMIZATION RULES
+
+Customization may modify:
+
+Appearance
+Animation
+Audio
+Identity
+
+Gameplay modifiers are controlled through:
+
+Enhancements
+Workshop systems
+72. COMPETITIVE WEAPON REQUIREMENTS
+
+Ranked weapons must:
+
+Maintain predictable TTK
+Avoid extreme builds
+Preserve counterplay
+
+Workshop weapons entering ranked are normalized.
+
+73. WEAPON BALANCE REVIEW PROCESS
+
+Before release:
+
+Weapon receives testing for:
+
+Statistics
+Damage
+RPM
+TTK
+Gameplay
+Range
+Handling
+Skill requirement
+Competitive Impact
+Ranked viability
+Counterplay
+74. FUTURE WEAPON EXPANSION RULES
+
+New weapons must:
+
+Not be:
+
+"Better versions."
+
+They must be:
+
+"Different options."
+
+Example:
+
+New AR:
+
+Cannot simply be:
+
+Higher damage + higher fire rate + better accuracy.
+
+Instead:
+
+High damage but slower.
+
+OR
+
+High accuracy but lower DPS.

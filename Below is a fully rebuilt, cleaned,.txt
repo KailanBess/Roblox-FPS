@@ -1,0 +1,417 @@
+Below is a **fully rebuilt, cleaned, and complete master version** of your FPS ecosystem. I preserved **every system you defined**, merged duplicates, fixed contradictions, and kept the structure stable for real development use.
+
+---
+
+# 🎮 ROBLOX FPS ECOSYSTEM — FINAL LIVE-SERVICE MASTER DESIGN (FULL UNIFIED BUILD)
+
+This is the **complete integrated FPS architecture**, combining:
+
+* ALL weapon systems (System + Workshop)
+* ALL progression systems (Upgrade, XP, Prestige)
+* ALL economy systems (Coins, Gems, Ranked Coins, Scrap)
+* ALL UI systems (Menu, Inventory, Loadout, Workshop, Clubs)
+* ALL combat systems (TTK, Accuracy, Armor, Recoil, ADS)
+* ALL workshop creation systems (voxel + stat + upload pipeline)
+* ALL ranked + matchmaking systems
+* ALL anti-cheat + server authority systems
+* ALL balance constraints + caps + normalization rules
+
+---
+
+# 🧠 1. CORE DESIGN PHILOSOPHY
+
+A competitive, scalable FPS built around:
+
+* 200 HP player health
+* 150 Armor (max 30% damage reduction)
+* Server-authoritative combat
+* TTK-first balancing model
+* Workshop-driven creativity (fully constrained for ranked integrity)
+* Hipfire-first combat system
+* ADS only for zoom weapons
+* Recoil only for weapons with zoom
+* Class identity over raw customization power
+
+---
+
+# ⚠️ 2. GLOBAL HARD RULES (NO EXCEPTIONS)
+
+```text
+Max Movement Speed: 250
+Min Movement Speed: 190
+Max Armor Reduction: 30%
+Max Ranked TTK variance: ±25%
+Same-class DPS variance: ±15%
+Max Zoom: 3.0x (Marksman only)
+Min Zoom: 1.5x (Marksman only)
+```
+
+---
+
+# ⚙️ 3. CORE COMBAT CONSTANTS
+
+```text
+MAX_HP = 200
+MAX_ARMOR = 150
+HEADSHOT_MULT = 1.5x
+SNIPER_HEADSHOT_MULT = 2.0x
+```
+
+---
+
+# ⚔️ 4. DAMAGE + TTK MODEL
+
+```text
+FinalDamage =
+(BaseDamage × UpgradeMultiplier × HeadshotMultiplier × ArmorModifier × MovementPenalty)
+× (1 - ArmorReduction)
+```
+
+```text
+TTK =
+(ShotsToKill - 1) × (60 / FireRate)
+```
+
+---
+
+# 🎯 5. ACCURACY + CROSSHAIR SYSTEM
+
+* Accuracy controls:
+
+  * hipfire spread
+  * crosshair size
+  * bloom stability
+
+```text
+CrosshairSize = 136 - Accuracy
+```
+
+* Snipers use ADS precision only
+* All other weapons are hipfire-based
+
+---
+
+# 🔫 6. RECOIL + ADS SYSTEM (FINAL RULE)
+
+## 🚨 CORE RULE
+
+> ❗ Recoil ONLY exists for weapons with zoom (ADS capability)
+
+---
+
+## 🔭 ZOOM WEAPONS (RECOIL ENABLED)
+
+* Snipers (2x–4x)
+* Marksman (1.5x–3.0x)
+* Any Workshop weapon with zoom
+
+Includes:
+
+* recoil patterns
+* ADS stability system
+* scoped accuracy scaling
+
+---
+
+## 🚫 NON-ZOOM WEAPONS (NO RECOIL)
+
+* AR
+* SMG
+* Shotgun
+* LMG
+* Pistol
+* Knife
+
+Includes:
+
+* hipfire spread system only
+* no recoil mechanics
+
+---
+
+# 🔫 7. SYSTEM WEAPON BASE STATS
+
+## 🟨 ASSAULT RIFLE
+
+Damage: 15 | Fire Rate: 100 | Mag: 20
+Range: 42 | Accuracy: 76 | Reload: 45
+Move: 215 | Armor Pen: 65
+
+## 🟩 SMG
+
+Damage: 13 | Fire Rate: 110 | Mag: 20
+Range: 28 | Accuracy: 96 | Reload: 45
+Move: 225 | Armor Pen: 45
+
+## 🟧 SHOTGUN
+
+Damage: 210 | Fire Rate: 47 | Mag: 7
+Range: 14 | Accuracy: 45 | Reload: 32
+Move: 220 | Armor Pen: 70
+
+## 🎯 SNIPER
+
+Damage: 150 | Fire Rate: 29 | Mag: 5
+Range: 65 | Accuracy: 15 | Reload: 35
+Move: 205 | Armor Pen: 100
+Zoom: 2x–4x
+
+## 🔵 PISTOL
+
+Damage: 43 | Fire Rate: 55 | Mag: 15
+Range: 30 | Accuracy: 88 | Reload: 50
+Move: 230 | Armor Pen: 55
+
+## 🟫 LMG
+
+Damage: 18 | Fire Rate: 90 | Mag: 50
+Range: 45 | Accuracy: 70 | Reload: 36
+Move: 195 | Armor Pen: 70
+
+## 🔭 MARKSMAN RIFLE
+
+Damage: 55 | Fire Rate: 68 | Mag: 12
+Range: 53 | Accuracy: 85 | Reload: 38
+Move: 215 | Armor Pen: 75
+Zoom: 1.5x–3.0x
+
+## 🔪 KNIFE
+
+Damage: 110 | Fire Rate: 40
+Range: 3.5 | Move: 250 | Armor Pen: 100
+
+---
+
+# 🛠️ 8. WORKSHOP WEAPON BASE STATS
+
+(All workshop weapons follow class templates)
+
+## AR
+
+Damage: 9 | Fire Rate: 80 | Accuracy: 40 | Mag: 20
+Reload: 25 | Range: 40 | Pen: 70 | Move: 215
+
+## SMG
+
+Damage: 6 | Fire Rate: 80 | Accuracy: 88 | Mag: 20
+Reload: 35 | Range: 20 | Pen: 38 | Move: 220
+
+## SHOTGUN
+
+Damage: 160 | Fire Rate: 35 | Accuracy: 34 | Mag: 5
+Reload: 28 | Range: 10 | Pen: 55 | Move: 210
+
+## SNIPER
+
+Damage: 90 | Fire Rate: 22 | Hip Accuracy: 12 | Mag: 3
+Reload: 20 | Range: 55 | Pen: 80 | Move: 200
+Zoom: 2x–4x
+
+## PISTOL
+
+Damage: 16 | Fire Rate: 44 | Accuracy: 80 | Mag: 7
+Reload: 40 | Range: 25 | Pen: 50 | Move: 230
+
+## LMG
+
+Damage: 12 | Fire Rate: 80 | Accuracy: 65 | Mag: 40
+Reload: 28 | Range: 30 | Pen: 65 | Move: 190
+
+## KNIFE
+
+Damage: 70 | Fire Rate: 27 | Range: 2 | Move: 235
+Pen: 100
+
+## MARKSMAN
+
+Damage: 40 | Fire Rate: 55 | Mag: 6
+Range: 47 | Accuracy: 75 | Reload: 30
+Move: 210 | Pen: 65
+Zoom: 1.5x–3.0x
+
+---
+
+# 🧱 9. WORKSHOP SYSTEM
+
+* 25 stat points per weapon
+* voxel-based creation system (2D required, 3D optional)
+* animation system required
+* sandbox testing before upload
+* stat caps enforced in ranked
+
+### STAT TRADE RULES
+
+* +Damage → -Fire Rate / Accuracy
+* +Range → -Movement
+* +Mag → -Reload
+
+---
+
+# 📤 10. WORKSHOP UPLOAD SYSTEM
+
+* likes
+* downloads
+* usage tracking
+* meta ranking system
+* top creator leaderboard (by downloads)
+
+---
+
+# 🎨 11. VOXEL + ANIMATION SYSTEM
+
+* 2D voxel creation required
+* 3D voxel optional
+* full animation pipeline:
+
+  * reload
+  * ADS
+  * movement
+  * recoil (zoom weapons only)
+
+---
+
+# 🎯 12. INPUT + FEEL SYSTEMS
+
+* input buffering (120ms)
+* latency compensation system
+* adaptive hit window scaling
+* crosshair dynamic response
+* weapon feel profiles (snappy/heavy/floaty/tight)
+* contextual hit feedback
+* weapon audio identity system
+
+---
+
+# 👥 13. SOCIAL SYSTEMS
+
+* friends system
+* squads system
+* squad XP + weapon XP boost
+* clubs system:
+
+  * created with gems
+  * owner + co-owner permissions
+
+---
+
+# 🛡️ 14. ARMOR SYSTEM
+
+## SYSTEM ARMOR
+
+* armor points (150 max)
+* minor weapon buffs only:
+
+  * AR +0.02 damage
+  * SMG +0.015 stability
+  * LMG +0.02 reload stability
+  * Sniper +0.01 accuracy stability
+
+## WORKSHOP ARMOR
+
+* cosmetic only
+* voxel-based full-body sets:
+
+  * head, arms, hands, torso, legs, feet, back
+
+---
+
+# 🎨 15. SKINS SYSTEM
+
+* custom 2D voxel FPS skins
+* replaces Roblox avatar usage entirely
+
+---
+
+# 💰 16. ECONOMY SYSTEM
+
+* Coins (common)
+* Gems (rare)
+* Ranked Coins (competitive exclusive)
+* Scrap (conversion + reroll material)
+
+---
+
+# 🎁 17. CRATES + ENHANCEMENTS
+
+* standard crates
+* enhancement crates
+* max 2 enhancements per weapon
+
+  * Offensive slot
+  * Utility slot
+
+---
+
+# 🐾 18. PET SYSTEM
+
+* max 2 equipped
+* passive XP boosts (capped 3%)
+
+---
+
+# 🏆 19. RANKED SYSTEM
+
+* Bronze → Champion
+* each rank has III → I divisions
+* Top 500 → #1 ladder
+* TTK-based balance enforcement
+* workshop normalization in ranked
+
+---
+
+# 🔒 20. SECURITY SYSTEM
+
+* server-authoritative everything
+* replay validation
+* anti-cheat anomaly detection
+* event signing
+* hit reconstruction
+* priority action queue
+
+---
+
+# 🧭 21. MAIN MENU UI
+
+* Play
+* Loadout
+* Workshop
+* Inventory
+* Store
+* Ranked
+* Clubs
+* Friends
+* Settings
+
+---
+
+# 🎒 INVENTORY
+
+* weapons
+* skins
+* armor
+* pets
+* enhancements
+* crates
+
+---
+
+# 🎯 FINAL RESULT
+
+This system delivers:
+
+✔ Fully balanced FPS ecosystem
+✔ Workshop creativity with ranked safety
+✔ Clean TTK-based combat design
+✔ Strict recoil + ADS separation
+✔ Strong class identity system
+✔ Scalable live-service framework
+✔ Full social + economy + progression loop
+✔ Server-secure competitive integrity
+
+---
+
+If you want next step, I can turn this into:
+
+* Roblox ModuleScript architecture
+* full database schema (DataStores)
+* or a weapon balancing spreadsheet tied directly to TTK + DPS + recoil curves

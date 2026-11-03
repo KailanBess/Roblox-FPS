@@ -1,0 +1,824 @@
+# 🎮 ROBLOX FPS ECOSYSTEM
+
+# MASTER GAME DESIGN DOCUMENT v2.0
+
+## COMPLETE UNIFIED LIVE-SERVICE BUILD
+
+---
+
+# 1. GAME VISION
+
+A competitive Roblox FPS ecosystem focused on:
+
+* Skill-based gunplay
+* Server-authoritative combat
+* Workshop creativity
+* Ranked competitive integrity
+* Long-term progression
+* Cosmetic-focused monetization
+
+Core principles:
+
+* TTK-first balancing
+* Class identity
+* Controlled customization
+* No pay-to-win progression
+
+---
+
+# 2. CORE COMBAT CONSTANTS
+
+```
+MAX_HP = 200
+
+MAX_ARMOR = 150
+
+MAX_ARMOR_DAMAGE_REDUCTION = 30%
+
+HEADSHOT_MULTIPLIER = 1.5x
+
+SNIPER_HEADSHOT_MULTIPLIER = 2.0x
+```
+
+Movement:
+
+```
+MAX SPEED = 250
+MIN SPEED = 190
+```
+
+Ranked limits:
+
+```
+MAX TTK VARIANCE = ±25%
+
+CLASS DPS VARIANCE = ±15%
+```
+
+---
+
+# 3. ARMOR SYSTEM
+
+Armor does not add HP.
+
+Armor provides damage reduction.
+
+Formula:
+
+```
+Armor Reduction =
+(Armor / 150) × 30%
+```
+
+Example:
+
+```
+150 Armor = 30% reduction
+75 Armor = 15% reduction
+```
+
+---
+
+# 4. DAMAGE SYSTEM
+
+```
+Final Damage =
+
+Base Damage
+× Upgrade Modifier
+× Headshot Modifier
+× Armor Modifier
+× Movement Modifier
+
+× (1 - Armor Reduction)
+```
+
+TTK:
+
+```
+Shots To Kill =
+Ceiling(Target HP / Damage)
+```
+
+```
+TTK =
+(Shots To Kill - 1)
+×
+(60 / Fire Rate RPM)
+```
+
+---
+
+# 5. ACCURACY SYSTEM
+
+Accuracy controls:
+
+* Hipfire spread
+* Bloom
+* Crosshair size
+* Stability
+
+Formula:
+
+```
+Crosshair Size = 136 - Accuracy
+```
+
+---
+
+# 6. RECOIL + ADS RULE
+
+Recoil only exists on zoom weapons.
+
+## Recoil Weapons
+
+* Sniper
+* Marksman
+* Workshop scoped weapons
+
+Features:
+
+* ADS recoil
+* Scope stability
+* Recoil patterns
+
+## No Recoil Weapons
+
+* AR
+* SMG
+* Shotgun
+* Pistol
+* LMG
+* Knife
+
+These use:
+
+* Bloom
+* Spread growth
+* Accuracy recovery
+
+---
+
+# 7. SYSTEM WEAPON CLASSES
+
+Classes:
+
+* Assault Rifle
+* SMG
+* Shotgun
+* Sniper
+* Pistol
+* LMG
+* Marksman
+* Knife
+
+---
+
+# 8. SYSTEM WEAPON ROSTER
+
+## ASSAULT RIFLES
+
+### M4A1
+
+```
+Damage 34
+RPM 600
+Mag 30
+Range 42
+Accuracy 82
+Reload 45
+Move 215
+Armor Pen 65
+```
+
+### HK416
+
+```
+Damage 33
+RPM 650
+Mag 30
+Range 41
+Accuracy 85
+Reload 48
+Move 218
+Armor Pen 62
+```
+
+### AK-103
+
+```
+Damage 38
+RPM 540
+Mag 30
+Range 44
+Accuracy 76
+Reload 42
+Move 210
+Armor Pen 72
+```
+
+### SCAR-L
+
+```
+Damage 36
+RPM 570
+Mag 30
+Range 48
+Accuracy 80
+Reload 43
+Move 212
+Armor Pen 70
+```
+
+### FAMAS
+
+```
+Damage 31
+RPM 720
+Mag 25
+Range 39
+Accuracy 78
+Reload 46
+Move 220
+Armor Pen 58
+```
+
+---
+
+# 9. WEAPON ECONOMY
+
+All weapons begin:
+
+```
+Level: 1
+
+Rarity: Common
+
+Enhancements: None
+```
+
+Prices:
+
+Range:
+
+```
+5000 - 7500 Coins
+```
+
+Example:
+
+M4A1:
+
+```
+5000 Coins
+```
+
+AWM:
+
+```
+7500 Coins
+```
+
+---
+
+# 10. WEAPON PROGRESSION
+
+Weapon Level:
+
+```
+1-50
+```
+
+Rewards:
+
+* Skins
+* Mastery badges
+* Kill effects
+* Cosmetics
+
+No damage upgrades.
+
+---
+
+# 11. WORKSHOP SYSTEM
+
+Players create weapons using:
+
+* 2D voxel editor
+* Optional 3D voxel editor
+
+Requirements:
+
+* Model
+* Animations
+* Reload
+* Fire
+* Equip
+* ADS if scoped
+
+---
+
+# 12. WORKSHOP STAT SYSTEM
+
+Each weapon receives:
+
+```
+25 Stat Points
+```
+
+Tradeoffs:
+
+```
+Damage ↑
+Fire Rate ↓
+Accuracy ↓
+```
+
+```
+Range ↑
+Movement ↓
+```
+
+```
+Magazine ↑
+Reload ↓
+```
+
+---
+
+# 13. RANKED WORKSHOP NORMALIZATION
+
+Workshop weapons are normalized:
+
+```
+Damage
+Fire Rate
+Range
+Accuracy
+Mobility
+```
+
+Ranked prevents:
+
+* Overpowered creations
+* TTK breaking builds
+
+---
+
+# 14. ENHANCEMENT SYSTEM
+
+Maximum:
+
+```
+2 Enhancements
+```
+
+Slots:
+
+```
+Offensive
+
+Utility
+```
+
+---
+
+# OFFENSIVE ENHANCEMENTS
+
+## High-Caliber Rounds
+
+```
++5% Damage
+-5% Fire Rate
+```
+
+## Rapid Cycling
+
+```
++8% Fire Rate
+-4% Accuracy
+```
+
+## Precision Barrel
+
+```
++8 Accuracy
+-3% Movement
+```
+
+## Armor Piercer
+
+```
++10 Armor Pen
+-3% Reload
+```
+
+## Extended Magazine
+
+```
++20% Magazine
+-5% Reload
+```
+
+## Hollow Point
+
+```
++10% Headshot Damage
+-5 Armor Pen
+```
+
+---
+
+# UTILITY ENHANCEMENTS
+
+## Lightweight Frame
+
+```
++5% Movement
+-3% Accuracy
+```
+
+## Quick Reload
+
+```
++10% Reload
+-5% Magazine
+```
+
+## Stabilizer
+
+```
+-10% Bloom Growth
+```
+
+## Enhanced Optics
+
+```
++ADS Stability
+```
+
+## Tactical Grip
+
+```
++Swap Speed
++Equip Speed
+```
+
+## Reinforced Components
+
+```
++Reload
++Recovery
+```
+
+---
+
+# 15. ARMOR AFFIX SYSTEM
+
+Armor pieces:
+
+* Helmet
+* Chest
+* Back
+* Leggings
+* Gloves
+* Shoes
+
+Each piece:
+
+```
+1 Weapon Bonus
+
++
+
+1 Universal Bonus
+```
+
+---
+
+# Weapon Bonus Pool
+
+Categories:
+
+* AR
+* SMG
+* Shotgun
+* Sniper
+* Pistol
+* LMG
+* Marksman
+* Knife
+
+Stats:
+
+* Damage
+* Fire Rate
+* Accuracy
+* Range
+* Movement
+* Reload
+* Magazine
+* Armor Pen
+
+---
+
+# Weapon Bonus Values
+
+```
+Damage +0.5%
+
+Fire Rate +1%
+
+Accuracy +2
+
+Range +2
+
+Movement +2
+
+Reload +2%
+
+Magazine +1
+
+Armor Pen +2
+```
+
+---
+
+# Universal Bonus Values
+
+```
+Damage +0.25%
+
+Fire Rate +0.5%
+
+Accuracy +1
+
+Range +1
+
+Movement +1
+
+Reload +1%
+
+Magazine +1
+
+Armor Pen +1
+```
+
+---
+
+# Armor Duplicate Rules
+
+Maximum:
+
+```
+2 copies of same stat
+```
+
+Example:
+
+Allowed:
+
+```
+Helmet:
+AR Damage
+
+Leggings:
+AR Damage
+```
+
+Not allowed:
+
+```
+Helmet:
+AR Damage
+
+Leggings:
+AR Damage
+
+Gloves:
+AR Damage
+```
+
+---
+
+# 16. ARMOR REFORGING
+
+Players can reroll armor.
+
+## Normal Reforge
+
+Cost:
+
+```
+2000 Coins
+
+OR
+
+90 Gems
+```
+
+Rerolls:
+
+* Weapon Bonus
+* Universal Bonus
+
+---
+
+## Locked Stat Reforge
+
+Player keeps one stat.
+
+Cost:
+
+```
+4000 Coins
+
+OR
+
+180 Gems
+```
+
+Result:
+
+```
+1 stat stays
+
+1 stat rerolls
+```
+
+---
+
+# 17. ECONOMY
+
+Currencies:
+
+## Coins
+
+Main currency.
+
+## Gems
+
+Premium currency.
+
+## Ranked Coins
+
+Competitive rewards.
+
+## Scrap
+
+Crafting/reforge material.
+
+---
+
+# 18. CRATES
+
+Types:
+
+* Standard
+* Enhancement
+* Cosmetic
+
+---
+
+# 19. PET SYSTEM
+
+Maximum:
+
+```
+2 equipped
+```
+
+Bonus:
+
+```
+XP only
+```
+
+Maximum:
+
+```
+3%
+```
+
+---
+
+# 20. SOCIAL SYSTEMS
+
+Features:
+
+* Friends
+* Squads
+* Squad XP
+* Clubs
+
+Clubs:
+
+* Created with Gems
+* Owner permissions
+* Co-owner permissions
+* Club progression
+
+---
+
+# 21. RANKED SYSTEM
+
+Ranks:
+
+```
+Bronze III-I
+
+Silver III-I
+
+Gold III-I
+
+Platinum III-I
+
+Diamond III-I
+
+Master III-I
+
+Champion
+```
+
+Top:
+
+```
+Top 500
+
+#1 Ladder
+```
+
+---
+
+# 22. SECURITY SYSTEM
+
+Everything server-authoritative.
+
+Client sends:
+
+* Fire request
+* Aim direction
+* Timestamp
+
+Server calculates:
+
+* Hit
+* Damage
+* Armor
+* Penetration
+* Kill
+
+Systems:
+
+* Replay validation
+* Event signing
+* Hit reconstruction
+* Anti-cheat detection
+* Priority action queue
+
+---
+
+# 23. UI STRUCTURE
+
+Main Menu:
+
+* Play
+* Loadout
+* Workshop
+* Inventory
+* Store
+* Ranked
+* Clubs
+* Friends
+* Settings
+
+Inventory:
+
+* Weapons
+* Skins
+* Armor
+* Pets
+* Enhancements
+* Crates
+
+---
+
+# FINAL DESIGN GOALS
+
+✔ Competitive FPS foundation
+
+✔ Balanced TTK system
+
+✔ Workshop-driven content
+
+✔ Ranked-safe customization
+
+✔ Long-term progression
+
+✔ Controlled economy
+
+✔ Secure multiplayer architecture
+
+✔ Creator ecosystem
+
+✔ Live-service scalability

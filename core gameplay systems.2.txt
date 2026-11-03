@@ -1,0 +1,561 @@
+VOLUME II — CORE GAMEPLAY SYSTEMS
+PART 2 — MOVEMENT, ACCURACY, BLOOM, RECOIL, ADS, AND WEAPON HANDLING FRAMEWORK
+36. MOVEMENT SYSTEM
+
+Movement is one of the primary skill expressions in the FPS ecosystem.
+
+Movement should reward:
+
+Mechanical skill
+Positioning
+Timing
+Map knowledge
+
+Movement should not create:
+
+Unavoidable advantages
+Extreme speed abuse
+Random combat outcomes
+36.1 Movement Constants
+MAX MOVEMENT SPEED = 250
+
+MIN MOVEMENT SPEED = 190
+
+Every playable loadout must exist inside this range.
+
+36.2 Movement Philosophy
+
+Movement is designed around:
+
+Mobility vs Accuracy
+
+Fast players gain:
+
+Better positioning
+Faster rotations
+Aggressive opportunities
+
+But lose:
+
+Precision
+Stability
+36.3 Movement States
+
+Players can exist in:
+
+Idle
+
+Walking
+
+Running
+
+Sprinting
+
+Jumping
+
+Crouching
+
+Sliding
+
+ADS Movement
+
+Each state affects:
+
+Accuracy
+Weapon handling
+Visibility
+Mobility
+37. SPRINT SYSTEM
+
+Sprint allows fast repositioning.
+
+Sprint provides:
+
+Increased movement speed
+Faster map traversal
+
+Sprint reduces:
+
+Immediate combat readiness
+37.1 Sprint Rules
+
+While sprinting:
+
+Cannot:
+
+Fire immediately at full accuracy
+
+Requires:
+
+Sprint-to-fire transition time
+37.2 Sprint-to-Fire
+
+Every weapon has:
+
+Sprint Out Time
+
+Example:
+
+SMG:
+
+Fast sprint recovery
+
+LMG:
+
+Slow sprint recovery
+
+38. CROUCH SYSTEM
+
+Crouching provides:
+
+Benefits:
+
+Lower profile
+Reduced movement noise
+Better stability
+
+Tradeoff:
+
+Reduced mobility.
+
+39. JUMP SYSTEM
+
+Jumping exists for mobility.
+
+Jumping should not become:
+
+Bunny hopping abuse
+Perfect accuracy movement
+
+While airborne:
+
+Effects:
+
+Increased bloom
+Reduced accuracy
+40. SLIDE SYSTEM
+
+Sliding is optional movement tech.
+
+Purpose:
+
+Aggressive repositioning
+Momentum control
+
+Slide rules:
+
+Limited duration
+Requires sprint momentum
+Accuracy penalty
+41. MOVEMENT BALANCE RULES
+
+Movement cannot:
+
+Ignore weapon weaknesses
+Create impossible tracking situations
+Remove tactical positioning
+
+Movement skill should improve:
+
+Survival
+Positioning
+
+Not:
+
+Damage output
+42. ACCURACY SYSTEM
+
+Accuracy controls weapon consistency.
+
+Accuracy affects:
+
+Hipfire spread
+Bloom
+Crosshair size
+Stability
+42.1 Accuracy Formula
+Crosshair Size =
+
+136 - Accuracy
+
+Example:
+
+Accuracy:
+
+82
+
+Crosshair:
+
+136 - 82
+
+=
+
+54
+42.2 Accuracy Philosophy
+
+High accuracy weapons:
+
+Strength:
+
+Consistent shots
+
+Weakness:
+
+Lower damage
+Lower mobility
+
+Low accuracy weapons:
+
+Strength:
+
+Higher output
+
+Weakness:
+
+Require closer range
+43. BLOOM SYSTEM
+
+Bloom represents weapon inaccuracy caused by:
+
+Continuous firing
+Movement
+Jumping
+Poor control
+43.1 Bloom Growth
+
+Weapons increase spread over time.
+
+Example:
+
+AR:
+
+Controlled bloom
+
+SMG:
+
+Fast bloom growth
+
+Shotgun:
+
+Intentional spread
+
+43.2 Bloom Recovery
+
+Weapons recover accuracy after:
+
+Stopping fire
+Resetting aim
+
+Controlled by:
+
+Bloom Recovery Rate
+44. CROSSHAIR SYSTEM
+
+Crosshair communicates:
+
+Accuracy
+Weapon state
+Movement penalty
+
+Crosshair expands when:
+
+Running
+Jumping
+Shooting
+
+Crosshair contracts when:
+
+Standing still
+ADS
+Weapon recovery
+45. RECOIL SYSTEM
+
+Recoil is a controlled mechanic.
+
+It exists only on specific weapon types.
+
+45.1 Recoil Weapons
+
+Recoil exists on:
+
+Sniper
+Marksman
+Workshop scoped weapons
+
+Features:
+
+ADS recoil
+Scope movement
+Stability mechanics
+Recoil patterns
+45.2 No-Recoil Weapons
+
+No traditional recoil:
+
+Assault Rifle
+SMG
+Shotgun
+Pistol
+LMG
+Knife
+
+Instead they use:
+
+Bloom
+Spread
+Accuracy recovery
+46. RECOIL DESIGN PHILOSOPHY
+
+Recoil should reward:
+
+Control
+Timing
+Patience
+
+Not:
+
+Random punishment
+46.1 Recoil Pattern Types
+Vertical
+
+Weapon rises upward.
+
+Counter:
+
+Pull down.
+
+Horizontal
+
+Weapon moves side to side.
+
+Counter:
+
+Controlled tracking.
+
+Burst Pattern
+
+Weapon rewards:
+
+Short bursts.
+
+47. ADS SYSTEM
+
+ADS means:
+
+Aim Down Sights.
+
+ADS affects:
+
+Accuracy
+Zoom
+Stability
+Movement speed
+47.1 ADS Rules
+
+While ADS:
+
+Benefits:
+
+Reduced spread
+Improved precision
+
+Tradeoff:
+
+Lower movement
+47.2 Scope Weapons
+
+Scoped weapons receive:
+
+Scope stability
+ADS recoil
+Zoom management
+48. WEAPON HANDLING SYSTEM
+
+Weapons are balanced using more than damage.
+
+Every weapon includes handling statistics.
+
+48.1 Handling Stats
+Equip Speed
+
+Time to pull weapon out.
+
+Swap Speed
+
+Time between weapons.
+
+ADS Speed
+
+Time to aim.
+
+Sprint Out Time
+
+Time from sprinting to firing.
+
+First Shot Accuracy
+
+Accuracy of first bullet.
+
+Bloom Growth
+
+How quickly accuracy decreases.
+
+Bloom Recovery
+
+How quickly accuracy returns.
+
+ADS Stability
+
+How steady scoped weapons remain.
+
+Flinch Resistance
+
+How much incoming damage affects aim.
+
+49. WEAPON IDENTITY THROUGH HANDLING
+
+Example:
+
+M4A1
+
+Identity:
+
+Reliable all-rounder.
+
+Strengths:
+
+Accuracy
+Control
+Consistency
+
+Weakness:
+
+Lower burst damage
+AK-103
+
+Identity:
+
+High impact rifle.
+
+Strengths:
+
+Damage
+Armor penetration
+
+Weakness:
+
+Lower accuracy
+SMG
+
+Identity:
+
+Close-range aggression.
+
+Strengths:
+
+Speed
+Handling
+
+Weakness:
+
+Range
+Sniper
+
+Identity:
+
+Precision.
+
+Strength:
+
+High damage
+
+Weakness:
+
+Requires positioning
+50. WEAPON STATE SYSTEM
+
+Weapons respond differently based on:
+
+Movement
+Firing
+Reloading
+ADS
+Sprinting
+
+States:
+
+Ready
+
+Firing
+
+Reloading
+
+ADS
+
+Sprinting
+
+Inspecting
+
+Swapping
+51. RELOAD SYSTEM
+
+Reloading creates tactical decisions.
+
+Stats:
+
+Reload speed
+Magazine size
+Empty reload time
+51.1 Reload Philosophy
+
+Large magazines:
+
+Benefit:
+
+Sustained fights
+
+Weakness:
+
+Slower reload
+
+Small magazines:
+
+Benefit:
+
+Faster handling
+
+Weakness:
+
+Frequent reloads
+52. COMPETITIVE MOVEMENT BALANCE
+
+Movement must preserve:
+
+Aim skill
+Tracking skill
+Tactical positioning
+
+The game avoids:
+
+Extreme acceleration
+Unlimited mobility
+Accuracy while airborne
+VOLUME II CORE GAMEPLAY SUMMARY
+
+The combat foundation is built around:
+
+Predictability
+
+Players understand mechanics.
+
+Skill Expression
+
+Better players perform better.
+
+Weapon Identity
+
+Every weapon has purpose.
+
+Competitive Integrity
+
+Customization never overrides skill.

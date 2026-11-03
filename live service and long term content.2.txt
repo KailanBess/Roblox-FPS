@@ -1,0 +1,646 @@
+VOLUME XII — LIVE SERVICE ECOSYSTEM & PROJECT STANDARDS
+PART 2 — MONETIZATION, TECHNICAL STANDARDS, UI/UX, ACCESSIBILITY, PERFORMANCE, DEVELOPMENT PIPELINE, LAUNCH ROADMAP, AND FINAL DESIGN PRINCIPLES
+546. MONETIZATION PHILOSOPHY
+
+The monetization model is built around one fundamental principle:
+
+Every player should be able to compete on equal footing regardless of how much money they spend.
+
+Purchases should enhance:
+
+Personal expression
+Collection goals
+Progression speed (within reasonable limits)
+Convenience
+
+Purchases should never provide:
+
+Higher weapon damage
+Better armor values
+Faster Time-to-Kill
+Exclusive gameplay mechanics
+Exclusive competitive advantages
+
+The game's long-term success depends on players believing victories are earned through skill, not purchases.
+
+547. PAY-TO-WIN POLICY
+
+The following systems are permanently prohibited:
+
+Weapons sold for Robux that cannot be earned in-game
+Armor with higher stat ceilings purchased with premium currency
+Premium-only Enhancements
+Premium-only ranked rewards affecting gameplay
+Premium-exclusive pets with stronger gameplay effects
+Exclusive competitive advantages of any kind
+
+Allowed monetization includes:
+
+Cosmetics
+Profile customization
+Battle Pass
+Crate Keys
+Cosmetic Bundles
+Lobby Cosmetics
+Name Change Tokens
+Club Cosmetics
+548. PREMIUM STORE STRUCTURE
+
+The Store is divided into major sections.
+
+Featured
+
+Rotating bundles.
+
+Weapon Cosmetics
+Weapon skins
+Kill effects
+Inspection animations
+Weapon charms
+Armor Cosmetics
+Armor visual effects
+Armor recolors
+Armor finish styles
+Pets
+
+Cosmetic pet variants.
+
+Battle Pass
+
+Seasonal progression.
+
+Keys
+
+Used for opening crates.
+
+Profile Customization
+Titles
+Player cards
+Profile frames
+Banners
+Backgrounds
+Workshop
+
+Creator support items.
+
+549. STORE ROTATION
+
+Recommended schedule:
+
+Daily
+
+Small cosmetic rotation
+
+Weekly
+
+Featured cosmetic bundles
+
+Monthly
+
+Premium collection release
+
+Seasonally
+
+Exclusive seasonal shop
+550. BUNDLE SYSTEM
+
+Bundles combine multiple cosmetics.
+
+Example:
+
+Cyber Assault Bundle
+
+Contains:
+
+Weapon Skin
+Armor Effect
+Player Title
+Kill Effect
+Profile Frame
+
+Bundles offer value without affecting gameplay.
+
+551. GIFTING SYSTEM
+
+Players may gift:
+
+Battle Pass
+Cosmetic Bundles
+Keys
+Profile Items
+
+Restrictions:
+
+No gifting Ranked rewards
+No gifting progression-exclusive cosmetics
+Abuse detection required
+552. CREATOR SUPPORT PROGRAM
+
+Workshop creators may receive:
+
+Featured placement
+Cosmetic creator badge
+Revenue-sharing opportunities (if implemented)
+Exclusive creator cosmetics
+
+This encourages long-term community involvement.
+
+553. USER INTERFACE PHILOSOPHY
+
+The UI should prioritize:
+
+Clarity
+Speed
+Readability
+Consistency
+
+Players should never feel lost navigating menus.
+
+554. MAIN MENU STRUCTURE
+
+Main Menu contains:
+
+Play
+Loadout
+Workshop
+Inventory
+Store
+Battle Pass
+Ranked
+Clubs
+Friends
+Challenges
+Achievements
+Settings
+555. LOADOUT SCREEN
+
+Displays:
+
+Primary Weapon
+
+Secondary Weapon
+
+Knife
+
+Armor
+
+Enhancements
+
+Pets
+
+Weapon Mastery Progress
+
+Inspection Button
+
+Weapon Level
+
+556. INVENTORY DESIGN
+
+Inventory categories:
+
+Weapons
+
+Weapon Skins
+
+Workshop Weapons
+
+Armor
+
+Armor Cosmetics
+
+Pets
+
+Enhancements
+
+Crates
+
+Keys
+
+Titles
+
+Effects
+
+Charms
+
+Consumables (future-proofed)
+
+Each item supports:
+
+Sorting
+Filtering
+Favorites
+Search
+557. PROGRESSION DASHBOARD
+
+Displays:
+
+Player Level
+
+XP Progress
+
+Weapon Levels
+
+Battle Pass Tier
+
+Achievements
+
+Daily Challenges
+
+Weekly Challenges
+
+Workshop Reputation
+
+Collection Completion
+
+558. POST-MATCH SCREEN
+
+Order of presentation:
+
+Match Result
+
+↓
+
+XP Earned
+
+↓
+
+Coins Earned
+
+↓
+
+Ranked Points (if applicable)
+
+↓
+
+Weapon XP
+
+↓
+
+Player XP
+
+↓
+
+Challenge Progress
+
+↓
+
+Mastery Progress
+
+↓
+
+Battle Pass XP
+
+↓
+
+Rewards
+
+↓
+
+MVP Showcase
+
+The goal is to provide a satisfying reward cadence.
+
+559. ACCESSIBILITY PHILOSOPHY
+
+Accessibility is considered a core feature.
+
+Every player should be able to enjoy the game regardless of physical limitations.
+
+560. ACCESSIBILITY FEATURES
+
+Recommended options:
+
+Visual
+
+Colorblind modes
+Adjustable HUD scale
+Crosshair customization
+UI scaling
+Hit marker customization
+
+Audio
+
+Subtitle support
+Individual volume sliders
+Footstep emphasis option
+Hit confirmation sounds
+
+Controls
+
+Fully rebindable controls
+Toggle/hold ADS
+Toggle sprint
+Sensitivity sliders
+Separate ADS sensitivity
+
+Gameplay
+
+Damage number toggle
+Motion blur toggle
+Camera shake toggle
+Screen flash reduction
+561. AUDIO DESIGN
+
+Audio communicates gameplay information.
+
+Priority hierarchy:
+
+Enemy footsteps
+Gunfire
+Reloads
+Grenades
+Hit confirmations
+UI sounds
+
+Music should never interfere with gameplay awareness.
+
+562. VISUAL DESIGN LANGUAGE
+
+The visual style should balance:
+
+Competitive readability with Roblox creativity.
+
+Principles:
+
+Clear silhouettes
+Distinct weapon profiles
+Recognizable armor
+High contrast enemies
+Minimal visual clutter
+
+Cosmetics should remain readable during combat.
+
+563. PERFORMANCE TARGETS
+
+Recommended Roblox targets:
+
+Minimum:
+
+60 FPS on average supported devices
+
+Target:
+
+120+ FPS on high-end PCs
+
+Stable server tick rate
+
+Low latency networking
+
+Consistent hit registration
+
+Performance should always take priority over unnecessary visual effects.
+
+564. QUALITY ASSURANCE PIPELINE
+
+Every feature follows:
+
+Design
+
+↓
+
+Prototype
+
+↓
+
+Internal Testing
+
+↓
+
+Balance Review
+
+↓
+
+Bug Fixing
+
+↓
+
+Public Test Server
+
+↓
+
+Final Release
+
+↓
+
+Analytics Monitoring
+
+↓
+
+Iteration
+
+565. BUG PRIORITY SYSTEM
+
+Critical
+
+Exploits
+Crashes
+Data loss
+
+High
+
+Weapon bugs
+Ranked issues
+Economy problems
+
+Medium
+
+UI bugs
+Cosmetic issues
+
+Low
+
+Minor visual problems
+Animation glitches
+566. DEVELOPMENT ROADMAP
+Phase 1 — Core Foundation
+
+Implement:
+
+Combat
+Weapons
+Armor
+Progression
+Inventory
+Matchmaking
+Phase 2 — Competitive
+
+Implement:
+
+Ranked
+Workshop
+Anti-cheat
+Leaderboards
+Phase 3 — Live Service
+
+Implement:
+
+Battle Pass
+Events
+Seasonal content
+Clubs
+Achievements
+Phase 4 — Expansion
+
+Implement:
+
+Additional weapons
+New maps
+New pets
+New armor sets
+Esports support
+Creator expansion
+567. LAUNCH CONTENT RECOMMENDATION
+
+Recommended Version 1.0 launch:
+
+Weapons:
+
+20–30 System Weapons
+
+Maps:
+
+8–10 Maps
+
+Game Modes:
+
+5–6 Modes
+
+Armor Sets:
+
+10+
+
+Pets:
+
+25+
+
+Weapon Skins:
+
+150+
+
+Armor Effects:
+
+50+
+
+Challenges:
+
+200+
+
+Achievements:
+
+150+
+
+Battle Pass:
+
+100 Tiers
+
+Ranked:
+
+Season One
+
+Workshop:
+
+Available at launch
+
+568. POST-LAUNCH CONTENT PLAN
+
+Every Season should include approximately:
+
+1–2 New Weapons
+1–2 New Maps
+1 Armor Set
+3–5 Pets
+30–50 Weapon Skins
+20 Armor Cosmetics
+1 Battle Pass
+1 Ranked Season
+1 Seasonal Event
+Balance Update
+Workshop Feature Improvements
+569. SUCCESS METRICS
+
+The project should measure success using:
+
+Gameplay
+
+Match completion rate
+Average session length
+Weapon diversity
+Ranked participation
+
+Community
+
+Daily Active Users
+Monthly Active Users
+Club participation
+Workshop uploads
+
+Economy
+
+Battle Pass completion
+Cosmetic ownership
+Key usage
+Crate engagement
+
+Retention
+
+Day 1 retention
+Day 7 retention
+Day 30 retention
+Seasonal return rate
+570. FINAL DESIGN PRINCIPLES
+
+Every future decision should satisfy these questions:
+
+Competitive Integrity
+
+Does this preserve fair competition?
+
+Skill Expression
+
+Does this reward player skill?
+
+Long-Term Progression
+
+Does this provide meaningful goals?
+
+Player Freedom
+
+Does this allow personalization without creating imbalance?
+
+Social Interaction
+
+Does this encourage teamwork and community?
+
+Creator Support
+
+Does this empower Workshop creators?
+
+Live-Service Sustainability
+
+Can this system be maintained for years?
+
+Technical Scalability
+
+Can this feature grow without requiring major redesign?
+
+If the answer to any of these questions is no, the feature should be reconsidered before implementation.
+
+571. FINAL VISION STATEMENT
+
+The Roblox FPS Ecosystem is designed to be more than a shooter—it is a long-term competitive platform built around skill, creativity, progression, and community.
+
+Players can:
+
+Master dozens of weapons.
+Build a unique cosmetic identity.
+Climb the ranked ladder.
+Create Workshop content.
+Collect pets, armor, and skins.
+Complete achievements.
+Participate in seasonal events.
+Join clubs and communities.
+Return every season for new goals.
+
+The game is designed so that no single system stands alone. Combat feeds progression, progression feeds customization, customization feeds identity, identity feeds community, and community feeds long-term retention.
+
+By maintaining strict competitive integrity, a cosmetic-first economy, server-authoritative security, and a robust creator ecosystem, the project aims to remain engaging for both casual and competitive players while scaling for years of new content.

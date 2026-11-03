@@ -1,0 +1,263 @@
+🛡️ ARMOR WEAPON AFFIX SYSTEM (FINAL)
+Armor Slots
+Helmet
+Chestpiece
+Backpiece
+Leggings
+Gloves
+Shoes
+
+Each armor piece grants:
+
+1 Weapon-Specific Bonus
++
+1 Universal Bonus
+
+Total:
+
+6 Weapon Bonuses
++
+6 Universal Bonuses
+🎯 WEAPON-SPECIFIC BONUS POOL
+
+Every piece randomly selects:
+
+Assault Rifle
+SMG
+Shotgun
+Sniper
+Pistol
+LMG
+Marksman
+Knife
+
+Then applies one stat bonus.
+
+Possible bonuses:
+
+Damage
+
+Fire Rate
+
+Accuracy
+
+Range
+
+Movement Speed
+
+Reload Speed
+
+Magazine Size
+
+Armor Penetration
+Weapon Bonus Values
+Damage
++0.5%
+Fire Rate
++1%
+Accuracy
++2
+Range
++2
+Movement
++2
+Reload
++2%
+Magazine
++1
+Armor Penetration
++2
+🌐 UNIVERSAL BONUS POOL
+
+Universal bonuses affect ALL weapons.
+
+Possible stats:
+
+Damage
+
+Fire Rate
+
+Accuracy
+
+Range
+
+Movement Speed
+
+Reload Speed
+
+Magazine Size
+
+Armor Penetration
+Universal Bonus Values
+Damage
++0.25%
+Fire Rate
++0.5%
+Accuracy
++1
+Range
++1
+Movement
++1
+Reload
++1%
+Magazine
++1
+Armor Pen
++1
+🔒 DUPLICATE RULE
+
+No bonus may appear more than twice across all equipped armor.
+
+Applies to:
+
+Weapon Bonuses
+
+Example:
+
+Helmet
+AR Damage
+
+Leggings
+AR Damage
+
+Allowed.
+
+Gloves
+AR Damage
+
+Not allowed.
+
+Maximum reached.
+
+Universal Bonuses
+
+Example:
+
+Helmet
+Universal Accuracy
+
+Shoes
+Universal Accuracy
+
+Allowed.
+
+Chestpiece
+Universal Accuracy
+
+Not allowed.
+
+Maximum reached.
+
+🎲 Example Full Armor Set
+Helmet
+SMG Accuracy
+
+Universal Reload
+Chestpiece
+Sniper Range
+
+Universal Accuracy
+Backpiece
+AR Damage
+
+Universal Movement
+Leggings
+AR Damage
+
+Universal Accuracy
+
+(Second and final AR Damage)
+
+Gloves
+LMG Magazine Size
+
+Universal Reload
+
+(Second and final Universal Reload)
+
+Shoes
+Marksman Armor Pen
+
+Universal Movement
+
+(Second and final Universal Movement)
+
+📊 Maximum Possible Stacking
+
+Because of the duplicate limit:
+
+Weapon Bonus Maximums
+Damage
++1.0%
+
+Fire Rate
++2%
+
+Accuracy
++4
+
+Range
++4
+
+Movement
++4
+
+Reload
++4%
+
+Magazine
++2
+
+Armor Pen
++4
+Universal Maximums
+Damage
++0.5%
+
+Fire Rate
++1%
+
+Accuracy
++2
+
+Range
++2
+
+Movement
++2
+
+Reload
++2%
+
+Magazine
++2
+
+Armor Pen
++2
+🏆 Perfect Max Roll Example
+
+A player fully specializing into an AR could obtain:
+
+AR Damage
++1.0%
+
+AR Accuracy
++4
+
+Universal Accuracy
++2
+
+Universal Reload
++2%
+
+Universal Movement
++2
+
+Even a perfectly optimized set remains within your:
+
+Same-Class DPS Variance: ±15%
+
+Ranked TTK Variance: ±25%
+
+rules while making armor progression meaningful and highly collectible.

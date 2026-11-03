@@ -1,0 +1,412 @@
+VOLUME VIII — SOCIAL SYSTEMS & COMPETITIVE SYSTEMS
+PART 2 — RANKED SYSTEM, COMPETITIVE STRUCTURE, MATCHMAKING, REWARDS, LEADERBOARDS, AND INTEGRITY RULES
+300. RANKED SYSTEM OVERVIEW
+
+Ranked is the competitive foundation of the FPS ecosystem.
+
+The goal:
+
+Create a fair environment where players compete based on:
+
+Aim
+Strategy
+Teamwork
+Decision-making
+Game knowledge
+300.1 RANKED PHILOSOPHY
+
+Ranked should reward:
+
+Skill.
+
+Not:
+
+Playtime only
+Spending
+Grinding advantages
+301. RANK STRUCTURE
+
+Ranks:
+
+Bronze III
+
+Bronze II
+
+Bronze I
+
+
+Silver III
+
+Silver II
+
+Silver I
+
+
+Gold III
+
+Gold II
+
+Gold I
+
+
+Platinum III
+
+Platinum II
+
+Platinum I
+
+
+Diamond III
+
+Diamond II
+
+Diamond I
+
+
+Master III
+
+Master II
+
+Master I
+
+
+Champion
+302. TOP COMPETITIVE TIERS
+
+After Champion:
+
+Top 500
+
+Leaderboard:
+
+#1 Ladder
+303. RANKED POINT SYSTEM
+
+Ranked uses:
+
+Ranked Points
+
+Ranked Points are earned only from:
+
+Ranked matches
+Ranked performance
+Seasonal rewards
+
+Cannot be earned from:
+
+Casual
+Events
+Login rewards
+304. RANKED POINT CHANGES
+
+Rank changes based on:
+
+Win/Loss
+
+Primary factor.
+
+Individual Performance
+
+Secondary factor.
+
+Team Contribution
+
+Additional factor.
+
+305. PERFORMANCE FACTORS
+
+Ranked evaluation considers:
+
+Combat
+Eliminations
+Damage
+Accuracy
+Objective
+Captures
+Defense
+Team actions
+Survival
+Smart positioning
+Round impact
+306. MATCHMAKING SYSTEM
+
+Matches players based on:
+
+Rank
+Hidden skill rating
+Recent performance
+307. HIDDEN MMR SYSTEM
+
+Rank is visible.
+
+MMR is hidden.
+
+Purpose:
+
+Prevent:
+
+Rank abuse
+Smurfing
+Unbalanced matches
+308. RANKED PLACEMENT MATCHES
+
+New players complete:
+
+10 Placement Matches
+
+Purpose:
+
+Determine starting rank.
+
+309. RANKED RESET SYSTEM
+
+Each season:
+
+Partial reset.
+
+Players return:
+
+Slightly lower.
+
+Purpose:
+
+Encourage competition.
+
+310. RANKED SEASONS
+
+Recommended:
+
+8-12 Weeks
+
+Each season includes:
+
+Ranked rewards
+Leaderboard reset
+Competitive cosmetics
+311. RANKED REWARDS
+
+Rewards are prestige-focused.
+
+Bronze Reward
+
+Badge.
+
+Silver Reward
+
+Profile cosmetic.
+
+Gold Reward
+
+Weapon skin.
+
+Platinum Reward
+
+Animated cosmetic.
+
+Diamond Reward
+
+Exclusive ranked armor effect.
+
+Master Reward
+
+Legendary ranked skin.
+
+Champion Reward
+
+Mythic ranked cosmetic.
+
+Top 500 Reward
+
+Unique title.
+
+#1 Ladder Reward
+
+Exclusive permanent recognition.
+
+312. RANKED COIN RECOMMENDATION
+
+Add:
+
+Ranked Shop Currency.
+
+Earned from:
+
+Ranked matches
+Seasonal placement
+
+Used for:
+
+Competitive cosmetics
+313. RANKED SHOP ITEMS
+
+Examples:
+
+Ranked weapon skins
+Rank banners
+Profile effects
+Titles
+314. RANKED REWARD FAIRNESS
+
+Ranked rewards cannot provide:
+
+Better weapons
+Better armor
+Gameplay advantages
+315. RANKED WORKSHOP RULES
+
+Workshop weapons are allowed.
+
+However:
+
+Ranked requires:
+
+Normalization
+Approval
+Balance validation
+316. WORKSHOP RANKED APPROVAL
+
+Requirements:
+
+Weapon must have:
+
+Balanced TTK
+Proper stats
+No exploits
+
+Approved weapons receive:
+
+Competitive badge.
+
+317. RANKED MAP ROTATION
+
+Ranked maps should rotate.
+
+Includes:
+
+Core maps
+Competitive maps
+318. MAP BALANCE RULES
+
+Maps must support:
+
+Multiple strategies
+Fair spawns
+Counterplay
+319. MATCH MODES
+
+Recommended ranked modes:
+
+Team Elimination
+
+Primary gunfight mode.
+
+Objective Mode
+
+Team strategy.
+
+Control Mode
+
+Area competition.
+
+Search Style Mode
+
+Limited lives.
+
+320. MATCH MVP INTEGRATION
+
+Ranked MVP rewards:
+
+Recognition only.
+
+MVP categories:
+
+Combat
+Objective
+Support
+Clutch
+321. LEADERBOARD SYSTEM
+
+Leaderboards show:
+
+Global
+
+Top players.
+
+Regional
+
+Competition.
+
+Friends
+
+Personal comparison.
+
+322. LEADERBOARD CATEGORIES
+
+Examples:
+
+Ranked Points
+Win Rate
+Eliminations
+Accuracy
+Weapon Mastery
+323. COMPETITIVE STAT TRACKING
+
+Players can view:
+
+Matches played
+Wins
+Losses
+K/D
+Accuracy
+Favorite weapons
+Rank history
+324. SEASON HISTORY
+
+Profiles display:
+
+Previous seasons.
+
+Example:
+
+Season 1
+
+Diamond II
+
+Season 2
+
+Master III
+325. ANTI-TOXICITY SYSTEM
+
+Competitive environment includes:
+
+Reporting
+Chat moderation
+Behavior tracking
+326. FAIR PLAY SCORE
+
+Players receive:
+
+Behavior rating.
+
+Affected by:
+
+Reports
+Leaving matches
+Positive teamwork
+327. MATCH PENALTIES
+
+Leaving ranked:
+
+Penalty:
+
+Ranked Point loss
+Temporary restrictions
+328. RANKED INTEGRITY GOAL
+
+The system should create:
+
+"I lost because they played better."
+
+Not:
+
+"I lost because their account was stronger."

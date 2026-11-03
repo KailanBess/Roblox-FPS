@@ -1,0 +1,506 @@
+VOLUME II — CORE GAMEPLAY SYSTEMS
+PART 1 — COMBAT FRAMEWORK, SERVER AUTHORITY, HEALTH, ARMOR, DAMAGE, AND TTK DESIGN
+22. CORE COMBAT PHILOSOPHY
+
+The combat system is the foundation of the entire FPS ecosystem.
+
+Every other system:
+
+Weapons
+Armor
+Enhancements
+Ranked
+Workshop
+Progression
+
+must support the combat philosophy.
+
+The goal is:
+
+Fast, skill-based, readable combat.
+
+Players should understand:
+
+Why they died
+Why they won
+What they can improve
+22.1 Combat Priorities
+
+Combat balance follows this priority order:
+
+1. Skill Expression
+
+Players win through:
+
+Accuracy
+Positioning
+Reaction time
+Movement
+Game knowledge
+2. Weapon Identity
+
+Every weapon should have:
+
+Strengths
+Weaknesses
+Intended role
+3. Counterplay
+
+Every strategy should have counters.
+
+Examples:
+
+Shotguns:
+
+Strong:
+
+Close range
+
+Weak:
+
+Long range
+
+Counter:
+
+Distance
+Positioning
+
+Snipers:
+
+Strong:
+
+Precision
+Long range
+
+Weak:
+
+Close pressure
+
+Counter:
+
+Movement
+Flanking
+23. SERVER-AUTHORITATIVE COMBAT
+
+All important combat calculations happen on the server.
+
+The client does not decide:
+
+Damage
+Hits
+Kills
+Armor effects
+Weapon statistics
+23.1 Client Responsibilities
+
+The client sends:
+
+Fire Request
+
+Aim Direction
+
+Weapon Used
+
+Shot Timestamp
+
+Player Input State
+23.2 Server Responsibilities
+
+The server calculates:
+
+Weapon Validation
+
+Fire Rate Check
+
+Ammo Check
+
+Raycast
+
+Hit Detection
+
+Damage Calculation
+
+Armor Reduction
+
+Armor Penetration
+
+Final Damage
+
+Kill Confirmation
+23.3 Anti-Cheat Combat Validation
+
+The server monitors:
+
+Impossible fire rates
+Impossible accuracy
+Movement violations
+Invalid weapon states
+Suspicious hit patterns
+24. HEALTH SYSTEM
+
+Base player health:
+
+MAX_HP = 200
+
+Health represents the player's actual life pool.
+
+Armor does not increase health.
+
+24.1 Health Rules
+
+Health:
+
+Regenerates only through approved systems
+Cannot exceed 200
+Is separate from armor
+24.2 Healing Rules
+
+Healing sources:
+
+Map pickups (if enabled)
+Game modes
+Pet abilities
+Special mechanics
+
+Healing cannot:
+
+Increase max HP
+Ignore combat balance
+25. ARMOR SYSTEM
+
+Armor is a damage reduction layer.
+
+Armor does not:
+
+Add HP
+Extend TTK through extra health
+
+Instead:
+
+Armor reduces incoming damage.
+
+25.1 Armor Constants
+MAX_ARMOR = 150
+
+MAX_ARMOR_DAMAGE_REDUCTION = 30%
+25.2 Armor Reduction Formula
+
+Formula:
+
+Armor Reduction =
+
+(Armor / 150) × 30%
+
+Examples:
+
+150 Armor
+
+=
+30% damage reduction
+75 Armor
+
+=
+15% damage reduction
+0 Armor
+
+=
+0% damage reduction
+25.3 Armor Damage Formula
+
+Final damage:
+
+Final Damage =
+
+Base Damage
+
+× Upgrade Modifier
+
+× Headshot Modifier
+
+× Movement Modifier
+
+× (1 - Armor Reduction)
+
+Example:
+
+Weapon damage:
+
+40
+
+Enemy armor:
+
+150
+
+Reduction:
+
+30%
+
+Calculation:
+
+40 × 0.70
+
+=
+
+28 Damage
+26. ARMOR PENETRATION
+
+Armor penetration reduces the effectiveness of armor.
+
+It does not increase raw damage.
+
+26.1 Armor Pen Formula
+
+Example:
+
+Weapon:
+
+Armor Pen = 70
+
+Enemy armor:
+
+150
+
+Effective armor:
+
+150 - 70
+
+=
+
+80 Armor
+26.2 Purpose
+
+Armor penetration creates weapon identity.
+
+Examples:
+
+AK-103:
+
+High armor penetration.
+
+Purpose:
+
+Strong against armored players
+
+FAMAS:
+
+Lower penetration.
+
+Purpose:
+
+High DPS against lightly armored targets
+27. DAMAGE SYSTEM
+
+Every weapon has:
+
+Base damage
+Fire rate
+Range
+Accuracy
+Mobility
+Armor penetration
+27.1 Damage Categories
+
+Damage is affected by:
+
+Weapon Stats
+Base damage
+Enhancements
+Workshop normalization
+Player State
+Movement
+Accuracy
+Armor
+Hit Location
+Head
+Body
+Limbs
+28. HEADSHOT SYSTEM
+
+Headshots reward precision.
+
+Standard Weapons
+HEADSHOT MULTIPLIER
+
+1.5x
+Snipers
+HEADSHOT MULTIPLIER
+
+2.0x
+28.1 Headshot Rules
+
+Headshots should:
+
+Matter
+Reward skill
+
+But:
+
+Should not create unavoidable instant kills on every weapon.
+
+29. SHOTS TO KILL SYSTEM
+
+Formula:
+
+Shots To Kill =
+
+Ceiling(Target HP / Damage)
+
+Example:
+
+Enemy:
+
+200 HP
+
+Weapon damage:
+
+40
+
+Calculation:
+
+200 / 40
+
+=
+
+5 shots
+30. TIME TO KILL SYSTEM
+
+Formula:
+
+TTK =
+
+(Shots To Kill - 1)
+
+×
+
+(60 / Fire Rate RPM)
+
+Example:
+
+Weapon:
+
+600 RPM
+
+Shots:
+
+5
+
+Calculation:
+
+(5-1)
+
+×
+
+(60/600)
+
+=
+
+0.4 seconds
+31. TTK BALANCE PHILOSOPHY
+
+The game uses:
+
+TTK First Balancing
+
+Meaning:
+
+Weapons are balanced around:
+
+Kill speed
+Reliability
+Skill requirement
+Required Balance:
+MAX TTK VARIANCE
+
+±25%
+
+Weapon classes:
+
+CLASS DPS VARIANCE
+
+±15%
+32. DAMAGE FALL OFF
+
+Weapons lose damage over distance.
+
+Example:
+
+SMG:
+
+Strong:
+
+0-20 meters
+
+Weak:
+
+Long range
+
+Sniper:
+
+Strong:
+
+Long range
+
+Weak:
+
+Close range
+
+32.1 Range Design
+
+Range creates identity.
+
+Range does not make weapons universally stronger.
+
+33. HIT DETECTION SYSTEM
+
+The game uses:
+
+Server-side validation
+
+with:
+
+Raycasting
+Timestamp validation
+Hit reconstruction
+33.1 Hit Confirmation
+
+The player receives:
+
+Hit marker
+Damage feedback
+Kill confirmation
+34. COMBAT FEEDBACK
+
+Players should understand:
+
+Damage dealt
+Damage received
+Hit location
+
+Optional settings:
+
+Damage numbers
+Hit markers
+Elimination feed
+35. COMBAT BALANCE RULES
+
+Every weapon must follow:
+
+Rule 1
+
+No weapon dominates all ranges.
+
+Rule 2
+
+Every strength has a weakness.
+
+Rule 3
+
+Customization cannot destroy weapon identity.
+
+Rule 4
+
+Rare items cannot break TTK.
+
+Rule 5
+
+Workshop weapons must remain competitive but controlled.
