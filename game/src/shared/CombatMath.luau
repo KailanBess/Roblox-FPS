@@ -1,8 +1,6 @@
 local Combat = {}
 Combat.MaxHealth = 200
 Combat.MaxArmor = 150
--- GDD movement ratings are converted to studs/sec; they are not literal WalkSpeed.
-Combat.MovementScale = 0.08
 Combat.StudsPerMeter = 3.571
 function Combat.finite(value)
     return type(value) == "number" and value == value and math.abs(value) < math.huge

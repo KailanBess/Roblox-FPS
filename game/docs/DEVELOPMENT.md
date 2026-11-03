@@ -10,8 +10,9 @@ points, as that document's example specifies. Uploaded base templates with much
 lower fire rates are not silently substituted for the named roster.
 
 Range values are treated as meters and converted at 3.571 studs per meter.
-Movement 190–250 is treated as a rating and scaled by 0.08 to WalkSpeed; literal
-250-stud speeds would make this starter range unusable. Reload rating is mapped
+Movement 190–250 is treated as a rating. The current controlled-movement pass maps
+it to a 12.5-stud/sec baseline clamped to 11–14; aim/lean slow it further. See
+MOVEMENT.md. This supersedes the initial 0.08 conversion. Reload rating is mapped
 to 120/rating seconds. These conversions are provisional and centralized in
 CombatMath for tuning. Falloff reaches 50% damage at twice the listed range.
 Shotgun listed damage is total damage across eight pellets. Ranked TTK/DPS limits

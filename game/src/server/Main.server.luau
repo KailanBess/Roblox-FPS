@@ -4,6 +4,7 @@ local Shared = ReplicatedStorage:WaitForChild("FPS")
 local Catalog = require(Shared.WeaponCatalog)
 local Combat = require(Shared.CombatMath)
 local Workshop = require(Shared.Workshop)
+local MovementService = require(script.Parent.MovementService)
 local network = Instance.new("Folder")
 network.Name = "Network"
 network.Parent = Shared
@@ -15,6 +16,7 @@ local function remote(name)
 end
 local action, state, effect = remote("Action"), remote("State"), remote("Effect")
 local sessions = {}
+MovementService.start(sessions)
 local random = Random.new()
 local function sync(player, message, includeDesign)
     local s = sessions[player]
@@ -39,7 +41,7 @@ local function setupPlayer(player)
         if not s or player.Character ~= char then return end
         hum.MaxHealth = Combat.MaxHealth
         hum.Health = Combat.MaxHealth
-        hum.WalkSpeed = Catalog.ById[s.weapon].move * Combat.MovementScale
+        MovementService.configure(player,char,hum)
         char:SetAttribute("Armor", Combat.MaxArmor)
         s.ammo = Catalog.ById[s.weapon].magazine
         s.reloadEnd = 0
@@ -65,7 +67,9 @@ action.OnServerEvent:Connect(function(player, kind, payload)
     local char, hum, head = alive(player)
     if not char then return end
     local weapon = Catalog.ById[s.weapon]
-    if kind == "Equip" then
+    if kind == "Movement" then
+        MovementService.request(player,payload)
+    elseif kind == "Equip" then
         if type(payload) ~= "string" or not Catalog.ById[payload] or now < s.nextEquip then return end
         -- Sandbox roster is unlocked. Production ownership belongs in a server inventory service.
         s.nextEquip = now + .4
@@ -75,7 +79,7 @@ action.OnServerEvent:Connect(function(player, kind, payload)
         s.reloadEnd = 0
         s.lastShot = now
         s.bloom = 0
-        hum.WalkSpeed = Catalog.ById[payload].move * Combat.MovementScale
+        s.aiming = false
         sync(player, "Equipped — reload to load magazine")
     elseif kind == "Workshop" then
         if now < s.nextWorkshop then return end
@@ -109,10 +113,12 @@ action.OnServerEvent:Connect(function(player, kind, payload)
         if now-s.lastShot < 60/weapon.rpm or s.reloadEnd > now or now < s.nextEquip then return end
         local melee = weapon.class == "Knife"
         if not melee and s.ammo < 1 then sync(player, "Reload required"); return end
+        local origin = MovementService.origin(player)
+        if not origin then return end
         s.bloom = math.max(0, s.bloom-(now-s.lastShot)*3)
         s.lastShot = now
         if not melee then s.ammo -= 1 end
-        local scoped = weapon.zoom > 1 and payload.ads == true
+        local scoped = weapon.zoom > 1 and s.aiming == true and payload.ads == true
         local spread = if scoped then .0015 else (100-weapon.accuracy)*.0006 + s.bloom*.002
         if hum.MoveDirection.Magnitude > .1 then spread += .008 end
         if hum.FloorMaterial == Enum.Material.Air then spread += .025 end
@@ -128,16 +134,16 @@ action.OnServerEvent:Connect(function(player, kind, payload)
             local radius = math.sqrt(random:NextNumber()) * spread
             local theta = random:NextNumber(0, math.pi*2)
             local rayDirection = (direction + basis.RightVector*math.cos(theta)*radius + basis.UpVector*math.sin(theta)*radius).Unit
-            local result = workspace:Raycast(head.Position, rayDirection*range, params)
-            local endpoint = if result then result.Position else head.Position + rayDirection*range
-            if not melee then effect:FireAllClients(head.Position, endpoint) end
+            local result = workspace:Raycast(origin, rayDirection*range, params)
+            local endpoint = if result then result.Position else origin + rayDirection*range
+            if not melee then effect:FireAllClients(origin, endpoint) end
             if result then
                 local target = result.Instance:FindFirstAncestorOfClass("Model")
                 local targetHum = target and target:FindFirstChildOfClass("Humanoid")
                 local targetPlayer = target and Players:GetPlayerFromCharacter(target)
                 local teammate = targetPlayer and player.Team ~= nil and targetPlayer.Team == player.Team
                 if targetHum and targetHum.Health > 0 and not teammate and not target:FindFirstChildOfClass("ForceField") then
-                    local headshot = result.Instance.Name == "Head"
+                    local headshot = result.Instance.Name == "Head" or result.Instance:GetAttribute("Headshot") == true
                     local armor = target:GetAttribute("Armor") or 0
                     if not Combat.finite(armor) then armor = 0 end
                     local damage = Combat.damage(weapon, math.clamp(armor,0,150), headshot, result.Distance) / pellets

@@ -9,12 +9,14 @@ local Catalog = require(shared.WeaponCatalog)
 local Combat = require(shared.CombatMath)
 local Workshop = require(shared.Workshop)
 local Models = require(shared.WeaponModel)
+local MovementController = require(script.Parent.MovementController)
 local network = shared:WaitForChild("Network")
 local action, state, effect = network:WaitForChild("Action"), network:WaitForChild("State"), network:WaitForChild("Effect")
 local weapon, ammo, reloading, savedCells = Catalog.ById.M4A1, 30, false, nil
 local firing, ads, lastShot = false, false, -math.huge
 local menuOpen = true
 local viewmodel
+local movementController
 local gui = Instance.new("ScreenGui")
 gui.Name = "FPSInterface"
 gui.ResetOnSpawn = false
@@ -236,10 +238,11 @@ local function fire()
     local now=os.clock()
     if now-lastShot<60/weapon.rpm then return end
     lastShot=now
+    if movementController then movementController.send() end
     action:FireServer("Fire",{direction=workspace.CurrentCamera.CFrame.LookVector,
         timestamp=workspace:GetServerTimeNow(),ads=ads})
     if weapon.zoom>1 then
-        workspace.CurrentCamera.CFrame *= CFrame.Angles(math.rad(.7),0,0)
+        if movementController then movementController.recoil(math.rad(.7)) end
     end
 end
 Input.InputBegan:Connect(function(input,processed)
@@ -283,7 +286,7 @@ effect.OnClientEvent:Connect(function(origin,endpoint)
     tracer.Parent=workspace
     Debris:AddItem(tracer,.065)
 end)
-RunService:BindToRenderStep("FPSView",Enum.RenderPriority.Camera.Value+1,function(dt)
+RunService:BindToRenderStep("FPSView",Enum.RenderPriority.Camera.Value+2,function(dt)
     local cam=workspace.CurrentCamera
     local targetFov=if ads and weapon.zoom>1 and not menuOpen then 70/weapon.zoom else 70
     cam.FieldOfView += (targetFov-cam.FieldOfView)*math.min(1,dt*15)
@@ -298,8 +301,13 @@ RunService:BindToRenderStep("FPSView",Enum.RenderPriority.Camera.Value+1,functio
     end
     local hum=player.Character and player.Character:FindFirstChildOfClass("Humanoid")
     local hp=if hum then math.ceil(hum.Health) else 0
-    hud.Text=string.format("HP %d / 200     %s     %s\nLMB fire • RMB scope • R reload • M armory",hp,weapon.id,
+    hud.Text=string.format("HP %d / 200     %s     %s\nLMB fire • RMB scope • R reload • Q/E lean • M armory",hp,weapon.id,
         if reloading then "RELOADING" elseif weapon.class=="Knife" then "MELEE" else tostring(ammo).." / "..weapon.magazine)
 end)
 setMenu(true)
+movementController=MovementController.start(action,{
+    active=function() return not menuOpen end,
+    aiming=function() return ads end,
+    weapon=function() return weapon end,
+})
 action:FireServer("Sync")

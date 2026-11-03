@@ -161,3 +161,45 @@ for key,rgb in Voxels.Palette do
 end
 check(firearmCount==35,"All 35 real-world firearm roster entries modeled")
 print(string.format("PASS: %d total checks; %d voxel firearms, maximum %d render parts",checks,firearmCount,maxParts))
+
+local Movement=require("../src/shared/Movement")
+local movementStart=checks
+check(near(Movement.walkSpeed(215,false,0),12.5),"Controlled base walking pace")
+check(near(Movement.walkSpeed(10000,false,0),14),"Light-weapon speed cap")
+check(near(Movement.walkSpeed(1,false,0),11),"Heavy-weapon speed floor")
+check(near(Movement.walkSpeed(215,true,0),10),"Aiming slows movement")
+check(near(Movement.walkSpeed(215,false,-1),10.25),"Leaning slows movement")
+check(near(Movement.walkSpeed(215,true,1),8.2),"Scoped leaning has a controlled pace")
+check(near(Movement.walkSpeed(215,false,-1),Movement.walkSpeed(215,false,1)),"Left/right pace symmetric")
+check(Movement.validRequest({lean=-1,ads=false}),"Accept left lean")
+check(Movement.validRequest({lean=1,ads=true}),"Accept aimed right lean")
+check(Movement.validRequest({lean=0,ads=false}),"Accept neutral stance")
+for _,payload in {{lean=2,ads=false},{lean=.5,ads=true},{lean=0/0,ads=false},{lean=math.huge,ads=false},
+    {lean=0,ads=1},{lean="1",ads=false},{ads=false},{lean=0}} do
+    check(not Movement.validRequest(payload),"Reject invalid movement request")
+end
+check(not Movement.validRequest(nil) and not Movement.validRequest("lean"),"Reject non-table requests")
+check(Movement.availableLean(1,false,true)==0,"Jumping neutralizes lean request")
+check(Movement.availableLean(-1,true,false)==0,"Inactive/menu stance neutral")
+check(Movement.availableLean(-1,true,true)==-1,"Grounded active lean accepted")
+check(Movement.wallFraction(.8,0)==0,"Immediate cover prevents lean")
+check(Movement.wallFraction(.8,.03)==0,"Padding prevents camera touching cover")
+check(near(Movement.wallFraction(.8,.46),.5),"Partial clearance permits partial lean")
+check(Movement.wallFraction(.8,5)==1,"Wall fraction cannot exceed full lean")
+check(Movement.wallFraction(0,1)==0,"No divide by zero at neutral")
+local reference
+for _,fps in {30,60,120,240} do
+    local lean,input=0,0
+    for _=1,fps do
+        lean=Movement.approach(lean,1,Movement.LeanResponse,1/fps)
+        input=Movement.approach(input,1,Movement.InputAcceleration,1/fps)
+        check(lean>=0 and lean<=1 and input>=0 and input<=1,"Smoothing never overshoots")
+    end
+    if reference then check(near(lean,reference),"Lean timing independent of frame rate") end
+    reference=lean
+    for _=1,math.floor(fps*.2) do input=Movement.approach(input,0,Movement.InputBraking,1/fps) end
+    check(input<.01,"Braking settles in 0.2 seconds without sliding")
+end
+check(Movement.approach(.5,1,Movement.LeanResponse,0)==.5,"Zero-time step is stable")
+check(Movement.approach(.5,1,Movement.LeanResponse,-1)==.5,"Negative-time step is stable")
+print(string.format("PASS: %d movement checks (pace, lean, cover clearance, invalid requests and frame rates)",checks-movementStart))
