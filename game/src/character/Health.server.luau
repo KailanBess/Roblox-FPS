@@ -1,0 +1,1 @@
+-- Intentionally replaces Roblox default Health script: no passive regeneration.

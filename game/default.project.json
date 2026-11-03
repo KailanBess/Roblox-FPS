@@ -1,0 +1,28 @@
+{
+  "name": "RobloxFPS",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "FPS": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "FPS": {
+        "$path": "src/server"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "FPS": {
+          "$path": "src/client"
+        }
+      },
+      "StarterCharacterScripts": {
+        "Health": {
+          "$path": "src/character/Health.server.luau"
+        }
+      }
+    }
+  }
+}
