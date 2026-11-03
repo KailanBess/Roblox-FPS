@@ -2,6 +2,10 @@
 
 Game code is Roblox Luau. Original uploaded design documents remain unchanged.
 
+Saved roadmap: [RECOMMENDATIONS.md](../RECOMMENDATIONS.md). In a future session with
+this repository selected, say **"read the recommendations from GitHub"** to load
+the draft without copying it into chat.
+
 Core identity: **fair competition + optional weapon creation**. All combat templates
 and creator tools are free; purchases must not grant combat power. See the
 [fair-play/creator plan](docs/GAME_IDENTITY.md), [platform checklist](docs/CROSS_PLATFORM.md),
